@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farol da barra</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comforter+Brush&family=Open+Sans:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../geral.css">
+    <link rel="stylesheet" href="quiz.css">
+    <script src="../geral.js" defer></script>
+
+</head>
+
+<body>
+    <header>
+        <img class="logo" src="../imagens/icones-logos/logo-branca.png" alt="logo Farol da Barra">
+        <nav class="nav-header">
+            <a href="../index.html">Home</a>
+            <a href="../Historia/historia.html">História</a>
+            <a href="../Curiosidades/curiosidades.html">Curiosidades</a>
+            <a href="#">Quiz</a>
+            <a href="../galeria/galeria.html">Galeria</a>
+        </nav>
+        <img src="../imagens/icones-logos/icon-menu.png" alt="menu" class="icon-menu">
+    </header>
+
+    <div class="titulo">
+        <p>Quiz</p>
+    </div>
+    <form class="perguntas">
+        <ol type="1">
+            <li class="pergunta">
+                <p>Na frase: A pessoa está feliz, onde está o sujeito?</p>
+                <ol type="a">
+                    <li>
+                        <input type="radio" id="resposta-1-p1" name="pergunta-1">
+                        <label for="resposta-1-p1">Na Bahia</label>
+                    </li>
+                    <li>
+                        <input type="radio" id="resposta-2-p1" name="pergunta-1">
+                        <label for="resposta-2-p1">Em Salvador</label>
+                    </li>
+                    <li>
+                        <input type="radio" id="resposta-3-p1" name="pergunta-1">
+                        <label for="resposta-3-p1">No Farol da Barra</label>
+                    </li>
+                    <li>
+                        <input type="radio" id="resposta-4-p1" name="pergunta-1">
+                        <label for="resposta-4-p1">Todas as respostas anteriores</label>
+                    </li>
+                </ol>
+            </li>
+            <li class="pergunta">
+                <p>Complete a tabela a seguir:</p>
+                <table frame='box'>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Localização</th>
+                        <th width="60%">Descrição</th>
+                    </tr>
+                    <tr>
+                        <td>Farol da <input class="resposta-pergunta-2" type="text"></td>
+                        <td>Salvador - BA</td>
+                        <td> Foi o primeiro do Brasil, teve sua primeira edificação por volta de 1536. Hoje é um
+                            dos mais lindos cartão postais de Salvador</td>
+                    </tr>
+                    <tr>
+                        <td>Carnaval de Salvador</td>
+                        <td>Salvador - BA</td>
+                        <td> O Carnaval de Salvador é a maior festa de participação popular do <input
+                                class="resposta-pergunta-2" type="text">.</td>
+                    </tr>
+                    <tr>
+                        <td>Praia do Porto da Barra</td>
+                        <td><input class="resposta-pergunta-2" type="text"></td>
+                        <td> Queridinha dos moradores e de turistas, parece ter águas que te abraçam a cada mergulho!
+                        </td>
+                    </tr>
+                </table>
+            </li>
+
+            <li class="pergunta">
+                Qual dessas fotos é o por do sol no Farol da Barra?
+                <ol type="a">
+                    <li>
+                        <input type="radio" id="resposta-1-p3" name="pergunta-3">
+                        <label for="resposta-1-p3"><img class="img-resp" src="../imagens/galeria/porto-da-barra.jpeg"
+                                alt="porto-da-barra"></label>
+                    </li>
+                    <li>
+                        <input type="radio" id="resposta-2-p3" name="pergunta-3">
+                        <label for="resposta-2-p3"><img class="img-resp" src="../imagens/galeria/por-do-sol.jpeg"
+                                alt="por-do-sol"></label>
+                    </li>
+                    <li>
+                        <input type="radio" id="resposta-3-p3" name="pergunta-3">
+                        <label for="resposta-3-p3"><img class="img-resp" src="../imagens/galeria/farol-da-barra-2.jpeg"
+                                alt="farol-da-barra-2"></label>
+                    </li>
+                    <li>
+                        <input type="radio" id="resposta-4-p3" name="pergunta-3">
+                        <label for="resposta-4-p3"><img class="img-resp"
+                                src="../imagens/galeria/farol-da-barra-capoeira.jpg"
+                                alt="farol-da-barra-capoeira"></label>
+                    </li>
+                </ol>
+            </li>
+
+            <li class="pergunta">
+                Me conta a primeira coisa que você pensa ao ver o cartão postal do Farol da Barra:
+                <textarea name="pergunta-4" id="pergunta-4" cols="30" rows="10"></textarea>
+            </li>
+            <li class="pergunta">
+                Do que você mais gosta na Bahia:
+                <textarea name="pergunta-5" id="pergunta-5" cols="30" rows="10"></textarea>
+            </li>
+            <li class="pergunta">
+                Visitar a Bahia é:
+                <textarea name="pergunta-6" id="pergunta-6" cols="30" rows="10"></textarea>
+            </li>
+            <li class="pergunta">
+                Sugestões de melhoria para a cidade:
+                <textarea name="pergunta-7" id="pergunta-7" cols="30" rows="10"></textarea>
+            </li>
+            <li class="pergunta">
+                Já veio para o carnaval de Salvador, se sim como foi a experiencia ?
+                <textarea name="pergunta-8" id="pergunta-8" cols="30" rows="10"></textarea>
+            </li>
+            <li class="pergunta">
+                Voltaria a Salvador ?
+                <textarea name="pergunta-9" id="pergunta-9" cols="30" rows="10"></textarea>
+            </li>
+            <li class="pergunta">
+                Deixe seu feedback sobre esse site:
+                <textarea name="pergunta-10" id="pergunta-10" cols="30" rows="10"></textarea>
+            </li>
+        </ol>
+        <div class="form-button">
+            <button>Enviar Respostas</button>
+        </div>
+    </form>
+
+    <footer>
+        <img class="logo-salvador" src="../imagens/icones-logos/logo-salvador.png" alt="logo Farol da Barra">
+
+        <div>
+            <p>
+                Página web desenvolvida por Guilherme Moreira, em dezembro de 2021, como trabalho da disciplina de
+                Desenvolvimento de Páginas Web da faculdade da UNIRIO.
+            </p>
+        </div>
+    </footer>
+</body>

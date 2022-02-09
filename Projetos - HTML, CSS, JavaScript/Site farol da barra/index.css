@@ -1,0 +1,560 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+a{
+    all: unset;
+    cursor: pointer;
+}
+
+body{
+    position: relative;
+    background-color:#004369;
+
+    max-width: 100vw;
+    overflow-x: hidden;
+}
+
+header{
+    width: 100vw;
+
+    position: absolute;
+    z-index: 2;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo{
+    width: 84px;
+    height: 84px;
+    margin: 1vh 6vw;
+}
+
+nav{
+    width: 45vw;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    font-family: 'Open Sans', sans-serif;
+    font-size: 20px;
+    letter-spacing: 1px;
+
+    color: #F9FCFD;
+
+    margin-right: 60px;
+}
+
+nav a{
+    transition: 0.5s;
+}
+
+nav a:last-child{
+    border: 1px solid #F9FCFD;
+
+    padding: 4px 32px;
+}
+
+nav a:hover, .seta-esquerda:hover, .seta-direita:hover{
+    color: #004369;
+    border-color:#004369;
+    transform: scale(1.2);
+}
+
+.icon-menu{
+    display: none;
+
+    width: 40px;
+    cursor: pointer;
+}
+
+section{
+    min-height: 95vh;
+    width: 100vw;
+}
+
+.hero{
+    position: relative;
+
+    background-image: url('imagens/galeria/farol-da-barra-1.jpeg');
+    background-size: cover;
+
+    opacity: 0.8;
+}
+
+.titulo{
+    all:unset;
+    box-sizing: border-box;
+
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+
+    font-family: 'Comforter Brush', cursive;
+    font-size: 64px;
+    text-align: center;
+
+    background-color: rgba(245, 245, 245, 0.7);
+    color: #004369;
+    padding: 24px;
+
+    transition: 2s;
+}
+
+.div-aviso{
+    height: 100px;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    font-family: 'Open Sans', sans-serif;
+    font-size: 32px;
+    color: white;
+    text-align: center;
+
+    margin-bottom: -70px;
+}
+
+ul{
+    list-style: none;
+}
+
+.txt-hero-2, .txt-hero-3, .txt-hero-4, .txt-hero-5, .txt-hero-6{
+    position: absolute;
+    top: 44vh;
+    left: -500px;
+
+    font-family: 'Open Sans', sans-serif;
+    font-size: 32px;
+    text-align: center;
+
+    color: #01949A;
+    background-color: rgba(255, 255, 255, 0.9);
+
+    padding: 15px;
+
+    transition: 1s;
+}
+
+.txt-hero-3{
+    top: 53vh
+}
+
+.txt-hero-4{
+    color: #004369;
+    left: 10vw;
+    transform: scale(0)
+}
+
+.txt-hero-5{
+    color: #004369;
+    top: 52vh;
+    left: 15vw;
+    transform: scale(0)
+}
+
+.txt-hero-6{
+    display: none;
+    width: 0;
+
+    left: 15vw;
+
+    white-space: nowrap;
+    overflow: hidden;
+    animation: type 2s steps(60, end); 
+}
+
+@keyframes type{ 
+    from { width: 0; } 
+  } 
+
+.seta-esquerda{
+    position: absolute;
+    top: 50vh;
+    left: 4vw;
+
+    opacity: 0;
+    transition: 1s;
+}
+
+.seta-direita{
+    position: absolute;
+    top: 50vh;
+    right: 4vw;
+
+    opacity: 0;
+
+    transition: 1s;
+}
+
+.sobre{
+    position: relative;
+
+    margin-top: 10vh;
+}
+
+.cima{
+    display: flex;
+    align-items: center;
+}
+
+.tooltip {
+    display: block;
+    position: relative;
+
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    text-align: center;
+    
+    color: white;
+    background-color: #004369;
+
+    padding: 10px;
+
+    cursor: pointer;
+
+  }
+
+  div.tooltip span {
+    position: absolute;
+    text-align: center;
+    visibility: hidden;
+    background-color: #000;
+    color: #FFF;
+    padding: 5px 10px;
+  }
+
+  div.tooltip span:after {
+    content: '';
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -8px;
+    width: 0; height: 0;
+    border-bottom: 8px solid #000;
+    border-right: 8px solid transparent;
+    border-left: 8px solid transparent;
+  }
+
+  div:hover.tooltip span {
+    visibility: visible;
+    opacity: 0.9;
+    top: 50px;
+    right: 40%;
+    z-index: 9;
+  }
+
+.left-section{
+    min-height: 340px;
+    min-width: 32vw;
+    max-width: 32vw;
+}
+
+
+.img-sobre{
+    background-image: url('imagens/galeria/letreiro-de-salvador.jpg');
+    background-size: cover;
+    background-position: -10 0;
+
+
+    opacity: 0.9;
+ }
+
+.branco{
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    max-height: 170px;
+    min-height: 170px;
+
+    font-family: 'Open Sans', sans-serif;
+    font-size: 20px;
+    text-align: center;
+
+    background-color: rgba(255, 255, 255);
+    color: #01949A;
+
+    padding: 5vh;
+}
+
+.vermelho-cima{
+    max-height: 170px;
+    min-height: 170px;
+    min-width: 65vw;
+
+    background: linear-gradient( rgba(255,0,0,.4),rgba(255,0,0,.4)), url('imagens/galeria/farol-da-barra-capoeira.jpg');
+    opacity: 0.9;
+} 
+
+.vermelho-baixo{
+    max-height: 170px;
+    min-height: 170px;
+    min-width: 100vw;
+
+    background: linear-gradient( rgba(255,0,0,.4),rgba(255,0,0,.4)), url('imagens/galeria/farol-da-barra-capoeira.jpg');
+    background-position: 32vw 27vh;
+    opacity: 0.9;
+}
+
+.poesia {
+margin: 0 10vw 3vh 10vw;
+}
+
+.cards{
+    display: flex;
+    align-items: center ;
+    justify-content: center;
+
+    background-color: white;
+
+    gap: 5vw;
+    margin-top: -10vh;
+}
+
+.card{
+    position: relative;
+
+    box-sizing: border-box;
+    height: 300px;
+    width: 240px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    border: 3px solid #004369;
+    border-radius: 5px;
+
+    gap: 10px;
+    padding: 20px;
+
+    transition: 0.5s;
+}
+
+.card:hover{
+    transform: scale(1.05)
+}
+
+.icon-card:hover{
+    transform: rotateZ(360deg)
+}
+
+.icon-card{
+    position: absolute;
+    top: -24px;
+
+    height: 40px;
+    width: 40px;
+
+    background-color: #dd0000;
+    border-radius: 50%;
+
+    padding: 5px;
+    
+    transition: 1s;
+}
+
+h3{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 20px;
+    text-align: center;
+
+    color: #004369;
+
+    margin-top: 16px;
+}
+
+.p-card{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 18px;
+    text-align: center;
+
+    color: #01949A;
+
+    margin-bottom: 16px;
+}
+
+.link-card{
+    position: absolute;
+    bottom: 30px;
+
+    width: 120px;
+
+    font-family: 'Open Sans', sans-serif;
+    font-size: 18px;
+    text-align: center;
+
+    color: #dd0000;
+    border: 1px solid #dd0000;
+    border-radius: 5px;
+}
+
+.link-card:hover{
+background-color: #dd0000;
+color: white;
+}
+
+footer{
+    position: absolute;
+    bottom: 0;
+
+    box-sizing: border-box;
+    width: 100vw;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background-color: #004369;
+    color: white;
+
+    padding: 10px 20px 10px 20px;
+}
+
+.logo-salvador{
+    height: 60px;
+}
+
+
+
+@media screen and (max-width: 1200px){
+    nav{
+        width: 75vw;
+    }
+
+    .branco{
+        font-size: 16px;
+    }
+
+    .cards{
+        flex-wrap: wrap;
+
+        padding-bottom: 150px;
+        padding-top: 100px;
+
+    }
+
+    .card{
+        margin: 100px 10vw 0 100px;
+    }
+
+    .seta-direita, .seta-esquerda{
+        display: none;
+    }
+
+
+    div:hover.tooltip span{
+        right: 35%;
+    }
+
+    .div-aviso{
+        font-size: 24px;
+    }
+
+}
+
+
+@media screen and (max-width: 750px){
+    .nav-home{
+        display: none;
+
+        position: absolute;
+        right: 0vw;
+        top:50px;
+
+        background-color: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(15px);
+        border-radius: 10px;
+        border: 1px solid white;
+        
+
+        width: 200px;
+        height: auto;
+
+        padding: 10px;
+        gap: 5px;
+    }
+
+    .icon-menu{
+        display: inline;
+
+        opacity: 0.8;
+
+        margin-right: 6vw;
+    }
+
+    .titulo{    
+        font-size: 44px;
+    }
+
+    .hero{
+        background-position-x: -100px;
+    }
+
+    .img-sobre{
+        display: none;
+    }
+
+    .vermelho-baixo{
+        background-position: 0vw 27vh;
+    }
+
+
+    div:hover.tooltip span{
+        right: 25%;
+    }
+}
+
+@media screen and (max-width: 520px){
+
+    .hero{
+        background-position-x: -200px;
+    }
+
+    .branco{
+        font-size: 14px;
+    }
+
+    .cards{
+        padding-bottom: 300px;
+    }
+
+    .card{
+        margin: 100px auto 0 auto;
+    }
+
+.vermelho-baixo, .vermelho-cima{
+        background-position-x: calc(100vw - 500px);
+    }
+
+    div:hover.tooltip span{
+        right: 10%;
+    }
+}
+
+@media screen and (max-width: 330px){
+    .nav-home{
+    width: 100vw;
+
+    left: 0;
+    right: 0;
+    }
+
+    .branco{
+        font-size: 11px;
+    }
+}
+
+

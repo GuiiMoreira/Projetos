@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Comforter+Brush&display=swap');
+
+header {
+  box-sizing: border-box;
+
+  position: fixed;
+  top: 0;
+  z-index: 2;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100vw;
+  height: 70px;
+
+  background-color: white;
+
+  padding: 20px  5vw;
+}
+
+.icon-menu{
+  display: none;
+  height: 45px;
+}
+
+.title-header{
+  color: #ffc90f;
+  font-size: 32px;
+
+  font-family: 'Comforter Brush', cursive;  
+}
+
+.title-header span{
+  color: black
+}
+
+.menu-perfil{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.foto-perfil-header{
+  width: 45px;
+
+  border-radius: 50%;
+  border: 2px solid rgb(255,201,15);
+
+  margin-right: 10px;
+}
+
+.icon-header{
+  width: 25px;
+
+  opacity: 0.6;
+}
+
+@media (max-width: 1000px){
+
+}
+
+@media (max-width: 600px){
+  header{
+    padding: 20px 3vw;
+  }
+
+  .menu-perfil p, .foto-perfil-header{
+    display: none;
+  }
+
+  .icon-menu{
+    display: inline;
+  }
+}

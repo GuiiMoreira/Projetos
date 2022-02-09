@@ -1,0 +1,185 @@
+*{
+    margin: 0;
+    padding: 0;
+  }
+  
+  body{
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+    font-family: 'Fredericka the Great', cursive;
+
+    color: white;
+    font-size: 80px;
+
+    align-items: center;
+    padding: 10px 100px;
+
+    --size: 200px;
+    --gap: 50px;
+
+    --top: 0;
+    --left: 0;
+
+  }
+
+  .start{
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+
+  .configuracoes{
+    min-width: 400px;
+    display: none;
+    font-size: 20px;
+    color: #FD076A;
+
+    border: 2px solid white;
+
+    margin-top: 30px;
+  }
+
+  input{
+    margin-right: 5px;
+  }
+
+  .tempo {
+    display: flex;
+    justify-content: space-evenly ;
+
+    margin-top: 30px;
+  }
+
+  .dificuldade {
+    display: flex;
+    justify-content: space-evenly;
+
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+  
+  .container{
+   position: relative;
+   display: none;
+   justify-content: center;
+   align-items: center;
+   flex-wrap: wrap;
+   min-height: 75vh;
+   min-width: 90vw;
+   gap: var(--gap);
+
+   margin-top: 50px;
+
+   background-image: url('https://images.contentstack.io/v3/assets/bltb6530b271fddd0b1/bltc81450142909c658/5ed00fd7d94d9d1a6948ed8f/New-mid.jpg');
+   background-size: cover;
+   cursor: url('hiclipart.com.png'), pointer;
+
+   transition: 2s;
+  }
+
+  .div-headshot{
+    position: absolute;
+    min-height: 75vh;
+    min-width: 90vw;
+
+    opacity: 0;
+    transition: 1s;
+
+  }
+  
+  .target{
+    position: absolute;
+    top: var(--top);
+    left: var(--left);
+
+    min-width: 100px;
+    min-height: 120px;
+
+    background-image: url('https://preview.redd.it/vto93ilsbi951.png?width=1920&format=png&auto=webp&s=0ce2bbe911cf5d84ad02acf899db37a45438d45e');
+    background-size: cover;
+    background-position: -50px 0;
+
+    border-radius: 120px 40px 0 0;
+  }
+
+  .headshot{
+    position: absolute;
+
+    top: 5px;
+    left: 20px;
+    z-index: 2;
+
+    min-width: 70px;
+    min-height: 55px;
+
+    border-radius: 50%;
+
+  }
+
+  .txtHeadShot{
+    position: absolute;
+    z-index: 3;
+    top: var(--top);
+    left: var(--left);
+
+    font-family: 'Creepster', cursive;
+    font-size: 30px;
+
+    color: #FD076A;
+    opacity: 0.7;
+    transition: 2s;
+
+    margin-right: 5px;
+  }
+
+
+  .fim-de-jogo{
+      position: absolute;
+      top: 40vh;
+      z-index: 4;
+      display: flex;
+      flex-direction: column;
+      transition: 4s;
+
+      opacity: 0;
+  }
+
+  .contagem-acertos{
+    position: absolute;
+    top: 110px;
+    left: 75vw;
+    font-size: 30px;
+    opacity: 0;
+  }
+
+  .contagem-hs{
+    position: absolute;
+    top: 110px;
+    left: 45vw;
+    font-size: 30px;
+    opacity: 0;
+  }
+
+  .contagem-tempo{
+    position: absolute;
+    top: 110px;
+    left: 10vw;
+    font-size: 30px;
+    opacity: 0;
+  }
+
+  span{
+    margin-left: 5px;
+  }
+
+  button{
+    all: unset;
+
+    text-align: center;
+    border-radius: 25%;
+    font-size: 30px;
+    background-color: #FD076A;
+    padding: 5px;
+    cursor: pointer;
+  }
+

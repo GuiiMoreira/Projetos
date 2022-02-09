@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,700;1,400&family=Open+Sans:wght@400;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.aviso-header{
+    text-align: center;
+
+    background-color: rgb(59, 59, 59);
+    color: white;
+    padding: 5px;
+}
+
+.menu-header{
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+
+    box-sizing: border-box;
+    max-width: 100vw;
+    height: 10vh;
+
+    background-color: black;
+    color: white;
+
+    padding-bottom: 15px;
+}
+
+.logo-header{
+    margin-left: 3vw;
+
+    font-size: 28px;
+}
+
+.menu-filtros-header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap:5vw;
+
+    width: 70vw;
+
+    font-family: 'Open Sans', sans-serif;
+}
+
+.menu-filtros-header p{
+    cursor: pointer;
+}
+
+.menu-user-header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap:2vw;
+    
+    width: 15vw;
+}
+
+.menu-user-header img{
+    width: 20px;
+}

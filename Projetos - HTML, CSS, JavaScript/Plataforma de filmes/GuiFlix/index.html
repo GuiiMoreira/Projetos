@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GuiFlix</title>
+  <link href="https://fonts.googleapis.com/css?family=Manrope:200,300,regular,500,600,700,800" rel="stylesheet" />
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+  <header class="header">
+    <div class="logo-page">
+      <img src="./assets/logo.svg" alt="Logo">
+      <h1 class="header__title">Gui<span class="header__subtitle">Flix</span></h1>
+    </div>
+    <img class="btn-theme" src="./assets/light-mode.svg" alt="Botão de tema">
+  </header>
+
+  <div class="container">
+    <div class="highlight">
+      <div class="highlight__img"></div>
+      <div class="highlight__info">
+        <div class="highlight__title-rating">
+          <h3 class="highlight__title"></h3>
+          <span class="highlight__rating"></span>
+        </div>
+        <div class="highlight__genre-launch">
+          <span class="highlight__genres"></span>
+          <span class="highlight__launch"></span>
+        </div>
+        <p class="highlight__description">
+        </p>
+        <a class='highlight__video-link' href="" target="_blank">Assista o trailer <img src="./assets/play.svg"
+            alt="Play"></a>
+      </div>
+    </div>
+    <div class="search-movie">
+      <h2 class="search-title"> Filmes em alta:</h2>
+      <input class="input" type="text" placeholder="Pesquisar...">
+      <img src="./assets/lupa-branca.svg" alt="Buscar" class="search-icon">
+    </div>
+    <div class="movies-container">
+      <img class="btn-prev" src="./assets/seta-esquerda-preta.svg" alt="Seta esquerda">
+      <div class="movies">
+      </div>
+      <img class="btn-next" src="./assets/seta-direita-preta.svg" alt="Seta direita">
+    </div>
+    <div class="search-movie">
+      <h2 class="search-genre-title"> Filmes de Animação:</h2>
+      <select name="genre" id="genre">
+        <option value="Ação">Ação</option>
+        <option value="Animação" selected>Animação</option>
+        <option value="Aventura">Aventura</option>
+        <option value="Comédia">Comédia</option>
+        <option value="Drama">Drama</option>
+        <option value="Fantasia">Fantasia</option>
+        <option value="Ficção Cientifica">Ficção Cientifica</option>
+        <option value="Suspense">Suspense</option>
+        <option value="Terror">Terror</option>
+      </select>
+      <img src="./assets/seta-baixo-branca.svg" alt="seta-baixo" class="seta-baixo">
+    </div>
+    <div class="movies-container">
+      <img class="btn-prev-genre" src="./assets/seta-esquerda-preta.svg" alt="Seta esquerda">
+      <div class="movies movies-genres">
+      </div>
+      <img class="btn-next-genre" src="./assets/seta-direita-preta.svg" alt="Seta direita">
+    </div>
+  </div>
+  <div class="modal hidden">
+    <img src="./assets/close.svg" alt="Close" class="modal__close">
+    <h3 class="modal__title"></h3>
+    <a class="modal__link" href="#" target="_blank">
+      <img class="modal__img">
+    </a>
+    <p class="modal__description">
+    </p>
+    <div class="modal__genre-average">
+      <div class="modal__genres"></div>
+      <div class="modal__average"></div>
+    </div>
+  </div>
+</body>
+
+</html>

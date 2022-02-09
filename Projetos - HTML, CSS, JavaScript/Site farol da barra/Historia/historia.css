@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;700&display=swap');
+
+body{
+    position: relative;
+    background-color: white;
+
+    text-align: justify;
+}
+
+header{
+    position: relative;
+    background-color: #004369;
+}
+
+.imgs{
+    position: relative;
+}
+
+.seta-esquerda{
+    width: 2vw;
+    min-width: 16px;
+
+    position: absolute;
+    top: 50%;
+    left: 0;
+
+    opacity: 1;
+}
+
+.seta-direita{
+    width: 2vw;
+    min-width: 16px;
+
+    position: absolute;
+    top: 50%;
+    right: 0;
+
+    opacity: 1;
+}
+
+.txt-historia{
+    box-sizing: border-box;
+    width: 100vw;
+    padding: 6vw;
+}
+
+h2{
+    text-align: center;
+    color: #004369;
+    margin-bottom: 3vh;
+
+    font-size: 32px;
+}
+
+h3{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
+    letter-spacing: 2px;
+
+    color:#004369;
+
+    margin-top: 60px;
+    margin-bottom: 20px;
+}
+
+ol{
+    box-sizing: border-box;
+    width: 88vw;
+
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap:20px;
+
+    background-color: rgba(128, 128, 128, 0.082);
+    border: 2px solid #004369;
+    border-radius: 5px;
+
+    margin-bottom: 5vh;
+    padding: 16px;
+}
+
+li{
+    font-family: 'Montserrat', sans-serif;
+    color: #004369;
+}
+
+li:hover{
+    color: #01949A;
+}
+
+.img-historia{
+    width: 88vw;
+    margin-bottom: 5vh;
+}
+
+
+.p-historia{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 18px;
+    color: #01949A;
+
+    margin-bottom: 1vh;
+
+    line-height: 28px;
+}
+
+
+@media screen and (max-width: 750px){
+    ol{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        gap: 5px
+    }
+}
+
+
+@media screen and (max-width: 450px){
+    ol{
+    font-size: 14px;
+    }
+
+    li{
+        margin-bottom: 10px;
+    }
+
+    .seta-direita, .seta-esquerda{
+        top: 20%;
+    }
+}

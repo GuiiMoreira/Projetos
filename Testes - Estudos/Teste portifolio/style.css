@@ -1,0 +1,443 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Turret+Road&display=swap');
+
+*{
+    margin: 0px;
+    padding: 0px;
+
+    background-repeat: no-repeat;
+}
+
+html{
+    font-size: 12px;
+    font-family: 'Roboto';
+}
+
+body{
+    box-sizing: border-box;
+
+    display: flex;
+    justify-content: center;
+    
+    background-color: rgb(223, 154,230);
+
+    overflow: hidden;
+
+    scale: 0.5;
+}
+
+header{
+    box-sizing: border-box;
+    width: 100vw;
+
+    position: absolute;
+    top:0;
+    z-index: 9;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    font-size: 1.3rem;
+
+    background-color: rgba(0, 0, 0, 0.9);
+    color: white;
+
+    padding: 1.5rem  5rem;
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+
+    width: 30%;
+}
+
+a{
+    all: unset;
+
+    cursor: pointer;
+}
+
+.background-frase{
+    position: absolute;
+    top: 0;
+
+    z-index: -9;
+
+    color: white;
+    font-size: 15vw;
+    line-height: 12vw;
+
+    -webkit-mask-image: linear-gradient(to top, transparent 20%, rgb(255, 255, 255) 100%)
+}
+
+.container-um, .container-dois, .container-tres, .container-quatro, .container-cinco{
+    position: fixed;
+    width: 100vw;
+    height: 100px;
+}
+
+.container-um{
+    z-index: 1;
+    min-width: 528px;
+}
+
+.container-dois{
+    min-width: 749.5px;
+}
+
+.container-tres{
+    z-index: -2;
+    min-width: 977px;
+}
+
+.container-quatro{
+    z-index: -3;
+    min-width: 1228px;
+}
+
+.container-cinco{
+    z-index: -4;
+    min-width: 1429px;
+}
+
+.container-seis{
+    position: absolute;
+    top: 280px;
+    z-index: -8;
+
+    margin-left: -5px;
+}
+
+.corpo{
+    box-sizing: border-box;
+    
+    position: absolute;
+    top:510px;
+    z-index: -7;
+    
+    width: 512px;
+    height: 250px;
+
+    background-image: url('./Assets/corpo.png');
+    background-size: contain;
+}
+
+.lado-esquerdo-um, .lado-direito-um, .lado-esquerdo-dois, .lado-direito-dois, .lado-esquerdo-tres, .lado-direito-tres, .lado-direito-quatro, .lado-esquerdo-quatro, .lado-esquerdo-cinco, .lado-direito-cinco{
+    position: absolute;
+    top: 70%;
+    
+    align-items: center;
+
+    transition: 1s;
+}
+
+.lado-esquerdo-um{
+    width: 175px;
+    height: 512px;
+
+    left: 90px;
+
+    background-image: url("./Assets/guiiwe.png");
+    background-size: contain;
+}
+
+.lado-direito-um{
+    width: 175px;
+    height: 512px;
+
+    right: 90px;
+
+    background-image: url("./Assets/guiid.png");
+    background-size: contain;
+}
+
+.lado-esquerdo-dois{
+    width: 185px;
+    height: 546px;
+    z-index: -2;
+
+    left: 190px;
+    
+    background-image: url("./Assets/miranha-esquerdo.png");
+    background-size: contain;
+}
+
+.lado-direito-dois{
+    width: 185px;
+    height: 546px;
+    z-index: -2;
+
+    right: 190px;
+    background-image: url("./Assets/miranha-direito.png");
+    background-size: contain;
+}
+
+.lado-esquerdo-tres{
+    width: 168.5px;
+    height: 492px;
+    z-index: -3;
+
+    left: 320px;
+    
+    background-image: url("./Assets/caveira-esquerdo.png");
+    background-size: contain;
+}
+
+.lado-direito-tres{
+    width: 168.5px;
+    height: 492px;
+    z-index: -3;
+
+    right: 320px;
+    background-image: url("./Assets/caveira-direito.png");
+    background-size: contain;
+}
+
+.lado-esquerdo-quatro{
+    width: 175px;
+    height: 512px;
+    z-index: -4;
+    left: 440px;
+    
+    background-image: url("./Assets/teemo-esquerdo.png");
+    background-size: contain;
+
+    top: 79%;
+}
+
+.lado-direito-quatro{
+    width: 175px;
+    height: 512px;
+    z-index: -4;
+
+    right: 440px;
+    background-image: url("./Assets/teemo-direito.png");
+    background-size: contain;
+}
+
+.lado-esquerdo-cinco{
+    width: 175px;
+    height: 512px;
+    z-index: -5;
+
+    left: 540px;
+    
+    background-image: url("./Assets/hamburguer-esquerdo.png");
+    background-size: contain;
+
+    top: 60%;
+}
+
+.lado-direito-cinco{
+    width: 175px;
+    height: 512px;
+    z-index: -5;
+
+    right: 540px;
+    background-image: url("./Assets/hamburguer-direito.png");
+    background-size: contain;
+
+    top: 60%;
+}
+
+button{
+    all: unset;
+    position: absolute;
+
+    bottom: 2vh;
+    z-index: 8;
+
+    background-color: #C6B6F7;
+    color: white;
+
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 14px;
+
+    cursor: pointer;
+}
+
+button:hover{
+    background-color: white;
+    color: #C6B6F7;
+}
+
+.atomo {
+    position:relative;
+    height: 150px;
+}
+
+.orbital {
+    transform: rotate(-55deg) scale(1, 1) skew(12deg, 40deg) translate(0, 0);
+    position:absolute;
+    width: 90px;
+    height:90px;
+    top:50%;
+    left:50%;
+    margin-top: -40px;
+    margin-left:-50px;
+    border-radius: 50%;
+    border: 5px solid black;
+}
+.orbital.e3 {
+    transform: rotate(70deg) scale(1, 1) skew(12deg, 40deg) translate(0, 0);
+}
+
+.orbital.e2 {
+    transform: rotate(0deg) scale(1, 1) skew(12deg, 40deg) translate(0, 0);
+}
+
+.rota {
+    width: 90px;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    margin-top: -5px;
+}
+
+.eletron {
+    background-color: red;
+
+    border-radius: 50%;
+    width:10px;
+    height:10px;
+    margin-left:-6px;
+}
+
+.proton {
+    position:absolute;
+    top:45%;
+
+    width:35px;
+    height:35px;
+
+    border-radius: 50%;
+    background: rgb(2,0,36);
+    background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(255,198,0,1) 33%, rgba(2,0,36,0.5) 100%);
+
+    margin-left: -18px;
+}
+
+.rota {
+    animation: spin 2.5s infinite linear;
+}
+.orbital.e2 .rota {
+    animation: spin 2.5s infinite -1.25s linear;
+}
+.orbital.e3 .rota {
+    animation: spin 2.5s infinite 0s linear;
+}
+
+.formacao{
+    display: none;
+
+    font-size: 24px;
+    color: whitesmoke;
+    font-family: 'Turret Road', cursive;
+    position: absolute;
+    bottom: 2vh
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+
+@media screen and (max-width: 1420px){
+    button{
+        display: none;
+    }
+
+    .formacao{
+        display: inline;
+    }
+}
+
+
+@media screen and (max-width: 1230px){
+    .container-cinco{
+        display: none;
+    }
+}
+
+@media screen and (max-width: 920px) {
+    .container-quatro{
+        display: none;
+    }
+  }
+
+@media screen and (max-width: 800px) {
+    .container-tres{
+        min-width: 970px;
+    }
+  }
+
+@media screen and (max-width: 752px) {
+    .container-tres{
+        display: none;
+    }
+
+    .nome{
+        display: none;
+    }
+
+    nav{
+        width: 100%;
+        margin: 0 3vw;
+    }
+
+    button{
+        display: none;
+    }
+  }
+
+@media screen and (max-width:530px) {
+    .container-um, .container-dois, .corpo{
+        display: none;
+    }
+
+    .container-zero{
+        position: absolute;
+        bottom: -5vh;
+        width: 100vw;
+        height: 90vh;
+        
+        background-image: url('./Assets/imagem-inteira.png');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+
+      header{
+        padding: 1.5rem  3rem;
+      }
+}
+
+@media screen and (max-width:300px) {
+      header{
+        padding: 1.5rem  1rem;
+      }
+
+      .formacao{
+          font-size: 18px;
+      }
+}
+
+@media screen and (max-height:700px){
+    .corpo{
+        display: none;
+    }
+}
+
+@media screen and (max-height:550px){
+    .formacao{
+        display: none;
+    }
+}

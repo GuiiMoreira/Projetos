@@ -1,0 +1,68 @@
+
+.container{
+	box-sizing: border-box;
+	max-width: 100vw;
+	height: 74vh;
+
+	margin: 2vh 15vw 17vh 15vw;
+
+}
+
+.sobre-portifolio{
+	display: flex;
+	justify-content: space-between;
+}
+
+.sobre-portifolio img{
+	width: 36vw;
+	height: 73vh;
+}
+
+.texto-sobre-portifolio{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+
+	box-sizing: border-box;
+	width: 23vw;
+	height: 73vh;
+}
+
+
+.texto-sobre-portifolio h2{
+	font-family: 'Ibarra Real Nova', serif;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 2.5em;
+
+	color: #33323D;
+	
+	margin: 14vh 0px 5vh 0px;
+}
+
+.texto-sobre-portifolio p{
+	font-family: 'Public Sans', sans-serif;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 1em;
+	line-height: 1.8em;
+
+	color: #33323D;
+
+	mix-blend-mode: normal;
+	opacity: 0.8;
+
+	margin-bottom: 8vh;
+}
+
+.ir-portifolio{
+	margin-bottom: 13vh;
+}
+
+.linha{
+	width: 23vw;
+	height: 0.2vh;
+	background: #33323D;
+	mix-blend-mode: normal;
+	opacity: 0.15;
+}

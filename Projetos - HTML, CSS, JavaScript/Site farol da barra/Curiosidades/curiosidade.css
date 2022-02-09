@@ -1,0 +1,132 @@
+body{
+    height: 100vh;
+
+    background: linear-gradient( rgba(255, 255, 255, 0.7),rgba(255, 255, 255, 0.7)), url('../imagens/galeria/farol-da-barra-4.jpeg');
+    background-position-x: calc(100vw - 1530px);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+ul{
+    list-style: none;
+}
+
+details{
+    position: relative; 
+    z-index: 2;
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+summary{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 18px;
+
+    background-color:rgba(0, 67, 105, 0.8);
+    color: white;
+
+    margin-top: 24px;
+    padding: 2vh 5vw;
+    padding-right: 20vw;
+}
+
+.info-topico{
+    display: flex;
+    padding: 24px 60px;
+}
+
+.nome-topico{
+    color: #01949A;
+    margin-bottom: 1vh;
+}
+
+
+.foto-topico{
+    width: 400px;
+    margin-bottom: 1vh;
+    border-radius: 2px;
+}
+
+.foto-topico-atras{
+    display: none;
+
+    width: 400px;
+    margin-bottom: 1vh;
+    border-radius: 2px;
+}
+
+.descricao-topico{
+    display: flex;
+    flex-direction: column;
+
+    justify-content: space-between;
+    align-items: flex-start;
+
+    font-size: 18px;
+    color: #01949A;
+
+    margin: 40px 0 40px 60px ;
+}
+
+.descricao-topico p{
+    margin-bottom: 10px;
+}
+
+
+.paginas-relacionadas{
+    display: flex;
+    align-items: flex-start;
+
+    gap: 5px;
+}
+
+.icon-topico{
+    width: 40px;
+    height: 40px;
+
+    border-radius: 5px;
+}
+
+.btn-azulclaro p{
+    box-sizing: border-box;
+    height: 40px;
+    width: 60px;
+
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+
+    background-color: #01949A;
+    color: white;
+
+    border-radius: 5px;
+    padding: 10px;
+}
+
+footer{
+    position: fixed;
+    bottom: 0;
+}
+
+@media screen and (max-width: 800px) {
+    .info-topico{
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+    }
+    
+    .nome-topico{
+        margin: 20px;
+    }
+
+    .foto-topico{
+        width: 100vw;
+
+        margin: 0;
+    }
+
+    .descricao-topico{
+        margin: 20px;
+    }
+}

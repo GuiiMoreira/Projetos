@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Comforter+Brush&display=swap');
+
+main {
+  display: flex;
+  height: 100vh;
+}
+
+main div {
+  width: 50%;
+}
+
+.logo{
+  position: absolute;
+  top: 30px;
+  right: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-family: 'Comforter Brush', cursive;
+}
+
+.logo p{
+  color: rgb(255, 201,14);
+  font-size: 36px;
+  margin-left: 10px;
+}
+
+.logo span{
+  color: black
+}
+
+.img-logo{
+  width: 30px;
+  height: 30px;
+}
+
+.container-login-left{
+    background-image: url('../../assets/sign-in-background.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.container-right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  margin-top: 5vh;
+}
+
+.container-right form {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+}
+
+.container-right form h1 {
+  margin: 0 0 0 0;
+  font-size: 25px;
+}
+
+.btn-login {
+  margin-top: 72px;
+}
+
+.register-link {
+  display: flex;
+  justify-content: center;
+  width: 400px;
+  margin-top: 96px;
+}
+
+.register-link span {
+  margin-right: 10px;
+}
+
+@media (max-width: 820px) {
+  .container-login-left{
+  width: 0;
+  }
+
+  .container-right form{
+    width: 80vw;
+    }
+
+  main{
+    justify-content: center;
+  }
+
+  .logo{
+    right: auto;
+  }
+}

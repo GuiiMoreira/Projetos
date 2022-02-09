@@ -1,0 +1,93 @@
+.hero{
+	display: flex;
+	align-items: flex-end;
+
+	background-image: url("../../assets/home/image-homepage-hero.jpg");
+	background-size: 77vw 75vh;
+}
+
+.apresentacao{
+	box-sizing: border-box;
+	width: 30vw;
+	height: 50vh;
+
+	background: #FAFAFA;
+}
+
+.apresentacao h1{
+	letter-spacing: -0.446429px;
+
+	color: #33323D;
+
+	margin: 8vh 2vw 8vh 2vw;
+}
+
+.apresentacao button{
+	display: flex;
+	align-items: center;
+
+	padding-right: 2.5vw;
+}
+
+.apresentacao button img{
+	background: rgba(00,00,00,0.1);
+	mix-blend-mode: normal;
+	
+	margin-right: 2vw;
+	padding: 1.2vw;
+}
+
+.sobre-mim{
+	display: flex;
+	justify-content: space-between;
+}
+
+.sobre-mim img{
+	width: 35vw;
+	height: 79vh;
+}
+
+.texto-sobre-mim{
+	box-sizing: border-box;
+	width: 30vw;
+}
+
+.texto-sobre-mim h2{
+
+	color: #33323D;
+	
+	margin: 7vh 0px 5vh 0px;
+}
+
+.texto-sobre-mim p{
+	line-height: 1.8em;
+
+	color: #33323D;
+
+	mix-blend-mode: normal;
+	opacity: 0.8;
+
+	margin-bottom: 6vh;
+}
+
+.ir-portifolio{
+	text-align: center;
+	margin-bottom: 60px;
+}
+
+
+.linha{
+	width: 30vw;
+	height: 0.2vh;
+	background: #33323D;
+	mix-blend-mode: normal;
+	opacity: 0.15;
+}
+
+.seta-baixo:hover{
+	filter: brightness(5)
+}
+
+
+
+

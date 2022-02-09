@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Jogo da mira</title>
+    <link href="https://fonts.googleapis.com/css?family=Manrope:200,300,regular,500,600,700,800" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Creepster&family=Fredericka+the+Great&display=swap"
+        rel="stylesheet">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <p class="title">Jogo da mira</p>
+    <button class="start">Start</button>
+    <button class="btnconfiguracoes">Configurações</button>
+    <div class="configuracoes">
+        <div class="tempo">
+            <label><strong>Tempo</strong></label>
+            <label>
+                <input type="radio" name="tempo" value="10" checked>10s
+            </label>
+            <label>
+                <input type="radio" name="tempo" value="30">30s
+            </label>
+            <label>
+                <input type="radio" name="tempo" value="60">60s
+            </label>
+        </div>
+
+        <div class="dificuldade">
+            <label class="valorDificuldade" for='dificuldade'><strong>Dificuldade</strong></label>
+            <label>
+                <input type="radio" name="dificuldade" value="facil" checked>Fácil
+            </label>
+            <label>
+                <input type="radio" name="dificuldade" value="medio">Médio
+            </label>
+            <label>
+                <input type="radio" name="dificuldade" value="dificil">Difícil
+            </label>
+        </div>
+    </div>
+
+    <div class="contadores">
+        <p class="contagem-acertos">Acertos :<span class="n-acerto"></span></p>
+        <p class="contagem-hs">Headshots:<span class="n-headshot"></span></p>
+        <p class="contagem-tempo">Tempo:<span class="n-tempo"></span></p>
+    </div>
+
+    <div class="container">
+        <div class="div-headshot"></div>
+    </div>
+    <div class="fim-de-jogo"></div>
+</body>
+
+</html>

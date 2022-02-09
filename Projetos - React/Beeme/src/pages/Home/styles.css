@@ -1,0 +1,84 @@
+.container-home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+
+  margin-top: 80px;
+}
+
+.content-home {
+  display: flex;
+
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.container-publicacao{
+  margin-bottom: 50px;
+}
+
+.header-publicacao{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-right: 10px;
+}
+
+.usuario-publicacao{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 10px;
+
+  font-size: 14px;
+}
+
+.hora-publicacao{
+  opacity: 0.7;
+
+  font-size: 14px;
+}
+
+.foto-perfil-publicacao{
+  width: 30px;
+  height: 30px;
+  border: 2px solid rgb(255, 201, 14);
+
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.conteudo-publicacao{
+  display: flex;
+  align-items: center;
+
+  width: 550px;
+  max-width: 550px;
+
+  overflow: hidden;
+
+  margin-top: 10px;
+}
+
+.foto-feed{
+  width: 100%;
+}
+
+.botoes-publicacao{
+  display: flex;
+
+  margin: 16px 0px; 
+}
+
+.botao-publicacao{
+  height: 25px;
+  margin-right: 16px;
+}
+
+@media (max-width: 570px){
+  .conteudo-publicacao{
+    width: 100vw;
+  }
+}

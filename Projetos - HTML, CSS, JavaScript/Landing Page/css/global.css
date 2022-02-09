@@ -1,0 +1,178 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+/* ---------------- HEADER ----------------- */
+
+header{
+	box-sizing: border-box; 
+	max-width: 100vw;
+	height: 10vh;
+
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+    padding: 8vh 11vw 8vh 11vw;
+	
+}
+
+.pages a{
+	font-family: 'Public Sans', sans-serif;
+	font-weight: normal;
+	font-size: 0.75em;
+	letter-spacing: 0.2em;
+	text-transform: uppercase;
+				
+	margin-left: 2.5vw;
+}
+
+.sem-selecao{
+	color: #33323D;
+}
+
+.pag-selecionada{
+	color: #5FB4A2;
+}
+
+/* ---------------- BODY ----------------- */
+
+body{
+	Background-color: #FAFAFA;
+}
+
+.container{
+	box-sizing: border-box;
+	max-width: 100vw;
+	height: 80vh;
+
+	margin: 2vh 11vw 20vh 11vw;
+}
+
+
+.contato-section{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	margin: 0 11vw 20vh 11vw;
+}
+
+.contato-section h2{
+	box-sizing: border-box;
+	width: 27vw;
+
+	color: #33323D;
+}
+
+.contato-section .link-branco{
+	padding: 2vh 3vw;
+}
+
+/* ---------------- FOOTER ----------------- */
+
+.rodape{
+	box-sizing: border-box; 
+	max-width: 100vw;
+	height: 10vh;
+
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	background: #33323D;
+
+	padding: 3vh 11vw 3vh 11vw;
+}
+
+.pages {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+
+
+footer .pages a{
+	color: #ffff
+}
+
+
+.redes-sociais a{
+	margin-left: 1vw;
+}
+
+/* ---------------- ELEMENTOS ----------------- */
+
+a{
+	text-decoration: none;
+}
+
+button{
+	all: unset;
+
+	text-align: center;
+    font-family: 'Public Sans';
+    font-size: 0.75em;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+
+    background: rgb(32, 58, 76);
+    color: #FFFFFF;
+}
+
+
+h1{
+	font-family: 'Ibarra Real Nova', serif;
+	font-weight: bold;
+	font-size: 3em;
+	line-height: 1em;
+}
+
+h2{
+	font-family: 'Ibarra Real Nova', serif;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 2.5em;
+}
+
+
+h3{
+	font-family: 'Ibarra Real Nova', serif;
+	font-size: 2em;
+	line-height: 1.3em;
+	
+	color: #33323D;
+	
+	margin-bottom: 5vh;
+}
+
+p{
+	font-family: 'Public Sans', sans-serif;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 1em;
+}
+
+.link-branco{
+	text-decoration: none;
+	font-family: 'Public Sans', sans-serif;
+	font-weight: normal;
+	font-size: 0.75em;
+	letter-spacing: 0.2em;
+	text-transform: uppercase;
+
+	color: #33323D;
+
+	border: 1px solid #33323D;
+	padding: 2vh 1.5vw;
+}
+
+.link-branco:hover{
+	background: #33323D;
+	color: #FAFAFA;
+}
+
+.azul:hover{
+	background: #5FB4A2;
+}
