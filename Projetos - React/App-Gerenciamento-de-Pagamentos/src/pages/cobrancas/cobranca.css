@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Nunito:wght@400;600&display=swap');
+
+.cobrancas-section-superior{
+    width: 75vw;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-left: -0.5vw;
+}
+
+.titulo-section-superior{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.titulo-section-superior img{
+    height: 35px;
+    width: 35px;
+}
+
+.titulo-section-superior p{
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 26px;
+    line-height: 130%;
+
+
+    display: flex;
+    align-items: center;
+
+    color: #3F3F55;
+}
+
+.funcionalidades{
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.btn-filtros-cobrancas{
+  all: unset;
+  width: 40px;
+  height: 40px;
+
+  cursor: pointer;
+}
+
+.pesquisa-cobrancas{
+  position: relative;
+}
+
+.pesquisa-cobrancas input{
+  all: unset;
+  width: 300px;
+
+  padding: 7px 8px;
+  background: #FFFFFF;
+  border-radius: 10px;
+
+  box-shadow: 5px 5px 5px 2px rgba(218, 1, 117, 0.05);
+
+  font-family: 'Nunito', sans-serif;
+  font-size: 18px;
+  line-height: 25px;
+}
+
+.pesquisa-cobrancas img{
+  position: absolute;
+  top: 25%;    
+  right: 15px;
+}

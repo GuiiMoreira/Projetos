@@ -1,0 +1,40 @@
+.visible-modal-feedback-addclientes{
+    animation-name: aparecerModalFeedbackAddCliente;
+    animation-duration: 4s;
+}
+
+@keyframes aparecerModalFeedbackAddCliente {
+    from {opacity: 0}
+    to {opacity: 1}
+  }
+
+.modal-feedback-clientes{
+    position: absolute;
+    top:500px;
+    right: 0vw;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 5px;
+
+    font-family: 'Nunito';
+    font-size: 14px;
+    line-height: 19px;
+
+    color: #243F80;
+    background: #C3D4FE;
+    box-shadow: 0px 4px 42px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+
+    padding: 10px 15px;
+}
+
+.icon-sucesso-feedback-clientes{
+    height: 20px;
+}
+
+.icon-fechar-feedback-clientes{
+    height: 8px;
+    margin-left: 10px;
+}

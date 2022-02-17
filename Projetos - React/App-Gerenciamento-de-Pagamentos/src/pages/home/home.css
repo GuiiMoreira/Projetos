@@ -1,0 +1,45 @@
+.container-home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+}
+
+.content-home {
+  margin-top: 40px;
+  width: 80%;
+}
+
+.btn-adicionar {
+  width: 200px;
+  margin-bottom: 24px;
+}
+.conteudo {
+  position: absolute;
+  top: 20vh;
+  left: 15vw;
+
+  width: 75vw;
+}
+.topo {
+  display: flex;
+  justify-content: space-between;
+
+  width: 100%;
+}
+.cobrancas {
+  display: flex;
+  justify-content: space-between;
+
+  width: 100%;
+
+  margin-top: 20px;
+}
+.resumo-clientes {
+  display: flex;
+  justify-content: space-between;
+
+  width: 100%;
+
+  margin-top: 20px;
+}

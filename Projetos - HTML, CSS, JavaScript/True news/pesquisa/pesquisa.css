@@ -1,0 +1,39 @@
+h2{
+    border-bottom: 3px solid red;
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+}
+
+.resultados-pesquisa{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    gap: 30px;
+}
+
+.pesquisa{
+
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+
+    gap: 30px;
+
+    margin-bottom: 10px;
+}
+
+.img-pesquisa{
+    width: 300px;
+    height: 150px;
+
+    overflow-y: hidden;
+}
+
+.pesquisa-fake{
+    color: red;
+}
+
+.pesquisa-true{
+    color: green;
+}

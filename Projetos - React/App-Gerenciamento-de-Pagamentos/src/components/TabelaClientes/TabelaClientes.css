@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Nunito:wght@400;600&display=swap');
+
+
+.tabela-clientes{
+    box-sizing: border-box;
+    width: 75vw;
+
+    background: #FFFFFF;
+    border-radius: 30px;
+    margin-top: 30px;
+    padding: 20px 15px;
+
+    margin-left: -0.5vw;
+}
+
+.cabecalho-tabela-clientes, .linhas-tabela-clientes{
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    text-align: start;
+
+    border-bottom: 1px solid #EFF0F6;
+    padding: 18px;
+}
+
+.linhas-tabela-clientes:last-child{
+    border-bottom: none;
+}
+
+.cabecalho-tabela-clientes p, .linhas-tabela-clientes p{
+    width: 140px;
+    max-width: 140px;
+
+    white-space: nowrap;
+    overflow:   hidden;
+    text-overflow: ellipsis;
+}
+
+.cabecalho-tabela-clientes p{
+    font-family: 'Nunito', sans-serif;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 50px;
+
+    letter-spacing: 0.005em;
+
+    color: #3F3F55;
+}
+
+.linhas-tabela-clientes p{
+    font-family: 'Nunito', sans-serif;
+    font-size: 14px;
+    line-height: 40px;
+    letter-spacing: 0.005em;
+
+    color: #747488;
+}
+
+.linhas-tabela-clientes .cliente-inadimplente{
+    font-weight: 600;
+
+    color: #971D1D;
+    background: #FFEFEF;
+    border-radius: 8px;
+
+    padding: 3px;
+}
+
+.linhas-tabela-clientes span.cliente-em-dia{
+    font-weight: 600;
+
+    color: #1FA7AF;
+    background: #EEF6F6;;
+    border-radius: 8px;
+
+    padding: 3px 25px;
+}
+
+.linhas-tabela-clientes p:last-child{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.cabecalho-tabela-clientes img{
+    height: 20px;
+}
+
+.linhas-tabela-clientes img{
+    height: 30px;
+    cursor: pointer;
+}
+
+
+

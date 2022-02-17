@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Nunito:wght@400;600&display=swap');
+
+
+.tabela-cobrancas{
+    box-sizing: border-box;
+    width: 75vw;
+
+    background: #FFFFFF;
+    border-radius: 30px;
+    margin-top: 30px;
+    padding: 20px 15px;
+
+    margin-left: -0.5vw;
+}
+
+.cabecalho-tabela-cobrancas, .linhas-tabela-cobrancas{
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    text-align: start;
+
+    border-bottom: 1px solid #EFF0F6;
+    padding: 18px;
+}
+
+.cabecalho-tabela-cobrancas p, .linhas-tabela-cobrancas p{
+  width: 140px;
+  max-width: 140px;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.cabecalho-tabela-cobrancas p{
+  font-family: 'Nunito', sans-serif;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 50px;
+
+  letter-spacing: 0.005em;
+
+  color: #3F3F55;
+}
+
+.cabecalho-tabela-cobrancas img{
+  height: 20px;
+}
+
+button {
+  all: unset;
+  margin-right: 24px;
+  cursor: pointer;
+}

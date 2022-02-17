@@ -11,6 +11,7 @@ const faceEsquerdo = document.querySelector('.lado-esquerdo-um')
 const faceDireito = document.querySelector('.lado-direito-um')
 const imagemInteira = document.querySelector('.container-zero')
 const largura = window.screen.width
+const apresentacao = document.querySelector('.container-apresentacao')
 
 function alertar() {
     if (button.textContent === "Hide the universe's secret!") {
@@ -59,6 +60,7 @@ function fecharAMente() {
     setTimeout(() => {
         faceEsquerdo.style.left = `calc(50vw - 175px)`
         faceDireito.style.right = `calc(50vw - 175px)`
+        apresentacao.style.left = '10vw'
     }, 4000)
 
     setTimeout(() => {
@@ -67,7 +69,7 @@ function fecharAMente() {
     }, 4990)
 
     setTimeout(() => {
-        button.textContent = 'Open your mind!'
+        button.textContent = 'Open my mind!'
 
         faceDireito.style.transition = '0s'
         faceEsquerdo.style.transition = '0s'
@@ -79,6 +81,8 @@ function abrirAMente() {
     faceEsquerdo.style.transition = '1s'
     faceEsquerdo.style.left = '90px'
     faceDireito.style.right = '90px'
+    apresentacao.style.left = '-300px'
+
 
     setTimeout(() => {
         miranhaEsquerdo.style.display = 'initial'
@@ -88,6 +92,7 @@ function abrirAMente() {
     setTimeout(() => {
         miranhaEsquerdo.style.left = '190px'
         miranhaDireito.style.right = '190px'
+
     }, 1000)
 
     setTimeout(() => {
@@ -120,13 +125,16 @@ function abrirAMente() {
         hamburguerDireito.style.right = '540px'
     }, 4000)
 
-
-
-
     setTimeout(() => {
         button.textContent = "Hide the universe's secret!"
     }, 3000)
 }
 
 
+if (largura > 1400) {
+    fecharAMente()
+}
+
+
+// document.addEventListener("DOMContentLoaded", fecharAMente);
 button.addEventListener('click', alertar)

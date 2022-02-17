@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TrueNews</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="report.css">
+</head>
+
+<body>
+    <header>
+        <h1>TrueNews</h1>
+
+        <nav>
+            <a href="../index.html">Home</a>
+            <a href="../sobre/sobre.html">About</a>
+            <a href="#">Report</a>
+            <a href="../download/download.html">Download</a>
+        </nav>
+    </header>
+
+    <section class="report">
+        <h2>Report a fake news</h2>
+        <form>
+            <div>
+                <label for="title">Titulo da fake news</label>
+                <input name="title" type="text" placeholder="Insira o titulo ..." required>
+            </div>
+            <div>
+                <label for="fakeNews">URL da fake news</label>
+                <input name="fakeNews" type="text" placeholder="Insira a url ..." required>
+            </div>
+            <div>
+                <label for="text">Porque essa noticia é falsa</label>
+                <textarea name="text" id="" cols="30" rows="10"></textarea>
+            </div>
+            <div>
+                <label for="url">URL da notícia verdadeira</label>
+                <input name="url" type="text" placeholder="Insira a url ...">
+            </div>
+            <div class="half">
+                <div>
+                    <label for="nome">Nome: (não é necessário)</label>
+                    <input name="nome" type="text" placeholder="Digite seu nome ...">
+                </div>
+                <div>
+                    <label for="email">E-mail: (não é necessário)</label>
+                    <input name="email" type="text" placeholder="Digite seu e-mail ...">
+                </div>
+            </div>
+
+            <button>Enviar report</button>
+        </form>
+
+    </section>
+    <footer>
+        Todas as noticias desse site foram verificadas e garantimos a veracidade das informações.
+    </footer>
+</body>
+
+</html>

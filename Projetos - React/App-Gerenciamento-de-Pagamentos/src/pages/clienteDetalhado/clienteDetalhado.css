@@ -1,0 +1,229 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Nunito:wght@400;600;700&display=swap');
+
+.titulo-cliente-detalhado{
+    display: flex;
+    align-items: center;
+
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 26px;
+    line-height: 130%;
+
+    color: #3F3F55;
+
+    margin-left: -0.5vw;
+    margin-bottom: 30px;
+}
+
+.tabela-detalhes-cliente{
+    box-sizing: border-box;
+    width: 75vw;
+    min-width: 1100px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 30px;
+
+    background-color: #FFFFFF;
+    border-radius: 30px;
+    padding: 30px;
+    margin-bottom: 30px;
+}
+
+.titulo-tabela-cliente-detalhado{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 130%;
+
+    color: #3F3F55;
+}
+
+.tabela-linha-um{
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btn-editar-cliente{
+    all: unset;
+
+    font-family: 'Nunito', sans-serif;
+    font-size: 16px;
+    line-height: 25px;
+
+    color: #0E8750;
+    background: #F8F8F9;
+    border: 1px solid #DEDEE9;
+    box-sizing: border-box;
+    border-radius: 10px;
+
+    padding: 5px 40px;
+
+    cursor: pointer;
+}
+
+.tabela-linha-dois{
+    display: flex;
+    justify-content: space-between;
+}
+
+.titulo-info-cliente-detalhado{
+    font-family: 'Nunito', sans-serif;  
+    width: 200px;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 24px;
+
+    color: #3F3F55;
+}
+
+.info-cliente-detalhado{
+    font-family: 'Nunito', sans-serif;
+
+    font-size: 14px;
+    line-height: 24px;
+
+    color: #3F3F55;
+}
+
+.tabela-linha-titulos{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    font-family: 'Nunito', sans-serif;
+
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 50px;
+
+    letter-spacing: 0.005em;
+    color: #3F3F55;
+}
+
+.tabela-linha-cobrancas-cliente{
+    width: 100%;
+
+    font-family: 'Nunito';
+
+    font-size: 14px;
+    line-height: 40px;
+    letter-spacing: 0.005em;
+
+    color: #6E6E85;
+}
+
+.tabela-linha-titulos .coluna-data,  .tabela-linha-titulos .coluna-id {
+    margin-left: -5px;
+}
+
+.tabela-linha-titulos .coluna-valor{
+    margin-left: 5px;
+}
+
+.coluna-data,  .coluna-id{
+    width: 20%;
+
+    display: flex;
+    align-items: center;
+}
+
+.coluna-descricao{
+    width: 30%;
+    max-width: 30%;
+
+    overflow: hidden;
+    white-space: nowrap ;
+    text-overflow: ellipsis;
+}
+
+.coluna-status, .coluna-valor{
+    width: 12.5%;
+}
+
+.coluna-icons{
+    width: 5%;
+
+    display: flex;
+    gap: 10px;
+
+    padding-left: 15px;
+    cursor: pointer;
+}
+
+.coluna-icons img{
+    width: 20px;
+    margin-top: -5px;
+}
+
+.linha-cobrancas-cliente{
+    box-sizing: border-box;
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+
+    border-top: 1px solid #EFF0F6;
+
+    padding: 10px 0 ;
+}
+
+.cobranca-Pendente{
+    width: 70px;
+    text-align: center;
+    background: #FCF6DC;
+    border-radius: 8px;
+    font-family: 'Nunito';
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 19px;
+    color: #C5A605;
+    padding: 3px;
+}
+
+.cobranca-Vencida{
+    width: 60px;
+    text-align: center;
+    background: #FFEFEF;
+    border-radius: 8px;
+    font-family: 'Nunito';
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 19px;
+    color: #971D1D;
+    padding: 3px;
+}
+
+.cobranca-Pago{
+    width: 40px;
+    text-align: center;
+    background: #EEF6F6;
+    border-radius: 8px;
+    font-family: 'Nunito';
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 19px;
+    color: #1FA7AF;
+    padding: 3px;
+}
+
+.btn-nova-cobranca{
+    all: unset;
+
+    font-family: 'Nunito';
+    font-size: 16px;
+    line-height: 25px;
+
+    color: #F8F8F9;
+    background: #DA0175;
+    border-radius: 10px;
+
+    padding: 4px 56px;
+    cursor: pointer;
+}

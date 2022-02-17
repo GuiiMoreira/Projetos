@@ -1,0 +1,52 @@
+body{
+    height: 100vh;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.download{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 50px;
+
+    margin-top: -200px;
+}
+
+.download h2{
+    font-size: 32px;
+}
+
+.download li{
+    font-size: 20px;
+    color: gray;
+
+    margin-bottom: 10px;
+}
+
+.btn-downloads{
+    display: flex;
+    align-items: center;
+
+    gap: 30px;
+}
+
+.logo-btn-download{
+    width: 30px;
+
+    margin-left: 10px;
+}
+
+.btn-downloads button{
+    display: flex;
+    align-items: center;
+    min-height: 50px;
+
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: 1px solid red;
+
+    cursor: pointer;
+}

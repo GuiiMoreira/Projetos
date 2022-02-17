@@ -1,0 +1,136 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Nunito:wght@400;600&display=swap");
+
+.card-cobrancas {
+  width: 360px;
+
+  background-color: #fff;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  border-radius: 30px;
+
+  box-sizing: border-box;
+
+  box-shadow: 0px 4px 4px rgba(172, 217, 197, 0.25);
+}
+.titulo-tabela {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+
+  border-bottom: 1px solid #ccc;
+
+  height: 60px;
+
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 130%;
+
+  color: #3f3f55;
+}
+.cobrancas-home-direito {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  box-sizing: border-box;
+
+  border-radius: 8px;
+
+  padding: 0px 10px;
+
+  margin-left: 30px;
+}
+.cabecalho-tabela {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+
+  box-sizing: border-box;
+
+  padding: 0px 25px;
+
+  border-bottom: 1px solid #ccc;
+
+  width: 100%;
+  height: 65px;
+
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 50px;
+
+  color: #3f3f55;
+}
+.linha-tabela {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+
+  box-sizing: border-box;
+
+  padding: 0px 25px;
+
+  border-bottom: 1px solid #ccc;
+
+  width: 100%;
+  height: 65px;
+
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 50px;
+
+  color: #3f3f55;
+}
+.linha-tabela p,
+.cabecalho-tabela p {
+  width: 33%;
+  max-width: 33%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  white-space: nowrap;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.linha-tabela p.nome-cliente,
+p.valor-cliente {
+  justify-content: left;
+}
+.final-tabela {
+  height: 50px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-family: Nunito;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 23px;
+
+  display: flex;
+  align-items: center;
+  text-decoration-line: underline;
+  color: #da0175;
+}
+.final-tabela p {
+  text-decoration: underline;
+  color: #da0175;
+  cursor: pointer;
+}

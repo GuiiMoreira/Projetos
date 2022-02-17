@@ -1,0 +1,30 @@
+body{
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.sobre{
+    margin-top: -100px;
+}
+
+.sobre-img{
+    text-align: center;
+
+    margin-bottom: 30px;
+}
+
+.txt-sobre h2{
+    text-align: center;
+
+    margin-bottom: 20px;
+}
+
+.txt-sobre p{
+    font-size: 18px;
+
+    text-align: justify;
+}

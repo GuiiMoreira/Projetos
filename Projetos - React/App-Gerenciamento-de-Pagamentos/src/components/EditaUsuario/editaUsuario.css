@@ -1,0 +1,186 @@
+.modal-edita-usuario {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  background-color: rgba(145, 154, 150, 0.3);
+  backdrop-filter: blur(4px);
+
+  z-index: 20;
+}
+.card-edita-usuario {
+  background-color: #fff;
+
+  border-radius: 30px;
+
+  width: 500px;
+  height: 600px;
+
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding: 30px;
+}
+.topo-edita-usuario {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 31px;
+
+  display: flex;
+  align-items: center;
+  text-align: center;
+
+  margin: 0;
+  padding: 0;
+
+  margin-bottom: 10px;
+
+  color: #343447;
+}
+.titulo-modal-editar {
+  margin-left: 80px;
+}
+.btnFechar {
+  margin-left: 70px;
+}
+.formulario-edita-usuario {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+
+  height: 100%;
+}
+.formulario-edita-usuario label {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+
+  width: 100%;
+
+  font-family: Nunito;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 20px;
+
+  color: #344054;
+}
+.formulario-edita-usuario label input {
+  border: 1px solid #d0d5dd;
+  box-sizing: border-box;
+
+  height: 35px;
+
+  padding: 10px;
+
+  box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
+  border-radius: 8px;
+}
+.cpf-telefone {
+  display: flex;
+  flex-direction: row;
+
+  justify-content: space-between;
+}
+.cpf-telefone label {
+  width: 45%;
+}
+.final-edita-usuario button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 4px 40px;
+
+  border: none;
+
+  width: 160px;
+  height: 33px;
+
+  background: #da0175;
+  border-radius: 10px;
+
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 25px;
+
+  color: #f8f8f9;
+}
+.posicao-relativa {
+  position: relative;
+
+  margin-bottom: 30px;
+}
+.absoluto-edita {
+  position: absolute;
+  top: 55px;
+  left: 3px;
+}
+.icone-senha-edita {
+  width: 30px;
+  height: 30px;
+
+  position: absolute;
+
+  top: 40%;
+  right: 10px;
+  z-index: 100;
+}
+.campo-faltando-edicao {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 20px;
+  color: #e70000;
+}
+.card-sucesso {
+  height: 600px;
+  width: 600px;
+
+  background: #ffffff;
+  border-radius: 30px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 31px;
+
+  display: flex;
+  align-items: center;
+  text-align: center;
+
+  margin: 0;
+  padding: 0;
+
+  margin-bottom: 10px;
+
+  color: #343447;
+}
+.card-sucesso img {
+  margin-bottom: 30px;
+}
+.botao-aplicar {
+  cursor: pointer;
+}
