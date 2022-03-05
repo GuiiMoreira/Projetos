@@ -1,7 +1,7 @@
 import useGlobal from "./useGlobal";
 
 function useRequests() {
-    const { token, setErroLogin } = useGlobal();
+    const { token, setErroLogin, removeToken } = useGlobal();
 
     async function get(route) {
         try {
@@ -22,6 +22,7 @@ function useRequests() {
             }
         } catch (error) {
             console.log(error.message);
+            error.message === 'jwt expired' && removeToken()
         }
     }
 

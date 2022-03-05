@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Nunito:wght@400;600&display=swap');
+
+.tabela-cobrancas {
+  box-sizing: border-box;
+  width: 74vw;
+
+  background: #FFFFFF;
+  border-radius: 30px;
+  margin-top: 30px;
+  padding: 20px 15px;
+
+  margin-left: -0.5vw;
+}
+
+.naoEncontrado {
+  display: flex;
+
+  align-items: center;
+  flex-direction: column;
+
+  padding: 10px;
+
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+}
+
+.icones {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.mensagemNaoEncontrado {
+  font-size: 28px;
+  line-height: 34px;
+  text-align: center;
+
+  color: #F08889;
+
+  margin-bottom: 16px;
+}
+
+.avisoNaoEncontrado {
+  font-size: 24px;
+  line-height: 29px;
+  text-align: center;
+
+  color: #9B9BB2;
+}
+
+.iconeDireita {
+  z-index: 2;
+  right: 2vw;
+  top: 5vh;
+  position: absolute;
+}
+
+.iconeEsquerda {
+  z-index: 1;
+
+}

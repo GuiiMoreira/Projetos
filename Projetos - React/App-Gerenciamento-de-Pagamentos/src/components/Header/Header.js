@@ -22,7 +22,7 @@ function Header({ titulo, classname, subclasse }) {
     }
 
     useEffect(() => {
-        handleObeterUsuario()
+        handleObeterUsuario() // eslint-disable-next-line
     }, [])
 
     return (

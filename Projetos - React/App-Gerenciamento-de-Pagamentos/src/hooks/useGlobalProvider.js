@@ -15,8 +15,10 @@ function useGlobalProvider() {
   const [abrirModalFeedbackAddCliente, setAbrirModalFeedbackAddCliente] = useState(false);
   const [idCliente, setIdCliente] = useState();
   const [abriModalAddCobranca, setAbriModalAddCobranca] = useState(false);
-
-
+  const [abriModalEditCobranca, setAbriModalEditCobranca] = useState(false);
+  const [abriModalExcluirCobranca, setAbriModalExcluirCobranca] = useState(false);
+  const [abriModalDetalhesCobranca, setAbriModalDetalhesCobranca] = useState(false);
+  const [cobrancaSelecionada, setCobrancaSelecionada] = useState()
 
   return {
     token,
@@ -39,7 +41,15 @@ function useGlobalProvider() {
     abriModalAddCobranca,
     setAbriModalAddCobranca,
     erroLogin,
-    setErroLogin
+    setErroLogin,
+    abriModalEditCobranca,
+    setAbriModalEditCobranca,
+    abriModalExcluirCobranca,
+    setAbriModalExcluirCobranca,
+    abriModalDetalhesCobranca,
+    setAbriModalDetalhesCobranca,
+    cobrancaSelecionada,
+    setCobrancaSelecionada
   };
 }
 

@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import iconClienteCinza from '../../assets/icon-cliente-cinza.svg';
 import iconFiltroRosa from '../../assets/icon-filtro-rosa.svg';
 import iconLupa from '../../assets/icon-lupa.svg';
@@ -9,7 +10,9 @@ import useGlobal from '../../hooks/useGlobal';
 import './clients.css';
 
 function Clients() {
-    const { abrirModalAddCliente, setAbrirModalAddCliente, abrirModalFeedbackAddCliente } = useGlobal()
+    const { abrirModalAddCliente, setAbrirModalAddCliente, abrirModalFeedbackAddCliente } = useGlobal();
+    const [ pesquisa, setPesquisa ] = useState('');
+
     return (
         <main>
             <Layout titulo='Cliente' classe='cliente-header'>
@@ -23,19 +26,22 @@ function Clients() {
                         <button className='btn-adicionar-clientes' onClick={() => setAbrirModalAddCliente(true)}>+ Adicionar cliente</button>
                         <img className='btn-filtros-clientes' src={iconFiltroRosa} alt="Filtros" />
                         <div className='pesquisa-clientes'>
-                            <input type="text" placeholder='Pesquisa' />
+                            <input 
+                            type="text"  placeholder='Pesquisa' 
+                            onChange={(e) => setPesquisa(e.target.value)}
+                            />
                             <img src={iconLupa} alt="" />
                         </div>
                     </div>
                 </section>
 
-                <TabelaClientes />
+                <TabelaClientes 
+                    pesquisa={pesquisa}
+                />
                 {abrirModalAddCliente && <ModalAddCliente />}
                 {abrirModalFeedbackAddCliente === true && <ModalFeedbackClients class='visible-modal-feedback-addclientes' texto='Cadastro concluído com sucesso' />}
-
                 {abrirModalFeedbackAddCliente === 'editado' && <ModalFeedbackClients class='visible-modal-feedback-addclientes' texto='Edições do cadastro concluídas com sucesso' />}
-
-                {abrirModalFeedbackAddCliente === 'cobrancas' && <ModalFeedbackClients class='visible-modal-feedback-addclientes' texto='Cobranca cadastrada com sucesso' />}
+                {abrirModalFeedbackAddCliente === 'cobranca' && <ModalFeedbackClients class='visible-modal-feedback-addclientes' texto='Cobrança cadastrada com sucesso' />}
             </Layout>
         </main>
     );

@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Nunito:wght@400;600&display=swap');
+
+.backdrop-modalDetalhes{
+    position: fixed;
+    top:0;
+    bottom: 0;
+    right: 0;
+    left: 8vw;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    background-color: rgba(145, 154, 150, 0.3);
+    backdrop-filter: blur(4px);
+}
+
+.container-detalhes{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    box-sizing: border-box;
+    background: #FFFFFF;
+    border-radius: 30px;
+
+    height: 50vh;
+    width: 35vw;
+    min-width: 550px;
+    min-height: 450px;
+
+    padding: 40px 55px;
+}
+
+.titulo-detalhes{
+    display: flex;
+    align-items: center;
+
+    gap: 20px;
+
+    font-family: 'Montserrat';
+
+    font-weight: 600;
+    font-size: 26px;
+    line-height: 130%;
+    color: #3F3F55;
+}
+
+.icon-fechar-detalhes{
+    width: 20px;
+    align-self: flex-end;
+}
+
+.icon-detalhes{
+    width: 20px;
+}
+
+.label-detalhes{
+    font-family: 'Nunito';
+
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 24px;
+    color: #3F3F55;
+
+    margin-bottom: 5px;
+    margin-top: 20px;
+
+}
+
+.descricao-detalhes{
+    display: flex;
+    flex-direction: column;
+    height: 50px;
+}
+
+.div-flex-detalhes{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap:30px;
+}
+
+.div-menor-detalhes{
+    width: 200px;
+}

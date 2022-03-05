@@ -6,12 +6,22 @@ import iconFiltroRosa from '../../assets/icon-filtro-rosa.svg';
 import './cobranca.css';
 import TabelaCobrancas from "../../components/Cobrancas/TabelaCobrancas";
 import ModalAddCobranca from "../../components/ModalAddCobrancas/ModalAddCobrancas";
+import ModalEditCobrancas from "../../components/ModalEditCobrancas/ModalEditCobrancas";
+import ModalExcluirCobrancas from "../../components/ModalExcluirCobrancas/ModalExcluirCobrancas";
+import ModalDetalhesCobrancas from "../../components/ModalDetalhesCobrancas/ModalDetalhesCobrancas";
+import ModalFeedbackClients from "../../components/ModalFeedbackClients/ModalFeedbackClients"
+import { useState } from "react";
+
 
 function Cobrancas() {
   const {
     abriModalAddCobranca,
-    setAbriModalAddCobranca,
+    abriModalEditCobranca,
+    abriModalExcluirCobranca,
+    abrirModalFeedbackAddCliente,
+    abriModalDetalhesCobranca
   } = useGlobal();
+  const [ pesquisa, setPesquisa ] = useState('');
 
   return (
     <main>
@@ -23,16 +33,29 @@ function Cobrancas() {
           </div>
 
           <div className="funcionalidades">
-            <img className='btn-filtros-cobrancas' src={iconFiltroRosa} alt="Filtros" onClick={() => setAbriModalAddCobranca(true)} />
+            <img className='btn-filtros-cobrancas' src={iconFiltroRosa} alt="Filtros" />
             <div className='pesquisa-cobrancas'>
-              <input type="text" placeholder='Pesquisa' />
+              <input 
+              type="text" 
+              placeholder='Pesquisa'
+              onChange={(e) => setPesquisa(e.target.value)}
+              />
               <img src={iconLupa} alt="" />
             </div>
           </div>
         </section>
 
-        <TabelaCobrancas />
+        <TabelaCobrancas 
+          pesquisa={pesquisa}
+        />
         {abriModalAddCobranca && <ModalAddCobranca />}
+        {abriModalEditCobranca && <ModalEditCobrancas />}
+        {abriModalExcluirCobranca && <ModalExcluirCobrancas />}
+        {abriModalDetalhesCobranca && <ModalDetalhesCobrancas />}
+
+        {abrirModalFeedbackAddCliente === 'cobrancaDeletada' && <ModalFeedbackClients class='visible-modal-feedback-addclientes' texto='Cobrança excluída com sucesso' />}
+        {abrirModalFeedbackAddCliente === 'cobrancaEditada' && <ModalFeedbackClients class='visible-modal-feedback-addclientes' texto='Cobrança editada com sucesso' />}
+
       </Layout>
     </main>
   )

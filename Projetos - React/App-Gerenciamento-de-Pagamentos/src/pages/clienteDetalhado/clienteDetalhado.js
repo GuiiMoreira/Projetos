@@ -9,15 +9,32 @@ import { useState, useEffect } from 'react';
 import './clienteDetalhado.css'
 import useRequests from '../../hooks/useRequests';
 import ModalAddCobrancas from '../../components/ModalAddCobrancas/ModalAddCobrancas'
+import ModalEditCobrancas from '../../components/ModalEditCobrancas/ModalEditCobrancas'
+import ModalExcluirCobrancas from '../../components/ModalExcluirCobrancas/ModalExcluirCobrancas'
 import { useParams } from 'react-router-dom';
 import useClients from '../../hooks/useClients';
-
+import ModalFeedbackClients from '../../components/ModalFeedbackClients/ModalFeedbackClients';
+import ModalDetalhesCobrancas from '../../components/ModalDetalhesCobrancas/ModalDetalhesCobrancas';
 
 
 function ClienteDetalhado() {
     const requisicao = useRequests()
     const { id } = useParams();
-    const { abrirModalEditCliente, setAbrirModalEditCliente, setClienteSelecionado, clienteSelecionado, setAbriModalAddCobranca, abriModalAddCobranca } = useGlobal()
+    const { abrirModalEditCliente,
+        setAbrirModalEditCliente,
+        setClienteSelecionado,
+        clienteSelecionado,
+        setAbriModalAddCobranca,
+        abriModalAddCobranca,
+        abrirModalFeedbackAddCliente,
+        setCobrancaSelecionada,
+        setAbriModalEditCobranca,
+        abriModalEditCobranca,
+        setAbriModalExcluirCobranca,
+        abriModalExcluirCobranca,
+        setAbriModalDetalhesCobranca,
+        abriModalDetalhesCobranca
+    } = useGlobal()
     const [clienteCobranca, setClienteCobranca] = useState({});
     const [cobrancasFiltradas, setCobrancasFiltradas] = useState()
     const { cobrancas } = useClients();
@@ -58,7 +75,7 @@ function ClienteDetalhado() {
             const cobrancasFiltradasNova = cobrancas.filter(cobranca => `${cobranca.cliente_id}` === id)
 
             setCobrancasFiltradas(cobrancasFiltradasNova)
-        }
+        } // eslint-disable-next-line
     }, [cobrancas])
 
     useEffect(() => {
@@ -146,14 +163,37 @@ function ClienteDetalhado() {
                         {cobrancasFiltradas && cobrancasFiltradas.map((cobranca) => {
                             return (
                                 <div className="linha-cobrancas-cliente">
-                                    <p className="coluna-id">{cobranca.id}</p>
-                                    <p className="coluna-data">{formatar(cobranca.vencimento)}</p>
-                                    <p className="coluna-valor">R$ {cobranca.valor}</p>
-                                    <div className='coluna-status'><p className={"cobranca-" + verificarPendencia(cobranca.vencimento, cobranca.cobranca_status)}>{verificarPendencia(cobranca.vencimento, cobranca.cobranca_status)}</p></div>
-                                    <p className="coluna-descricao">{cobranca.descricao}</p>
+                                    <p className="coluna-id" onClick={() => {
+                                        setCobrancaSelecionada(cobranca)
+                                        setAbriModalDetalhesCobranca(true)
+                                    }}>{cobranca.id}</p>
+                                    <p className="coluna-data" onClick={() => {
+                                        setCobrancaSelecionada(cobranca)
+                                        setAbriModalDetalhesCobranca(true)
+                                    }}>{formatar(cobranca.vencimento)}</p>
+                                    <p className="coluna-valor" onClick={() => {
+                                        setCobrancaSelecionada(cobranca)
+                                        setAbriModalDetalhesCobranca(true)
+                                    }}>R$ {cobranca.valor}</p>
+                                    <div className='coluna-status' onClick={() => {
+                                        setCobrancaSelecionada(cobranca)
+                                        setAbriModalDetalhesCobranca(true)
+                                    }}><p className={"cobranca-" + verificarPendencia(cobranca.vencimento, cobranca.cobranca_status)}>{verificarPendencia(cobranca.vencimento, cobranca.cobranca_status)}</p></div>
+                                    <p className="coluna-descricao" onClick={() => {
+                                        setCobrancaSelecionada(cobranca)
+                                        setAbriModalDetalhesCobranca(true)
+                                    }}>{cobranca.descricao}</p>
                                     <p className="coluna-icons">
-                                        <img src={iconEditar} alt="Editar" />
-                                        <img src={iconExcluir} alt="Excluir" />
+                                        <img src={iconEditar} alt="Editar"
+                                            onClick={() => {
+                                                setCobrancaSelecionada(cobranca)
+                                                setAbriModalEditCobranca(true)
+                                            }} />
+                                        <img src={iconExcluir} alt="Excluir"
+                                            onClick={() => {
+                                                setCobrancaSelecionada(cobranca)
+                                                setAbriModalExcluirCobranca(true)
+                                            }} />
                                     </p>
                                 </div>
                             )
@@ -166,6 +206,13 @@ function ClienteDetalhado() {
                 {abriModalAddCobranca && <ModalAddCobrancas
                     cliente={clienteCobranca}
                 />}
+                {abriModalEditCobranca && <ModalEditCobrancas />}
+                {abriModalExcluirCobranca && <ModalExcluirCobrancas />}
+                {abriModalDetalhesCobranca && <ModalDetalhesCobrancas />}
+                {abrirModalFeedbackAddCliente === 'cobranca' && <ModalFeedbackClients class='visible-modal-feedback-addclientes' texto='Cobrança cadastrada com sucesso' />}
+                {abrirModalFeedbackAddCliente === 'cobrancaDeletada' && <ModalFeedbackClients class='visible-modal-feedback-addclientes' texto='Cobrança excluída com sucesso' />}
+                {abrirModalFeedbackAddCliente === 'cobrancaEditada' && <ModalFeedbackClients class='visible-modal-feedback-addclientes' texto='Cobrança editada com sucesso' />}
+                {abrirModalFeedbackAddCliente === 'editado' && <ModalFeedbackClients class='visible-modal-feedback-addclientes' texto='Edições do cadastro concluídas com sucesso' />}
             </Layout>
         </main>
     );

@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Nunito:wght@400;600&display=swap');
+
+.backdrop-modalAlertaExcluir{
+    position: fixed;
+    top:0;
+    bottom: 0;
+    right: 0;
+    left: 8vw;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    background-color: rgba(145, 154, 150, 0.3);
+    backdrop-filter: blur(4px);
+}
+
+.container-alerta-excluir{
+    box-sizing: border-box;
+    height: 50vh;
+    width: 40vw;
+    min-width: 400px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+
+    background: #FFFFFF;
+    border-radius: 30px;
+}
+
+.icon-fechar{
+    width: 15px;
+    align-self: flex-end;
+
+    cursor: pointer;
+
+    padding: 0px 20px;
+}
+
+.icon-alerta{
+    width: 100px;
+
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.txt-excluir{
+    font-family: 'Montserrat';
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 130%;
+
+    color: #CC7800;
+
+    margin-bottom: 20px;
+}
+
+.btns-exclusao{
+    margin-left: 20px;
+
+    margin-bottom: 40px;
+}
+
+.btn-cancelar-excluir{
+    background: #F2D6D0;
+    color: #AE1100;
+    border-radius: 4px;
+
+    font-family: 'Nunito';
+    font-size: 16px;
+    line-height: 25px;
+
+    padding: 3px 30px;
+
+    cursor: pointer;
+}
+
+.btn-confirmar-excluir{
+    background: #ACD9C5;;
+    color: #034A2A;
+    border-radius: 4px;
+
+    font-family: 'Nunito';
+    font-size: 16px;
+    line-height: 25px;
+
+    padding: 3px 30px;
+
+    cursor: pointer;
+}

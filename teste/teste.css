@@ -1,0 +1,24 @@
+body{
+    height: 100vh;
+    background-color: red;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.quadrado{
+
+    min-width: 200px;
+    min-height: 200px;
+    border-radius: 10px;
+
+    background-color: white;
+}
+
+@media screen and (max-width: 1000px){
+    body{
+        background-color: blue;
+    }
+}

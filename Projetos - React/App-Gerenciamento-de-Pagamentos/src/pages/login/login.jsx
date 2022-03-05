@@ -52,7 +52,7 @@ function Login() {
                     <div>
                         <div className='container-esqueceu-senha'>
                             <label htmlFor="senha">Senha</label>
-                            <a href='#' className='links-login'>Esqueceu a senha?</a>
+                            <a href='/Login' className='links-login'>Esqueceu a senha?</a>
                         </div>
                         <div className='container-input-senha-login'>
                             <input type={mostrarSenha ? 'text' : 'password'} name="senha" id="senha" placeholder='Digite sua senha'

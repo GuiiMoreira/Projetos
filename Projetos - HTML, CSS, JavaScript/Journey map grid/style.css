@@ -1,0 +1,114 @@
+*{
+    margin: 0;
+    padding: 0;
+  }
+  
+  body{
+    height: 100vh;
+    width: 100vw;
+
+    padding: 50px;
+  }
+  
+
+  .table::-webkit-scrollbar-track {
+    background-color: rgb(188, 141, 233);
+  }
+
+  .table::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+
+  .table::-webkit-scrollbar-thumb {
+    background-color: rgb(66, 14, 116);
+  }
+  
+  .linha-titulo, .linha-normal{
+    display: grid;
+    grid-template-columns:  1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    align-items: center;
+    gap:2px;
+
+     background-color: #444;
+     height: 100px;
+     resize: vertical;
+     overflow: auto;
+     overflow-x: hidden;
+     overflow-y: hidden;
+     padding-bottom:20px;
+  }
+
+  .table{
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr;
+  
+    max-height: 80vh;
+    width: 90vw;
+    overflow: scroll;
+  
+    gap: 2px;
+  }
+  
+  .item-titulo, .item-input{
+    all: unset;
+    box-sizing: border-box;
+    height: 100px;
+    width: 150px;
+    min-width: 150px;
+
+    
+  
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  
+    background-color: rgb(161, 79, 236);
+    color: white;
+    border-radius: 5px;
+  
+    text-align: center;
+  
+    padding: 10px;
+    resize: none;
+  }
+  
+  .item-input{
+    background-color: rgba(160, 79, 236, 0.3);
+    color: black;
+    resize: none;
+  }
+  
+  
+  .item-input::-webkit-scrollbar-track {
+    background-color: rgb(188, 141, 233);
+
+  }
+  .item-input::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  .item-input::-webkit-scrollbar-thumb {
+    background-color: rgb(66, 14, 116);
+  }
+
+  button{
+      all: unset;
+
+      border-radius: 5px;
+      border: 1px solid rgb(91, 20, 158);
+      color: rgb(91, 20, 158);
+
+      padding: 5px 10px;
+      margin-top: 20px;
+      cursor: pointer;
+  }
+
+
+  
+  button:hover{
+    background-color: rgb(91, 20, 158);
+    color: white;
+}

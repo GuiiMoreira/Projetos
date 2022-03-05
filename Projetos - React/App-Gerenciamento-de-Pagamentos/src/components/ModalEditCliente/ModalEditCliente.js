@@ -4,7 +4,6 @@ import iconFechar from '../../assets/icon-fechar.svg';
 import useGlobal from '../../hooks/useGlobal';
 import useClients from '../../hooks/useClients';
 import useRequests from '../../hooks/useRequests';
-import { useHistory } from 'react-router-dom';
 import './ModalEditCliente.css';
 
 
@@ -19,7 +18,6 @@ function ModalEditCliente() {
     const { carregarClientes, clientes } = useClients();
     const requisicao = useRequests();
     const objErrors = {};
-    const history = useHistory()
 
 
 
@@ -81,8 +79,8 @@ function ModalEditCliente() {
         if (resposta) {
             setAbrirModalEditCliente(false)
             setAbrirModalFeedbackAddCliente('editado')
+            setTimeout(() => setAbrirModalFeedbackAddCliente(false), 5000)
             carregarClientes()
-            history.push('/Clientes')
         }
     }
 
