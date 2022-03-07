@@ -13,13 +13,21 @@
     justify-content: space-between;
     padding: 5px 8px;
     font-size: 14px;
-    background: #F58840;
+    background: #b17248;
     color: #EEE5FF;
+  }
+
+  .price-button.game:hover{
+    background: #F58840;
   }
   
   .price-button.basket {
     padding: 16px;
     font-size: 16px;
-    background: #B85252;
+    background: #0f753d;
     color: #FDFDFD;
+  }
+
+  .price-button.basket:hover{
+    background: #33d87d;
   }

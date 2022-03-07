@@ -6,15 +6,11 @@
 }
 
 .game-card {
-    height: 300px;
-    width: 210px;
+    height: 160px;
+    width: 250px;
     display: flex;
     flex-direction: column;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.4);
-  }
-  
-  .game-card > svg {
-    cursor: pointer;
   }
   
   .starred {

@@ -4,7 +4,7 @@ import './Card.css';
 
 function Card({ title, price, thumbnail, handleBuyGame }) {
 
-    const background = "linear-gradient(rgba(0, 0, 0, 0.3) 100%, rgba(0, 0, 0, 0.3)100%), url('" + thumbnail + "') no-repeat center / cover";
+    const background = "linear-gradient(rgba(0, 0, 0, 0.3) 100%, rgba(0, 0, 0, 0.3)100%), url('" + thumbnail + "') no-repeat center / contain";
 
     return (
         <div className="game">

@@ -18,11 +18,10 @@ function Bag({ gamesBag, finalPrice, handleGameAdd, handleGameRemove }) {
                         (
                             gamesBag.map(({ title, backgroundImg, price, count }) => (
                                 <div className="bag-game">
-                                    {console.log(gamesBag)}
                                     <img src={backgroundImg} alt={title} />
                                     <div className="bag-game-info">
                                         <span className="bag-game-title">{title}</span>
-                                        <span className="bag-game-price">R$ {price.toString().replace('.', ',')}</span>
+                                        <span className="bag-game-price">R$ {price}</span>
                                     </div>
                                     <div className="bag-game-actions">
                                         <img src={PlusIcon} alt='adicionar' onClick={() => handleGameAdd(title)} />
@@ -40,7 +39,7 @@ function Bag({ gamesBag, finalPrice, handleGameAdd, handleGameRemove }) {
                             </>
                         )
                 }
-                {basketNotEmpty ? <Button text="Confirme seus dados" type="basket" price={finalPrice} /> : ''}
+                {basketNotEmpty ? <Button text="Comprar" type="basket" price={finalPrice} /> : ''}
             </div>
         </div>
     );

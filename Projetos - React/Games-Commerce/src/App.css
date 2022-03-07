@@ -13,11 +13,29 @@ body{
 }
 
 .cards{
-  width: calc(100vw - 350px);
+  width: calc(100vw - 400px);
   display: flex;
   flex-wrap: wrap;
 
   gap: 15px;
 
-  padding: 20px 70px;
+  margin-top: 90px;
+  padding: 20px 100px;
+}
+
+.nav-pages{
+  width: calc(100vw - 250px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  gap:30px;
+
+  font-size: 18px;
+
+  margin-bottom: 30px;
+}
+
+.next-page{
+  cursor: pointer;
 }
