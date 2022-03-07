@@ -71,8 +71,8 @@ function useRequests() {
 
             return data;
         } catch (error) {
-            if (error.message === 'Senha ou Email incorretos') {
-                setErroLogin(true)
+            if (error.message) {
+                setErroLogin(error.message)
             }
 
             console.log(error.message);

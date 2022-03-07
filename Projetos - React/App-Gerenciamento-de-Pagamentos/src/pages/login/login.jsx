@@ -12,13 +12,18 @@ function Login() {
     const [mostrarSenha, setMostrarSenha] = useState(false)
     const [senha, setSenha] = useState('')
     const [email, setEmail] = useState('')
+    const [errors, setErrors] = useState('')
     const requisicao = useRequests();
 
     async function HandleLogin(event) {
         event.preventDefault()
 
         if (!email || !senha) {
+            setErrors('Preencha todos os campos')
+            setErroLogin(false)
             return;
+        } else {
+            setErrors('')
         }
 
         const body = {
@@ -64,6 +69,8 @@ function Login() {
                             />
                         </div>
                         {erroLogin && <span className='erro-login'>Senha ou Email incorretos</span>}
+                        {errors && <span className='erro-login'>{errors}</span>}
+
                     </div>
 
                     <button className='form-button'>Entrar</button>
