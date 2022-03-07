@@ -1,0 +1,114 @@
+.bag {
+    width: 300px;
+    color: #fff;
+    position: fixed;
+    top: 100px;
+    right: 20px;
+    overflow-y: auto;
+    background-color: #1d2226;
+}
+
+.bag .bag-title {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #F58840;
+    align-self: center;
+}
+
+.bag .bag-container {
+    display: flex;
+    flex-direction: column;
+    background: rgba(0, 0, 0, 0.2);
+    gap: 24px;
+    padding: 40px 16px;
+}
+
+.bag-container h3 {
+    font-size: 16px;
+    align-self: center;
+}
+
+.bag-container h2,
+.bag-container .bag-illustration {
+    align-self: center;
+}
+
+.coupon-container span {
+    font-size: 12px;
+    margin-bottom: 3px;
+}
+
+.bag-illustration{
+    width: 250px;
+}
+
+.coupon-container-input-group {
+    width: 100%;
+    height: 40px;
+    position: relative;
+    display: flex;
+}
+
+.coupon-container-input {
+    width: 100%;
+    padding: 16px 14px;
+    border: 0;
+    outline: 0;
+    background: #0b1217;
+    color: #fff;
+    border: 1px solid transparent;
+}
+
+.coupon-container-input:hover {
+    border: 1px solid #8c8c8c;
+}
+
+.coupon-container-input:focus {
+    border: 1px solid #fdfdfd;
+}
+
+.coupon-container-input::placeholder {
+    font-family: "Manrope", sans-serif;
+    font-weight: 500;
+    color: #fdfdfd;
+    opacity: 0.7;
+}
+
+.coupon-container-icon {
+    width: 24px;
+    height: 24px;
+    align-self: center;
+    position: absolute;
+    z-index: 1;
+    right: 15px;
+}
+
+.bag-game {
+    display: flex;
+    align-items: center;
+}
+
+.bag-game img {
+    width: 50px;
+    height: 65px;
+}
+
+.bag-game-info {
+    width: 100px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-left: 10px;
+}
+
+.bag-game-actions {
+    display: flex;
+}
+
+.bag-game-actions img {
+    cursor: pointer;
+    height: 20px;
+}
+

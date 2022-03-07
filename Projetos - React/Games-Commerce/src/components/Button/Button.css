@@ -1,0 +1,25 @@
+.price-button {
+    all: unset;
+    box-sizing: border-box;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+  }
+  
+  .price-button.game {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 5px 8px;
+    font-size: 14px;
+    background: #F58840;
+    color: #EEE5FF;
+  }
+  
+  .price-button.basket {
+    padding: 16px;
+    font-size: 16px;
+    background: #B85252;
+    color: #FDFDFD;
+  }

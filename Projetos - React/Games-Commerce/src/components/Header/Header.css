@@ -1,0 +1,30 @@
+.header {
+    box-sizing: border-box;
+    background: #0f1c26c9;
+    color: #FDFDFD;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 12px 100px 12px 70px;
+
+    font-size: 20px;
+  }
+  
+  .header-logo {
+    margin-right: 42px;
+    color: #F58840;
+  }
+  
+  .header-item-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .item-container-img {
+    border: 3px solid white;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+  }
+  
