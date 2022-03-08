@@ -22,6 +22,7 @@
   }
   
   .price-button.basket {
+    min-width: 200px;
     padding: 16px;
     font-size: 16px;
     background: #0f753d;
@@ -30,4 +31,20 @@
 
   .price-button.basket:hover{
     background: #33d87d;
+  }
+
+
+  @media screen and (max-width: 650px){
+    .price-button.game{
+      font-size: 22px;
+      width: 100%;
+      padding-right: 30px;
+    }
+  }
+
+
+  @media screen and (max-width: 450px){
+    .price-button.game{
+      font-size: 16px;
+    }
   }

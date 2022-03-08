@@ -4,8 +4,14 @@
     display: flex;
     margin-right: 92px;
   }
+
+.yes-menu{
+  position: absolute;
+  width: 90vw;
+  margin: 5vw;
+}
   
-  .search-container-input {
+.search-container-input {
     width: 100%;
     padding: 16px 14px;
     border: 0;
@@ -41,4 +47,11 @@
     position: absolute;
     z-index: 1;
     right: 15px;
+  }
+
+
+  @media screen and (max-width: 650px){
+    .no-menu{
+      display: none;
+    }
   }

@@ -1,7 +1,6 @@
 .game{
   display: flex;
   flex-direction: column;
-
   margin-bottom: 10px;
 }
 
@@ -22,6 +21,7 @@
     display: flex;
     justify-content: space-between;
     padding: 5px 5px;
+    align-self: flex-start;
   }
   
   .game-info h3 {
@@ -30,8 +30,50 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+
+   
   }
-  
-  .game-info .game-stars {
-    color: #FBCD6E;
+
+  @media screen and (max-width: 1180px){
+    .game-card {
+      height: 224px;
+      width: 350px;
+    }
+  }
+
+  @media screen and (max-width: 1110px){
+    .game-card {
+      height: calc((100vw - 450px)*0.64);
+      width: calc(100vw - 450px)
+    }
+  }
+
+
+  @media screen and (max-width: 800px){
+    .game-card {
+      height: calc((100vw - 400px)*0.64);
+      width: calc(100vw - 400px)
+    }
+  }
+
+
+
+  @media screen and (max-width: 650px){
+    .game-card {
+      box-sizing: border-box;
+      height: calc(100vw*0.64);
+      width: 100vw;
+      margin-left: 0px;
+    }
+
+    .game-info{
+      font-size: 20px;
+    }
+  }
+
+
+  @media screen and (max-width: 450px){
+    .game-info{
+      font-size: 16px;
+    }
   }

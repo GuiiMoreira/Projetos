@@ -6,7 +6,7 @@ import TrashIcon from '../../assets/trash-icon.svg';
 import Button from '../Button/Buttton';
 import './Bag.css';
 
-function Bag({ gamesBag, finalPrice, handleGameAdd, handleGameRemove }) {
+export default function Bag({ gamesBag, finalPrice, handleGameAdd, handleGameRemove }) {
     const basketNotEmpty = gamesBag.length > 0;
 
     return (
@@ -44,5 +44,3 @@ function Bag({ gamesBag, finalPrice, handleGameAdd, handleGameRemove }) {
         </div>
     );
 }
-
-export default Bag;

@@ -1,0 +1,17 @@
+@media screen and (min-width:651px){
+    .menu{
+        display: none;
+    }
+}
+
+@media screen and (max-width:650px){
+    .menu{
+        position: fixed;
+        top:70px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+
+        background-color: #000000;
+    }
+}

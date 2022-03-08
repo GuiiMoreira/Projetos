@@ -23,7 +23,7 @@ body{
   padding: 20px 100px;
 }
 
-.nav-pages{
+.nav-pages, .nav-pages-superior{
   width: calc(100vw - 250px);
   display: flex;
   align-items: center;
@@ -36,6 +36,25 @@ body{
   margin-bottom: 30px;
 }
 
+.nav-pages-superior{
+  display: none;
+}
+
 .next-page{
   cursor: pointer;
+}
+
+@media screen and (max-width: 650px){
+  .cards {
+    padding: 0;
+  }
+
+  .nav-pages{
+    position: fixed;
+    top: 70px;
+    width: 100vw;
+    text-align: center;
+    padding: 10px;
+    background-color: black;
+  }
 }

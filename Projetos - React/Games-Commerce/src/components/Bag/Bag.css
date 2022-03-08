@@ -1,5 +1,6 @@
 .bag {
     width: 300px;
+    max-height: 70vh;
     color: #fff;
     position: fixed;
     top: 100px;
@@ -7,6 +8,19 @@
     overflow-y: auto;
     background-color: #1d2226;
 }
+
+.bag::-webkit-scrollbar {
+    width: 6px;             
+  }
+  
+.bag::-webkit-scrollbar-track {
+    background: gray;
+  }
+  
+.bag::-webkit-scrollbar-thumb {
+    background-color: #63371a; 
+    border-radius: 20px;      
+  }
 
 .bag .bag-title {
     width: 100%;
@@ -91,7 +105,7 @@
 }
 
 .bag-game img {
-    width: 50px;
+    width: 100px;
     height: 65px;
 }
 
@@ -99,16 +113,33 @@
     width: 100px;
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 15px;
+    font-size: 16px;
     margin-left: 10px;
 }
 
 .bag-game-actions {
     display: flex;
+    gap: 10px
 }
 
 .bag-game-actions img {
+    width: 20px;
     cursor: pointer;
     height: 20px;
 }
+
+
+@media screen and (max-width: 800px){
+    .bag{
+    width: 250px;
+    }
+  }
+
+
+  @media screen and (max-width: 650px){
+    .bag{
+    display: none;
+    }
+  }
 

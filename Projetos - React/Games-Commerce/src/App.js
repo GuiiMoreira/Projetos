@@ -3,10 +3,13 @@ import { useEffect, useState, useMemo } from 'react'
 import Header from './components/Header/Header';
 import Bag from './components/Bag/Bag';
 import Card from './components/Card/Card'
+import Menu from './components/Menu/Menu'
+
 
 function App() {
   const [gamesBag, setGamesBag] = useState([]);
   const [games, setGames] = useState([])
+  const [menu, setMenu] = useState(false)
   const [basketFinalPrice, setBasketFinalPrice] = useState(0);
   const [gameName, setGameName] = useState('');
   const [page, setPage] = useState(0);
@@ -104,12 +107,14 @@ function App() {
 
   return (
     <div className="App">
-      <Header setGameName={setGameName} />
+      <Header setGameName={setGameName} setMenu={setMenu} menu={menu} gameName={gameName} />
+
       <Bag
         gamesBag={gamesBag}
         finalPrice={basketFinalPrice}
         handleGameAdd={handleGameAdd}
         handleGameRemove={handleGameRemove} />
+
       <div className="cards">
         {gameName ? resultadoPesquisa.slice(0, 20).map((game) => (
           <Card {...game} handleBuyGame={handleBuyGame} key={game.id} />
@@ -118,17 +123,30 @@ function App() {
             <Card {...game} handleBuyGame={handleBuyGame} key={game.id} />
           ))}
       </div>
+
       {!gameName && <div className="nav-pages">
-        {page > 0 && <p className='next-page'
-          onClick={() => setPage(page - 1)} >
+        {page > 0 && <p className='next-page' onClick={() => {
+          setPage(page - 1)
+          window.scroll(0, 0)
+        }}>
           {'< Página anterior'}
         </p>}
         <p className='next-page'>{page + 1}</p>
         {page < (games.length / 20) - 1 && <p className='next-page'
-          onClick={() => setPage(page + 1)}>
+          onClick={() => {
+            setPage(page + 1)
+            window.scroll(0, 0)
+          }}>
           {'Próxima página >'}
         </p>}
       </div>}
+
+      {menu && <Menu gamesBag={gamesBag}
+        finalPrice={basketFinalPrice}
+        handleGameAdd={handleGameAdd}
+        handleGameRemove={handleGameRemove}
+        setGameName={setGameName}
+        gameName={gameName} />}
     </div>
   );
 }
