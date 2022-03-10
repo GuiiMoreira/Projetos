@@ -47,7 +47,7 @@ function Login() {
             </div>
             <div className="Lado-direito-layout-login">
                 <p className="titulo-login">Faça seu login!</p>
-                <form onSubmit={HandleLogin}>
+                <form onSubmit={HandleLogin()}>
                     <div>
                         <label htmlFor="email">E-mail</label>
                         <input type="text" name="email" id="email" placeholder='Digite seu email'
