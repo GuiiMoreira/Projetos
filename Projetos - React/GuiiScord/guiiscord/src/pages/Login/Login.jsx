@@ -30,7 +30,6 @@ function Login() {
         const resposta = await signInWithEmailAndPassword(auth, email, senha)
 
         if (resposta) {
-            console.log(resposta, 'deu certo')
             setUsuarioLogado(resposta);
             history.push('/Home');
         }
@@ -43,7 +42,6 @@ function Login() {
     useEffect(() => {
         verificaUsuario(usuarioLogado)
         // eslint-disable-next-line
-        console.log(usuarioLogado)
     }, []);
 
     return (
