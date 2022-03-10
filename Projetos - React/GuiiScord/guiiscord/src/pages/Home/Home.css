@@ -1,3 +1,4 @@
 .home{
-    background-color: rgb(45, 38, 68);
+    display: flex;
+    background-color: #36393f;
 }

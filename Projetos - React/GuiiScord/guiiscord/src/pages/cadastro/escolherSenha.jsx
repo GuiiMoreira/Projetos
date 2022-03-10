@@ -6,7 +6,7 @@ import iconEsconderSenha from '../../assets/esconderSenha.svg';
 import iconMostrarSenha from '../../assets/mostraSenha.svg';
 import { auth } from "../../context/config";
 import useGlobal from '../../hooks/useGlobal';
-import { set, ref, onValue, remove, update } from "firebase/database";
+import { set, ref } from "firebase/database";
 import { db } from '../../context/config';
 
 

@@ -1,28 +1,20 @@
-import React, { useState, useEffect } from 'react';
-import { db } from '../../context/config';
-import useGlobal from '../../hooks/useGlobal';
-import { ref, onValue, getDatabase } from "firebase/database";
 import { signOut } from "firebase/auth";
-import { auth } from '../../context/config';
-import './Dashboard.css'
-import iconChat from '../../assets/iconChat.png'
+import React, { useEffect, useState } from 'react';
+import iconChat from '../../assets/iconChat.png';
+import { auth, db } from '../../context/config';
+import useGlobal from '../../hooks/useGlobal';
+import './Dashboard.css';
 
 
 export default function Dashboard() {
-    const { usuarioLogado, removeUsuarioLogado, setAbrirModalAddchannel, channels, handleSetChannels, setCurrentChannel } = useGlobal()
-    const [user, setUser] = useState('')
+    const { user,
+        channels,
+        handleSetUser,
+        handleSetChannels,
+        setCurrentChannel,
+        removeUsuarioLogado,
+        setAbrirModalAddchannel } = useGlobal()
 
-    const dbRef = ref(getDatabase());
-    const userId = usuarioLogado.user.uid
-
-    function handleSetUser() {
-        return onValue(ref(db, '/users/' + userId), (snapshot) => {
-            setUser(snapshot.val() && snapshot.val());
-            // ...
-        }, {
-            onlyOnce: true
-        });
-    }
 
     useEffect(() => {
         handleSetUser()
