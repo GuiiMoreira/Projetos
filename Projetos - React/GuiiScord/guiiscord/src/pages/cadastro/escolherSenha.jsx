@@ -6,6 +6,10 @@ import iconEsconderSenha from '../../assets/esconderSenha.svg';
 import iconMostrarSenha from '../../assets/mostraSenha.svg';
 import { auth } from "../../context/config";
 import useGlobal from '../../hooks/useGlobal';
+import { uid } from "uid";
+import { set, ref, onValue, remove, update } from "firebase/database";
+import { db } from '../../context/config';
+
 
 
 function EscolherSenha() {
@@ -21,21 +25,25 @@ function EscolherSenha() {
 
   async function handleCadastrarUsuario(event) {
     event.preventDefault();
-
-    const body = {
+    const uuid = uid();
+    const user = {
+      id: uuid,
       email: nomeEmail.email,
       nome: nomeEmail.nome,
       senha: values.password
     };
 
     try {
-      const resposta = await createUserWithEmailAndPassword(auth, body.email, body.senha);
+      const resposta = await createUserWithEmailAndPassword(auth, user.email, user.senha);
       setUsuarioLogado(auth.currentUser)
       if (resposta) {
+        set(ref(db, `/users`), {
+          user,
+        });
         history.push('/Success');
       }
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
   }
 
