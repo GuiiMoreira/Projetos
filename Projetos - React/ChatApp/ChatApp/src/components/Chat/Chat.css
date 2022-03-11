@@ -1,0 +1,154 @@
+.chat{
+    box-sizing: border-box;
+    height: 90vh;
+    width: 80vw;
+    position: relative;
+
+    background-color: #36393f;
+    overflow-y: scroll;
+    margin-top: 60px;
+    padding-bottom: 50px;
+}
+
+.header-chat{
+    position: fixed;
+    top: 0;
+    z-index: 5;
+    width: 100%;
+    background-color: #36393f;
+    box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.5);
+
+    font-size: 32px;
+    color: white;
+    padding: 10px;
+}
+
+.impty-chat{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    top: calc(50% - 300px);
+    left: calc(50% - 300px);
+}
+
+.impty-chat p{
+    font-family: 'Montserrat', sans-serif;
+
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 130%;
+
+    color: #6C63FF;
+    text-align: center;
+}
+
+.chat-image{
+    width: 600px;
+    height: 400px;
+}
+
+
+
+.message-box{
+    color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+}
+
+.message{
+    width: 300px;
+    min-height: 30px;
+    position: relative;
+
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.own{
+    background-color: #7b43b9;
+    align-self: flex-end;
+}
+
+.others{
+    background-color: #53585f;
+    align-items: flex-start;
+}
+
+.message-creator{
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.txt-message{
+    margin-bottom: 10px;
+}
+
+.message-date{
+    display: flex;
+    gap: 5px;
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+
+    font-size: 10px;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.container-message{
+    display: flex;
+    align-items: center;
+    width: 1200px;
+
+    position: fixed;
+    bottom: 2vh;
+    left: 310px;
+    z-index: 2px;
+
+    box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.5);
+}
+
+.container-message button{
+    all: unset;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    width: 10%;
+
+    font-family: 'Nunito', sans-serif;
+    font-size: 14px;
+    line-height: 25px;
+
+    color: #F8F8F9;
+    background: #7b43b9;
+    padding: 4px;
+
+    cursor: pointer;
+}
+
+.container-message button:disabled{
+    background: #76787a;
+    cursor: default;
+}
+
+.container-message textarea{
+    all: unset;
+    box-sizing: border-box;
+    width: 90%;
+    height: 50px;
+
+    font-family: 'Nunito', sans-serif;
+    font-size: 14px;
+    line-height: 25px;
+
+
+    color: #F8F8F9;
+    background-color: #53585f;
+    padding: 12px 10px;
+}
