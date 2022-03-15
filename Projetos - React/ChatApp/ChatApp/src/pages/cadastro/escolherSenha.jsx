@@ -14,6 +14,7 @@ import { db } from '../../context/config';
 function EscolherSenha() {
   const history = useHistory();
   const { nomeEmail, setUsuarioLogado } = useGlobal();
+  const [errorRegister, setErrorRegister] = useState();
   const [mostrarSenha, setMostrarSenha] = useState(false)
   const [mostrarConfirmSenha, setMostrarConfirmSenha] = useState(false)
   const [values, setValues] = useState({
@@ -46,6 +47,7 @@ function EscolherSenha() {
       }
     } catch (error) {
       console.log(error);
+      setErrorRegister(true)
     }
   }
 
@@ -101,13 +103,13 @@ function EscolherSenha() {
                 onClick={() => mostrarConfirmSenha ? setMostrarConfirmSenha(false) : setMostrarConfirmSenha(true)}
               />
             </div>
+            {errorRegister && <p className='erro-login'>Email já cadastrado</p>}
           </div>
           <button className="form-button" disabled={values.password === values.cofirmPassword ? false : true}> Cadastrar </button>
           <p className="txt-link">
-            Já possui uma conta?Faça seu
+            Já possui uma conta? Faça seu
             <Link to="/Login" className='links-login'> Login</Link>
           </p>
-
         </form>
       </div >
     </div >

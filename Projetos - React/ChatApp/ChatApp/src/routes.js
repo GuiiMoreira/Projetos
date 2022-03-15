@@ -6,6 +6,8 @@ import Home from './pages/Home/Home';
 import Login from './pages/Login/Login';
 import { GlobalProvider } from './context/GlobalContext';
 import useGlobal from './hooks/useGlobal';
+import { Provider } from 'react-redux'
+import store from './reduxContent/store/store';
 
 
 function RotasProtegidas(props) {
@@ -20,17 +22,19 @@ function RotasProtegidas(props) {
 function Routes() {
   return (
     <Router>
-      <Switch>
-        <GlobalProvider>
-          <Route path="/Cadastro" exact component={Cadastro} />
-          <Route path="/Login" exact component={Login} />
-          <Route path="/Escolhasenha" exact component={EscolherSenha} />
-          <Route path="/Success" exact component={Success} />
-          <RotasProtegidas>
-            <Route path={['/', '/Home']} exact component={Home} />
-          </ RotasProtegidas>
-        </GlobalProvider>
-      </Switch>
+      <Provider store={store}>
+        <Switch>
+          <GlobalProvider>
+            <Route path="/Cadastro" exact component={Cadastro} />
+            <Route path="/Login" exact component={Login} />
+            <Route path="/Escolhasenha" exact component={EscolherSenha} />
+            <Route path="/Success" exact component={Success} />
+            <RotasProtegidas>
+              <Route path={['/', '/Home']} exact component={Home} />
+            </ RotasProtegidas>
+          </GlobalProvider>
+        </Switch>
+      </Provider>
     </Router>
   );
 }

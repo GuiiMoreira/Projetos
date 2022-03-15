@@ -4,8 +4,9 @@
     width: 80vw;
     position: relative;
 
-    background-color: #36393f;
-    overflow-y: scroll;
+    background-color: rgb(247, 247, 247);
+
+    overflow-y: auto;
     margin-top: 60px;
     padding-bottom: 50px;
 }
@@ -15,12 +16,12 @@
     top: 0;
     z-index: 5;
     width: 100%;
-    background-color: #36393f;
-    box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.5);
+    background-color: rgb(247, 247, 247);
+    box-shadow: 2px 0px 1px 2px rgba(122, 122, 122, 0.5);
 
     font-size: 32px;
-    color: white;
-    padding: 10px;
+    color: #0c0220;
+    padding: 10px 20px;
 }
 
 .impty-chat{
@@ -50,8 +51,6 @@
     height: 400px;
 }
 
-
-
 .message-box{
     color: white;
     display: flex;
@@ -75,7 +74,7 @@
 }
 
 .others{
-    background-color: #53585f;
+    background-color: #76787a;
     align-items: flex-start;
 }
 
@@ -108,8 +107,6 @@
     bottom: 2vh;
     left: 310px;
     z-index: 2px;
-
-    box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.5);
 }
 
 .container-message button{
@@ -149,6 +146,6 @@
 
 
     color: #F8F8F9;
-    background-color: #53585f;
+    background-color: #0c0220;
     padding: 12px 10px;
 }

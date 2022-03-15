@@ -8,6 +8,7 @@ import useGlobal from '../../hooks/useGlobal';
 import './Login.css';
 
 
+
 function Login() {
     const [mostrarSenha, setMostrarSenha] = useState(false)
     const [senha, setSenha] = useState('')
@@ -15,6 +16,7 @@ function Login() {
     const [errors, setErrors] = useState('')
     const { setUsuarioLogado, usuarioLogado } = useGlobal()
     const history = useHistory()
+
 
 
     async function HandleLogin(event) {
@@ -27,17 +29,24 @@ function Login() {
             setErrors('')
         }
 
-        const resposta = await signInWithEmailAndPassword(auth, email, senha)
+        try {
+            const resposta = await signInWithEmailAndPassword(auth, email, senha)
 
-        if (resposta) {
-            setUsuarioLogado(resposta);
-            history.push('/Home');
+            if (resposta) {
+                setUsuarioLogado(resposta);
+                localStorage.user = JSON.stringify(resposta.user)
+                history.push('/Home');
+            }
+        } catch (error) {
+            console.log(error.message)
+            setErrors('Email ou senha incorretos')
         }
     }
 
     function verificaUsuario(usuario) {
         usuario && history.push('/Home');
     }
+
 
     useEffect(() => {
         verificaUsuario(usuarioLogado)
@@ -47,9 +56,10 @@ function Login() {
     return (
         <body className="body-login">
             <div className="Lado-esquerdo-layout-login">
-                <p>Mantenha-se conectado com o mundo.</p>
+                <p>Canais que conectam o mundo.</p>
             </div>
             <div className="Lado-direito-layout-login">
+                <div className="logo-login">HB<span>CHANNELS</span></div>
                 <p className="titulo-login">Faça seu login!</p>
                 <form onSubmit={HandleLogin}>
                     <div>
@@ -80,7 +90,7 @@ function Login() {
                     <p className='txt-link'>Ainda não possui uma conta? <Link to='/Cadastro' className='links-login'> Cadastre-se</Link></p>
                 </form>
             </div>
-        </body>
+        </body >
     );
 }
 

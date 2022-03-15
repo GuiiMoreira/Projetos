@@ -28,6 +28,7 @@ function useGlobalProvider() {
     }
 
     function handleSetUser() {
+        console.log(usuarioLogado)
         return onValue(ref(db, '/users/' + usuarioLogado.user.uid), (snapshot) => {
             setUser(snapshot.val() && snapshot.val());
             // ...
@@ -35,7 +36,6 @@ function useGlobalProvider() {
             onlyOnce: true
         });
     }
-
 
 
     return {

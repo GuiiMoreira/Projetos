@@ -16,7 +16,6 @@ function Cadastro() {
       return;
     }
 
-
     history.push('/Escolhasenha')
   }
 
@@ -64,10 +63,9 @@ function Cadastro() {
           </div>
           <button className="form-button"> Continuar </button>
           <p className="txt-link">
-            Já possui uma conta?Faça seu
+            Já possui uma conta? Faça seu
             <Link to="/Login" className='links-login'> Login</Link>
           </p>
-
         </form>
       </div >
     </div >

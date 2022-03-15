@@ -8,6 +8,7 @@
 .body-login{
     display: flex;
     background-color: #0c0220;
+    overflow: hidden;
 }
 
 .Lado-esquerdo-layout-login{
@@ -18,7 +19,7 @@
 
     height: 100vh;
     width: 60vw;
-    min-width: 400px;
+    min-width: 600px;
 
     padding: 50px;
 
@@ -37,7 +38,7 @@
     text-align: center;
 
     color: #6C63FF;
-    margin-bottom: -20px;
+    margin-bottom: 0px;
 }
 
 .Lado-direito-layout-login{
@@ -50,7 +51,7 @@
     justify-content: center;
     margin-left: 50px;
 
-    box-shadow: 0 0 1000px 20px #2c2c2c;
+    background-color: rgb(247, 247, 247);
 }
 
 .Lado-direito-layout-login form{
@@ -59,12 +60,25 @@
     align-items: center;
 }
 
+.logo-login{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 36px;
+    font-weight: bold;
+    color: #7b43b9;
+    margin-bottom: 40px;
+}
+
+.logo-login span{
+    color: #00AEEF;
+}
+
 .titulo-login{
     font-family: 'Montserrat', sans-serif;  
-
+    width: 100vw;
     font-weight: bold;
     font-size: 24px;
     line-height: 130%;
+    text-align: center;
 
     color: #00AEEF;
 
@@ -113,6 +127,7 @@
     font-weight: 600;
     font-size: 14px;
     line-height: 130%;
+    white-space: nowrap;
     
     text-decoration-line: underline;
     
@@ -153,7 +168,7 @@
     font-size: 14px;
     line-height: 130%;
 
-    color: white;
+    color: #00AEEF;
 
     margin-top: 20px;
 }
@@ -175,4 +190,30 @@
     font-size: 12px;
     line-height: 20px;
     color: #e70000;
+}
+
+
+@media screen and (max-width: 1000px) {
+    .body-login{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: rgb(247, 247, 247);
+    }
+
+    .Lado-esquerdo-layout-login{
+        display: none;
+    }
+}
+
+
+
+@media screen and (max-width: 500px) {
+    .Lado-direito-layout-login{
+        margin-left: 0px;
+    }
+
+    .Lado-direito-layout-login input{
+    width: 90vw;
+    }
 }
