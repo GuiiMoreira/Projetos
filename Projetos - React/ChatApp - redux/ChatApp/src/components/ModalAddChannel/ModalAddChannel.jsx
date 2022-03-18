@@ -25,7 +25,7 @@ export default function ModalAddChannel() {
         <div className='backdrop' >
             <div className='modalAddChannel'>
                 <label htmlFor="nameChannel">Digite o nome do novo canal</label>
-                <input type="text" name="nameChannel" valuer={channelName} onChange={(e) => setChannelName(e.target.value)} />
+                <input type="text" name="nameChannel" valuer={channelName} onChange={(e) => setChannelName(e.target.value)} placeholder='Digite o nome do canal...' />
                 <div>
                     <button className='btn-confirm' onClick={() => handleAddChannel()}>Confirmar</button>
                     <button className='btn-cancel' onClick={() => setAbrirModalAddchannel(false)}>Cancelar</button>

@@ -12,7 +12,7 @@
     align-items: center;
     height: 100vh;
 
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: rgba(0, 0, 0, 0.2);
 }
 
 .modalAddChannel{
@@ -25,7 +25,9 @@
     align-items: center;
 
     border: 2px solid #7b43b9;
+    border-radius: 2px;
     padding: 30px;
+    background-color: #210e38;
 }
 
 .modalAddChannel label{

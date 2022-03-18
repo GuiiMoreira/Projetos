@@ -1,0 +1,7 @@
+.div-prox{
+    box-sizing: border-box;
+    width: 100vw;
+    height: 300px;
+
+    background-color: rgb(172, 172, 172);
+}

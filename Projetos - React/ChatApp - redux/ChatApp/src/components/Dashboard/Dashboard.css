@@ -33,7 +33,9 @@
 }
 
 .channels-dashboard{
+    position: relative;
     display: flex;
+    align-items: center;
 
     font-family: 'nunito', sans-serif;
     font-weight: 600;
@@ -44,7 +46,9 @@
     margin-bottom: 10px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.3);
     padding: 10px;
+}
 
+.channels-dashboard p{
     cursor: pointer;
 }
 
@@ -67,4 +71,45 @@
     padding: 4px 40px;
 
     cursor: pointer;
+}
+
+.config-channel{
+    position: absolute;
+    right: 5px;
+}
+
+.edit-icon{
+    margin-bottom: -5px;
+    transform: scale(0.8);
+    cursor: pointer;
+}
+
+.delete-icon{
+    all: unset;
+
+    border: 1px solid rgb(202, 48, 48);
+    color: rgb(202, 48, 48);
+    padding: 0px 6px;
+    cursor: pointer;
+
+    transform: scale(0.7);
+    cursor: pointer;
+}
+
+.btn-edit-user{
+    all: unset;
+    box-sizing: border-box;
+    position: absolute;
+    bottom: 40px;
+    width: 270px;
+    color: #F8F8F9;
+    background: #7b43b9;
+    text-align: center;
+    padding: 2px;
+}
+
+.btn-logout{
+    position: absolute;
+    bottom: 10px;
+    width: 270px;
 }

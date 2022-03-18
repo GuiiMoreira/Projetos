@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import './Chat.css'
-import { set, ref, onValue, query, orderByChild } from "firebase/database";
+import { set, ref, onValue, update } from "firebase/database";
 import useGlobal from '../../hooks/useGlobal';
 import { uid } from 'uid';
 import { db } from '../../context/config';
@@ -13,9 +13,8 @@ export default function Chat() {
     const [messagesBox, setMessagesBox] = useState([])
     const [message, setMessage] = useState('')
 
-
     function handleSetMessagesBox() {
-        return onValue(ref(db, `/message/${currentChannel}`, orderByChild('timeStamp')), (snapshot) => {
+        return onValue(ref(db, `/message/${currentChannel.id}`), (snapshot) => {
             setMessagesBox(snapshot.val() && Object.values(snapshot.val()));
             // ...
         }, {
@@ -23,11 +22,16 @@ export default function Chat() {
         });
     }
 
-    const topUserPostsRef = query(ref(db, `/message/${currentChannel}`, orderByChild('timeStamp')));
-    console.log(Object.values(topUserPostsRef))
+    messagesBox && messagesBox.sort((a, b) => a.timeStamp - b.timeStamp)
+
+    function scrollBottom() {
+        const objDiv = document.querySelector(".chat");
+        objDiv.scrollTop = objDiv.scrollHeight;
+    }
 
     useEffect(() => {
         handleSetMessagesBox()
+        setTimeout(() => scrollBottom(), 150)
     }, [currentChannel])
 
     useEffect(() => {
@@ -38,7 +42,7 @@ export default function Chat() {
         const uuid = uid()
         const date = new Date()
 
-        set(ref(db, `/message/${currentChannel}/${uuid}`), {
+        set(ref(db, `/message/${currentChannel.id}/${uuid}`), {
             id: uuid,
             message: message,
             creatorId: usuarioLogado.user.uid,
@@ -49,12 +53,14 @@ export default function Chat() {
         });
         setMessage('')
         handleSetMessagesBox()
+        scrollBottom()
     }
 
     return (
         <div className='chat'>
-            <div className='message-box'>
+            {currentChannel && <div className='header-chat'>{currentChannel.name}</div>}
 
+            <div className='message-box'>
                 {currentChannel && messagesBox && messagesBox.map((message) => {
                     return (
                         <div key={message.id} className={message.creatorId === usuarioLogado.user.uid ? 'own message' : 'others message'}>
@@ -73,6 +79,7 @@ export default function Chat() {
                 {!messagesBox && currentChannel && <div className='impty-chat'>
                     <img className='chat-image' src={imptyChat} alt="" />
                     <p>Inicie uma conversa nesse canal</p>
+
                 </ div>}
 
 

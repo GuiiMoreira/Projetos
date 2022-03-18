@@ -1,7 +1,7 @@
+import { getDatabase, onValue, ref } from "firebase/database";
 import { useState } from 'react';
 import { useLocalStorage } from 'react-use';
-import { ref, onValue, getDatabase } from "firebase/database";
-import { db } from '../context/config'
+import { db } from '../context/config';
 
 
 function useGlobalProvider() {
@@ -11,10 +11,11 @@ function useGlobalProvider() {
         { nome: '', email: '' }
     );
     const [erroLogin, setErroLogin] = useState();
-    const [abrirModalAddchannel, setAbrirModalAddchannel] = useState(false)
-    const [channels, setChannels] = useState('')
-    const [currentChannel, setCurrentChannel] = useState('')
-    const [user, setUser] = useState('')
+    const [abrirModalAddchannel, setAbrirModalAddchannel] = useState(false);
+    const [channels, setChannels] = useState('');
+    const [currentChannel, setCurrentChannel] = useState('');
+    const [configChannel, setConfigChannel] = useState('');
+    const [user, setUser] = useState('');
     const dbRef = ref(getDatabase());
 
     function handleSetChannels() {
@@ -36,7 +37,6 @@ function useGlobalProvider() {
     }
 
 
-
     return {
         removeUsuarioLogado,
         nomeEmail,
@@ -54,7 +54,9 @@ function useGlobalProvider() {
         setCurrentChannel,
         handleSetUser,
         user,
-        setUser
+        setUser,
+        configChannel,
+        setConfigChannel
     };
 }
 
