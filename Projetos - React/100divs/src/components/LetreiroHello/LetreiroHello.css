@@ -1,18 +1,18 @@
-.letreiro-hello{
-    width: 36vw;
-    min-width: 450px;
-	min-height: 450px;
-    background-color: #FF6347;
+.letreiro-hello {
+  width: calc(100vw - 930px);
+  min-width: 450px;
+  min-height: 450px;
+  background-color: #ff6347;
 }
 
-.linha-letreiro{
-    display: flex;
+.linha-letreiro {
+  display: flex;
 }
 
-.quadrado-linha{
-    width: 5%;
-    height: 25px;
-    border: 1px solid rgba(0, 0, 0, 0.1);
+.quadrado-linha {
+  width: 5%;
+  height: 25px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
 
-    cursor: pointer;
+  cursor: pointer;
 }
