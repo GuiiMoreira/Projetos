@@ -10,52 +10,31 @@ import { Task } from './task.entity';
 export class TasksController {
     constructor(private tasksServices: TasksService) { }
 
-
-    // @Get()
-    // getTasks(@Query() filterDto: GetTasksFilterDto) :Task[] {
-
-    //     if(Object.keys(filterDto).length){
-    //         return this.tasksServices.getTasksWithFilter(filterDto)
-    //     } else {
-    //         return this.tasksServices.getAllTasks();
-    //     }
-    // }
+    @Get()
+    getTasks(@Query() filterDto: GetTasksFilterDto): Promise<Task[]> {
+        return this.tasksServices.getTasks(filterDto)
+    }
 
     @Get('/:id')
     getTaskById(@Param('id') id: string): Promise<Task> {
         return this.tasksServices.getTasksById(id);
     }
-    // @Get('/:id')
-    // getTaskById(@Param('id') id:string) :Task {
 
-    //     return this.tasksServices.getTasksById(id);
-    // }
+    @Post()
+    createTask(@Body() createTaskDto: CreateTaskDto): Promise<Task> {
+        return this.tasksServices.createTask(createTaskDto)
+    }
 
-    // @Delete('/:id')
-    // delTaskById(@Param('id') id:string) :void {
+    @Delete('/:id')
+    delTaskById(@Param('id') id: string): Promise<void> {
 
-    //     return this.tasksServices.delTasksById(id);
-    // }
+        return this.tasksServices.delTasksById(id);
+    }
 
-    // @Post()
-    // createTask(@Body() createTaskDto: CreateTaskDto) :Task{
-
-    //     return this.tasksServices.createTask(createTaskDto)
-    // }
-
-    // @Patch('/:id/status')
-    // upadteTaskStatus(@Param('id') id:string, @Body() upadteTaskStatusDto: UpadteTaskStatusDto) :Task {
-    //     const {status} = upadteTaskStatusDto
-    //     return this.tasksServices.upadteTaskStatus(id, status);
-    // }
-
-
-
-    // @Post()
-    // createTask(@Body() body) :Task{
-
-    //     console.log('body:', body)
-    //     return
-    // }
+    @Patch('/:id/status')
+    upadteTaskStatus(@Param('id') id: string, @Body() upadteTaskStatusDto: UpadteTaskStatusDto): Promise<Task> {
+        const { status } = upadteTaskStatusDto
+        return this.tasksServices.upadteTaskStatus(id, status);
+    }
 
 }
