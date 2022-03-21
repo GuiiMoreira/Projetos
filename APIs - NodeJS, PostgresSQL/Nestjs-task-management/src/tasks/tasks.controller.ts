@@ -1,48 +1,53 @@
 import { Body, Controller, Delete, Get, Param, Patch, Post, Query } from '@nestjs/common';
-import { Task, TaskStatus } from './task.model';
+import { TaskStatus } from './task-status.enum';
 import { TasksService } from './tasks.service';
 import { CreateTaskDto } from './dto/create-task.dto';
 import { GetTasksFilterDto } from './dto/get-tasks-filter.dto';
 import { UpadteTaskStatusDto } from './dto/update-task.dto';
+import { Task } from './task.entity';
 
 @Controller('tasks')
 export class TasksController {
-    constructor(private tasksServices: TasksService){}
-    
+    constructor(private tasksServices: TasksService) { }
 
-    @Get()
-    getTasks(@Query() filterDto: GetTasksFilterDto) :Task[] {
 
-        if(Object.keys(filterDto).length){
-            return this.tasksServices.getTasksWithFilter(filterDto)
-        } else {
-            return this.tasksServices.getAllTasks();
-        }
-    }
+    // @Get()
+    // getTasks(@Query() filterDto: GetTasksFilterDto) :Task[] {
+
+    //     if(Object.keys(filterDto).length){
+    //         return this.tasksServices.getTasksWithFilter(filterDto)
+    //     } else {
+    //         return this.tasksServices.getAllTasks();
+    //     }
+    // }
 
     @Get('/:id')
-    getTaskById(@Param('id') id:string) :Task {
-
+    getTaskById(@Param('id') id: string): Promise<Task> {
         return this.tasksServices.getTasksById(id);
     }
+    // @Get('/:id')
+    // getTaskById(@Param('id') id:string) :Task {
 
-    @Delete('/:id')
-    delTaskById(@Param('id') id:string) :void {
+    //     return this.tasksServices.getTasksById(id);
+    // }
 
-        return this.tasksServices.delTasksById(id);
-    }
+    // @Delete('/:id')
+    // delTaskById(@Param('id') id:string) :void {
 
-    @Post()
-    createTask(@Body() createTaskDto: CreateTaskDto) :Task{
+    //     return this.tasksServices.delTasksById(id);
+    // }
 
-        return this.tasksServices.createTask(createTaskDto)
-    }
+    // @Post()
+    // createTask(@Body() createTaskDto: CreateTaskDto) :Task{
 
-    @Patch('/:id/status')
-    upadteTaskStatus(@Param('id') id:string, @Body() upadteTaskStatusDto: UpadteTaskStatusDto) :Task {
-        const {status} = upadteTaskStatusDto
-        return this.tasksServices.upadteTaskStatus(id, status);
-    }
+    //     return this.tasksServices.createTask(createTaskDto)
+    // }
+
+    // @Patch('/:id/status')
+    // upadteTaskStatus(@Param('id') id:string, @Body() upadteTaskStatusDto: UpadteTaskStatusDto) :Task {
+    //     const {status} = upadteTaskStatusDto
+    //     return this.tasksServices.upadteTaskStatus(id, status);
+    // }
 
 
 
