@@ -4,11 +4,14 @@ import { Repository } from 'typeorm';
 import { Pacients } from './pacients.entity';
 import { CreatePacientInput } from './pacients.input';
 import { v4 as uuid } from 'uuid';
+import { Appointment } from 'src/appointment/appointment.entity';
 
 @Injectable()
 export class PacientsService {
     constructor(
-        @InjectRepository(Pacients) private pacientsRepository: Repository<Pacients>
+        @InjectRepository(Pacients) private pacientsRepository: Repository<Pacients>,
+        @InjectRepository(Appointment) private appointmentRepository: Repository<Appointment>
+
     ) { }
 
     async getPacients(): Promise<Pacients[]> {
@@ -22,18 +25,22 @@ export class PacientsService {
             throw new NotFoundException(`Pacient with cpf ${cpf} not found`);
         }
 
+        const consultas = await this.appointmentRepository.find({ pacientCPF: cpf })
+        pacient.appointments = [...consultas]
+
         return pacient
     }
 
     async createPacient(createPacientInput: CreatePacientInput): Promise<Pacients> {
-        const { name, lastname, cpf, birthdate } = createPacientInput;
+        const { name, lastname, cpf, birthdate, appointments } = createPacientInput;
 
         const pacient = this.pacientsRepository.create({
             id: uuid(),
             name,
             lastname,
             cpf,
-            birthdate
+            birthdate,
+            appointments
         });
 
         return this.pacientsRepository.save(pacient);
@@ -41,7 +48,7 @@ export class PacientsService {
 
 
     async deletePacient(createPacientInput: CreatePacientInput): Promise<Pacients> {
-        const { name, lastname, cpf, birthdate } = createPacientInput;
+        const { cpf } = createPacientInput;
 
         const pacient = await this.pacientsRepository.findOne({ cpf });
 
@@ -54,5 +61,21 @@ export class PacientsService {
         await this.pacientsRepository.remove(pacient);
 
         return copy
+    }
+
+    async upadtePacient(createPacientInput: CreatePacientInput): Promise<Pacients> {
+        const { cpf, name } = createPacientInput;
+
+        const pacient = await this.pacientsRepository.findOne({ cpf });
+
+        if (!pacient) {
+            throw new NotFoundException(`Pacient with cpf ${cpf} not found`);
+        }
+
+        pacient.name = name
+
+        await this.pacientsRepository.save(pacient)
+
+        return pacient
     }
 }

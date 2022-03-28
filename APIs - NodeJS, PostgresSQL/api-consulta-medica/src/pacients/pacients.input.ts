@@ -19,7 +19,7 @@ export class CreatePacientInput {
     @Field()
     birthdate: string;
 
-    //   @IsUUID("4", { each: true })
-    //   @Field(() => [ID], { defaultValue: [] })
-    //   students: string[];
+    @IsUUID("4", { each: true })
+    @Field(() => [ID], { defaultValue: [] })
+    appointments: string[];
 }

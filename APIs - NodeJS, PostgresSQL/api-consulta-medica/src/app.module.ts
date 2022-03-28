@@ -3,6 +3,8 @@ import { GraphQLModule } from '@nestjs/graphql';
 import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
 import { PacientsModule } from './pacients/pacients.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { AppointmentModule } from './appointment/appointment.module';
+import { AuthModule } from './auth/auth.module';
 
 @Module({
   imports: [
@@ -20,7 +22,9 @@ import { TypeOrmModule } from '@nestjs/typeorm';
       autoLoadEntities: true,
       synchronize: true,
     }),
-    PacientsModule,],
+    PacientsModule,
+    AppointmentModule,
+    AuthModule,],
   controllers: [],
   providers: [],
 })

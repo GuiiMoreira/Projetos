@@ -32,4 +32,18 @@ export class PacientsResolver {
     ) {
         return this.pacientsService.deletePacient(createPacientInput);
     }
+
+    @Mutation(returns => PacientsType) upadtePacient(
+        @Args('createPacientInput') createPacientInput: CreatePacientInput,
+    ) {
+        return this.pacientsService.upadtePacient(createPacientInput);
+    }
+
+    // @Mutation(returns => PacientsType) assignAppointmentsToPacient(
+    //     @Args('assignAppointmentsToPacientInput') assignAppointmentsToPacientInput: AssignAppointmentsToPacientInput,
+    // ) {
+
+    //     const { pacienteCPF, appointmentIds } = assignAppointmentsToPacientInput
+    //     return this.pacientsService.assignAppointmentsToPacient(pacienteCPF, appointmentIds);
+    // }
 }

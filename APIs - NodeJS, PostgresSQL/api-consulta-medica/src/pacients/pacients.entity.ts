@@ -1,4 +1,6 @@
-import { Entity, PrimaryColumn, Column, ObjectIdColumn } from 'typeorm';
+import { type } from 'os';
+import { Appointment } from '../appointment/appointment.entity'
+import { Entity, PrimaryColumn, OneToMany, Column } from 'typeorm';
 
 @Entity()
 export class Pacients {
@@ -17,6 +19,6 @@ export class Pacients {
     @Column()
     birthdate: string;
 
-    //   @Column()
-    //   appointment: string[];
+    @OneToMany(_type => Appointment, appointments => appointments.pacient, { eager: true })
+    appointments;
 }
