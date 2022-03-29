@@ -8,6 +8,9 @@ export class Pacients {
     id: string;
 
     @Column()
+    creator: string;
+
+    @Column()
     name: string;
 
     @Column()

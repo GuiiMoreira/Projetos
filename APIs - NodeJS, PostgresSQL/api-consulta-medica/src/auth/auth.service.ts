@@ -7,6 +7,7 @@ import { JwtService } from '@nestjs/jwt';
 import { JwtPayload } from './dto/jwt-payload.interface';
 import { User } from './user.entity';
 import { Repository } from 'typeorm';
+import { AuthType } from './dto/auth.type';
 
 @Injectable()
 export class AuthService {
@@ -39,7 +40,7 @@ export class AuthService {
 
     }
 
-    async signIn(loginCredentialsDto: LoginCredentialsDto): Promise<{ accessToken: string }> {
+    async signIn(loginCredentialsDto: LoginCredentialsDto): Promise<AuthType> {
         const { username, password } = loginCredentialsDto
         const user = await this.usersRepository.findOne({ username })
 
@@ -47,10 +48,13 @@ export class AuthService {
 
         if (user && comparePassword) {
             const payload: JwtPayload = { username }
-            const accessToken: string = await this.jwtService.sign(payload);
-            console.log(accessToken)
+            const token: string = await this.jwtService.sign(payload);
 
-            return { accessToken }
+
+            return {
+                username,
+                token
+            }
         } else {
             throw new UnauthorizedException('User or password is wrong')
         }

@@ -27,21 +27,24 @@ export class AppointmentService {
         return Appointment
     }
 
-    async createAppointment(createAppointmentInput: CreateAppointmentInput): Promise<Appointment> {
+    async createAppointment(createAppointmentInput: CreateAppointmentInput, creator: string): Promise<Appointment> {
         const { pacientCPF, doctorName, date } = createAppointmentInput;
         const id = uuid();
         const pacient = await this.PacientsRepository.findOne({ cpf: pacientCPF })
-        console.log(pacient.appointments)
+
+        if (!pacient) {
+            throw new NotFoundException(`Appointment with cpf ${pacientCPF} not found`);
+        }
+
         pacient.appointments.push(id)
 
         const Appointment = this.AppointmentRepository.create({
             id,
+            creator,
             pacientCPF,
             doctorName,
             date,
         });
-
-        console.log(pacient.appointments)
 
         await this.PacientsRepository.save(pacient)
         return this.AppointmentRepository.save(Appointment);

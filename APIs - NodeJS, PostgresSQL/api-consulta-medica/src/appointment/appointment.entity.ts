@@ -7,6 +7,9 @@ export class Appointment {
     id: string;
 
     @Column()
+    creator: string
+
+    @Column()
     pacientCPF: string;
 
     @Column()

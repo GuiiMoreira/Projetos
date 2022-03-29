@@ -7,6 +7,9 @@ export class AppointmentType {
     id: string;
 
     @Field()
+    creator: string;
+
+    @Field()
     pacientCPF: string;
 
     @Field()

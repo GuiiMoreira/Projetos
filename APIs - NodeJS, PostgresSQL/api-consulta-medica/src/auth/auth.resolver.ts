@@ -3,6 +3,7 @@ import { AuthService } from "./auth.service";
 import { UsersType } from "./user.type";
 import { AuthCredentialsDto } from "./dto/AuthCredentials.dto";
 import { LoginCredentialsDto } from "./dto/LoginCredentials.dto";
+import { AuthType } from "./dto/auth.type";
 
 @Resolver(of => UsersType)
 export class AuthResolver {
@@ -18,10 +19,15 @@ export class AuthResolver {
         return this.AuthService.signUp(authCredentialsDto);
     }
 
-    @Mutation(returns => UsersType) signIn(
+    @Mutation(returns => AuthType) async signIn(
         @Args('loginCredentialsDto') loginCredentialsDto: LoginCredentialsDto,
     ) {
-        return this.AuthService.signIn(loginCredentialsDto);
+        const response = await this.AuthService.signIn(loginCredentialsDto);
+        console.log(response)
+        return {
+            username: response.username,
+            token: response.token
+        }
     }
 
 
