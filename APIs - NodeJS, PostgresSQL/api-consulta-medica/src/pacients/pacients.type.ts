@@ -1,12 +1,13 @@
 import { ObjectType, Field, ID } from '@nestjs/graphql';
 import { AppointmentType } from 'src/appointment/appointment.type';
+import { dateFormatMiddleware, loggerMiddleware } from './pacients.midleware';
 
 @ObjectType('Pacients')
 export class PacientsType {
     @Field(type => ID)
     id: string;
 
-    @Field()
+    @Field({ middleware: [loggerMiddleware] })
     creator: string
 
     @Field()
@@ -18,7 +19,7 @@ export class PacientsType {
     @Field()
     cpf: string;
 
-    @Field()
+    @Field({ middleware: [dateFormatMiddleware] })
     birthdate: string;
 
     @Field(type => [AppointmentType])
