@@ -131,9 +131,9 @@ function abrirAMente() {
 }
 
 
-if (largura > 1400) {
-    fecharAMente()
-}
+// if (largura > 1400) {
+//     fecharAMente()
+// }
 
 
 // document.addEventListener("DOMContentLoaded", fecharAMente);

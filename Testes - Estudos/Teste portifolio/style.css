@@ -18,7 +18,7 @@ body{
     display: flex;
     justify-content: center;
     
-    background-color: rgb(223, 154,230);
+    background-color: rgb(197, 134, 204);
 
     overflow: hidden;
 
@@ -64,7 +64,7 @@ a{
 
     z-index: -9;
 
-    color: white;
+    color: rgba(255, 255, 255, 0.774);
     font-size: 15vw;
     line-height: 12vw;
 
@@ -371,19 +371,7 @@ button:hover{
     border-radius: 5px;
 
     cursor: pointer;
-}
-
-.container-apresentacao::after {
-    content: "";
-    position: absolute;
-    z-index: 3;
-    top: 90%;
-    left: 103%;
-    border-width: 20px;
-    border-style: solid;
-
-    transform: rotateZ(270deg) scale(3);
-  }
+}   
 
 .container-apresentacao a:hover{
     background-color: white;
