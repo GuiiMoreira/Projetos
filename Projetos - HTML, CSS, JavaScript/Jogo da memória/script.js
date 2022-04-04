@@ -86,8 +86,8 @@ function createGame() {
                         box.classList.remove('virar')
                         event.target.classList.remove('virar')
                         setTimeout(function () {
-                            box.style.backgroundImage = 'url(./cardGame.jpg)'
-                            event.target.style.backgroundImage = 'url(./cardGame.jpg)'
+                            box.style.backgroundImage = 'url(./assets/cardGame.jpg)'
+                            event.target.style.backgroundImage = 'url(./assets/cardGame.jpg)'
                         }, 300)
                         box.setAttribute('data-cartaVirada', `nao`)
                         event.target.setAttribute('data-cartaVirada', `nao`)
