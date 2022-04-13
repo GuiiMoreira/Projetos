@@ -4,6 +4,14 @@
     margin: 0;
 }
 
+a {
+    all: unset;
+}
+
+.flex {
+    display: flex;
+}
+
 .container-dashboard {
     height: 100vh;
     width: 220px;

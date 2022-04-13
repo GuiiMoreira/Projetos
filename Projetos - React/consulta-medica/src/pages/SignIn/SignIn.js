@@ -10,21 +10,21 @@ function SignIn() {
   const [token, setToken] = useState('')
   const navigate = useNavigate()
 
-  function testando() {
-    client.query({
-      query: gql`
-      query{
-        Appointments{
-          id
-          creator
-          pacientCPF
-          doctorName
-          date
-        }
-      }
-    `
-    }).then((res) => console.log(res))
-  }
+  // function testando() {
+  //   client.query({
+  //     query: gql`
+  //     query{
+  //       Appointments{
+  //         id
+  //         creator
+  //         pacientCPF
+  //         doctorName
+  //         date
+  //       }
+  //     }
+  //   `
+  //   }).then((res) => console.log(res))
+  // }
 
   function login(userName, password) {
     client.mutate({
@@ -42,6 +42,7 @@ function SignIn() {
       }`
     }).then((res) => {
       console.log(res)
+      localStorage.setItem('token', res.data.signIn.token);
       setToken(res.data.signIn.token)
       navigate('/home')
     }).catch((res) => {
