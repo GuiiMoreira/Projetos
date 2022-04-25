@@ -1,0 +1,35 @@
+1 - Criar o projeto com o comando nest new nomedoprojeto
+2 - Abrir o projeto e excluir os arquivos da pasta src, deixando apenas o app.module.ts e o main.ts
+3 - Apaga o controller e provider do arquivo app.module.ts
+4 - Rodar o comando npm install @nestjs/cli no terminal
+5 - Rodar o comando npm install graphql@14.6.0 graphql-tools apollo-server-express @nestjs/apollo @nestjs/graphql uuid no terminal (GraphQL at version 14.6.0)
+6 - Importar o modulo GraphQLModule no arquivo app.module.ts
+7 - Configurar o GraphQLModule.forRoot com autoSchemaFile: true
+
+8 - Criar um módulo com o comando nest g module nomedomodulo
+9 - Criar um arquivo nomedomodulo.type.ts
+	9.1 - Criar uma classe NomedomoduloType
+	9.2 - Definir o tipo de cada campo que existirá na entidade. (ObjectType e Field)
+
+10 - Criar o arquivo nomedomodulo.resolver.ts
+	10.1 - Criar a classe NomedomoduloResolver
+	10.2 - Ir ao arquivo nomedomodulo.module.ts e dentro do @Module adicionar o providers: [NomedomoduloResolver]
+	10.3 - No arquivo nomedomodulo.resolver.ts adicionar o decorador @Resolver(of => NomedomoduloType)
+	10.4 - Criar uma consulta teste com decorador @Query retornando campos do NomedomoduloType com dados definidos
+
+11 - Abrir o programa pgAdmin e criar um banco de dados novo
+12 - Rodar o comando npm instal typeorm@0.2.32 @nestjs/typeorm pg
+13 - No arquivo app.module.ts importar o TypeOrmModule
+14 - Configurar o TypeOrmModule.forRoot
+15 - Criar o arquivo nomedomodulo.entity.ts
+	15.1 - Criar uma classe com Nomedomodule e decorador @Entity
+	15.2 - Definir as colunas que existirá na tabela do banco de dados para essa entidade
+
+16 - No arquivo nomedomodulo.module.ts adicionar o TypeOrmModule
+17 - Configurar o TypeOrmModule.forFeature adicionando as entidades
+
+18 - Rodar o comando nest g service nomedomodulo --no-spec
+	18.1 - Injetar o repository no constructor da classe
+	18.2 - Criar os seviços necessários para este módulo
+
+19 - No arquivo nomedomodulo.resolver.ts adicionar as querys e mutations relacionadas ao serviços
