@@ -1,7 +1,7 @@
 import { UseGuards } from "@nestjs/common";
 import { Args, Context, Mutation, Query, Resolver } from "@nestjs/graphql";
 import { GqlAuthGuard } from "src/auth/auth.guard";
-import { CreateAppointmentInput } from "./appointment.input";
+import { CreateAppointmentInput, DeleteAppointmentInput } from "./appointment.input";
 import { AppointmentService } from "./appointment.service";
 import { AppointmentType } from "./appointment.type";
 
@@ -30,14 +30,14 @@ export class appointmentResolver {
         @Args('createAppointmentInput') createAppointmentInput: CreateAppointmentInput,
         @Context() context,
     ) {
-        return this.appointmentService.createAppointment(createAppointmentInput, context.req.user.username);
+        return this.appointmentService.createAppointment(createAppointmentInput, context.req.user.cpf);
     }
 
     @UseGuards(GqlAuthGuard)
     @Mutation(returns => AppointmentType) deleteAppointment(
-        @Args('createAppointmentInput') createAppointmentInput: CreateAppointmentInput,
+        @Args('deleteAppointmentInput') deleteAppointmentInput: DeleteAppointmentInput,
     ) {
-        return this.appointmentService.deleteAppointment(createAppointmentInput);
+        return this.appointmentService.deleteAppointment(deleteAppointmentInput);
     }
 
 

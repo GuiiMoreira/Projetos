@@ -3,19 +3,26 @@ import { MinLength, IsDateString, IsUUID } from 'class-validator';
 
 @InputType()
 export class CreateAppointmentInput {
-    @MinLength(1)
     @Field()
-    pacientCPF: string;
+    exam: string;
 
-    @MinLength(1)
     @Field()
-    doctorName: string;
+    examDetails: string;
 
-    @MinLength(11)
+    @Field()
+    value: string;
+
     @Field()
     date: string;
 
     //   @IsUUID("4", { each: true })
     //   @Field(() => [ID], { defaultValue: [] })
     //   students: string[];
+}
+
+
+@InputType()
+export class DeleteAppointmentInput {
+    @Field()
+    id: string;
 }

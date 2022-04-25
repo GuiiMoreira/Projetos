@@ -7,16 +7,22 @@ export class AppointmentType {
     id: string;
 
     @Field()
-    creator: string;
-
-    @Field()
     pacientCPF: string;
 
     @Field()
-    doctorName: string;
+    exam: string;
+
+    @Field()
+    examDetails: string;
+
+    @Field()
+    value: string;
 
     @Field()
     date: string;
+
+    @Field()
+    createDate: string;
 
     // @Field(type => [StudentType])
     // students: string[];

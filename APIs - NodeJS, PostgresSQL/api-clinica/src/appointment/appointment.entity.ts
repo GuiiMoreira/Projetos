@@ -6,14 +6,20 @@ export class Appointment {
     id: string;
 
     @Column()
-    creator: string
-
-    @Column()
     pacientCPF: string;
 
     @Column()
-    doctorName: string;
+    exam: string;
+
+    @Column()
+    examDetails: string;
+
+    @Column()
+    value: string;
 
     @Column()
     date: string;
+
+    @Column()
+    createDate: string;
 }
