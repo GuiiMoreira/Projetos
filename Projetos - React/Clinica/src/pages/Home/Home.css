@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Akshar&display=swap');
+
+
+.header-home {
+    box-sizing: border-box;
+    width: 100vw;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 10px 30px;
+
+    color: white;
+    font-family: 'Akshar', sans-serif;
+}
+
+.header-home .logo {
+    font-size: 40px;
+}
+
+.header-home nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 30px;
+    font-size: 20px;
+}
+
+.header-home nav p {
+    cursor: pointer;
+}
+
+.header-home button {
+    all: unset;
+
+    border: 2px solid white;
+    padding: 3px 20px;
+}
+
+.background-home {
+    height: 700px;
+    width: 100vw;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    background: linear-gradient(rgba(0, 0, 0, .3), rgba(0, 0, 0, .3)), url("https://www.coxim.ms.gov.br/files/coxim_22a6cb94.png");
+    background-size: cover;
+}
+
+
+.txt-background {
+    text-align: center;
+    margin-bottom: 100px;
+}
+
+.txt-background p {
+    font-family: 'Akshar', sans-serif;
+    font-size: 40px;
+    color: white;
+}
+
+.txt-background span {
+    display: block;
+    font-family: 'Akshar', sans-serif;
+    font-size: 28px;
+    color: white;
+
+    margin-bottom: 30px;
+}
+
+.txt-background button {
+    all: unset;
+
+    font-family: 'Akshar', sans-serif;
+    font-size: 24px;
+    color: white;
+    background-color: #3A6291;
+    box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    padding: 10px 20px;
+
+    cursor: pointer;
+}
+
+.conteudo-home {
+    text-align: center;
+    color: #3A6291;
+    font-family: 'Akshar', sans-serif;
+
+    padding: 40px;
+    font-size: 28px;
+}
+
+
+.conteudo-home .title {
+    font-size: 32px;
+    margin-bottom: 60px;
+}
+
+.conteudo-home div {
+    margin-bottom: 70px;
+}
+
+.conteudo-home p {
+    margin-bottom: 10px;
+}
+
+
+.conteudo-home .azul-claro {
+    font-size: 22px;
+    color: rgb(101, 164, 236);
+}
+
+.conteudo-home .icon {
+    height: 150px;
+
+    margin: -20px;
+}
+
+
+.conteudo-home .icon-dif {
+    height: 150px;
+
+}
