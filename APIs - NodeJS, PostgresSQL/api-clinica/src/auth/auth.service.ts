@@ -43,8 +43,8 @@ export class AuthService {
         try {
             return await this.usersRepository.save(user);
         } catch (error) {
-            if (error.code === '23505') { //23505 é o codigo do erro name duplicado
-                throw new ConflictException('name already exists')
+            if (error.code === '23505') { //23505 é o codigo do erro cpf duplicado
+                throw new ConflictException('cpf or email already exists')
             } else {
                 throw new InternalServerErrorException()
             }

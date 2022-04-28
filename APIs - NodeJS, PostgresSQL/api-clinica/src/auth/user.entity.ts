@@ -14,7 +14,7 @@ export class User {
     @Column({ unique: true })
     cpf: string;
 
-    @Column()
+    @Column({ unique: true })
     email: string;
 
     @Column()
@@ -41,6 +41,6 @@ export class User {
     @Column()
     healthInsurance: string
 
-    @Column()
+    @Column({ unique: true })
     numberHealthInsurance: string
 }
