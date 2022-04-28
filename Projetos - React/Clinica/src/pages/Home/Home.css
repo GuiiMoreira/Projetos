@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Akshar&display=swap');
 
+/* .container-home {
+    box-sizing: border-box;
+    width: 100vw;
+
+    overflow: hidden;
+} */
 
 .header-home {
     box-sizing: border-box;
@@ -19,6 +25,11 @@
     font-size: 40px;
 }
 
+.header-home .logo span {
+    color: #3A6291;
+    border-bottom: 2px solid orange;
+}
+
 .header-home nav {
     display: flex;
     justify-content: space-between;
@@ -30,6 +41,11 @@
 
 .header-home nav p {
     cursor: pointer;
+}
+
+.header-home nav p:hover {
+    transform: scale(1.1);
+    transition: 0.5s;
 }
 
 .header-home button {
@@ -48,7 +64,7 @@
     justify-content: space-between;
     align-items: center;
 
-    background: linear-gradient(rgba(0, 0, 0, .3), rgba(0, 0, 0, .3)), url("https://www.coxim.ms.gov.br/files/coxim_22a6cb94.png");
+    background: linear-gradient(rgba(0, 0, 0, .3), rgba(0, 0, 0, .5)), url("https://www.coxim.ms.gov.br/files/coxim_22a6cb94.png");
     background-size: cover;
 }
 
@@ -126,4 +142,36 @@
 .conteudo-home .icon-dif {
     height: 150px;
 
+}
+
+.conteudo-home .flex {
+    justify-content: space-around;
+}
+
+.terco {
+    width: 25vw;
+}
+
+.terco:nth-child(1) p {
+    margin-bottom: 20px;
+}
+
+.terco:nth-child(1) img {
+    margin-bottom: 15px;
+}
+
+.terco:nth-child(2) img {
+    margin-bottom: 20px;
+}
+
+.blog {
+    margin-top: -100px;
+    background-color: #FAFAFA;
+}
+
+.blog img {
+    width: 400px;
+    height: 250px;
+    min-height: 250px;
+    border-radius: 10px;
 }

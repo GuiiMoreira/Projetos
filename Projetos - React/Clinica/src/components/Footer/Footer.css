@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+
+    font-family: 'Lato', sans-serif;
+    font-size: 18px;
+
+    background-color: #3A6291;
+    color: white;
+
+    padding: 20px 90px;
+}
+
+.footer p {
+    margin-bottom: 10px;
+}
+
+.footer .icon {
+    height: 30px;
+}
+
+.mgt-10 {
+    margin-top: 5px;
+}
