@@ -1,42 +1,26 @@
-import './SignIn.css';
-import { client } from '../../config/client-graphql'
 import { gql } from "@apollo/client";
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import { client } from '../../config/client-graphql';
+import './SignIn.css';
 
 function SignIn() {
-  const [userName, setUsername] = useState('')
+  const [cpf, setcpf] = useState('')
   const [password, setPassword] = useState('')
   const [token, setToken] = useState('')
   const navigate = useNavigate()
 
-  // function testando() {
-  //   client.query({
-  //     query: gql`
-  //     query{
-  //       Appointments{
-  //         id
-  //         creator
-  //         pacientCPF
-  //         doctorName
-  //         date
-  //       }
-  //     }
-  //   `
-  //   }).then((res) => console.log(res))
-  // }
-
-  function login(userName, password) {
+  function login(cpf, password) {
     client.mutate({
       mutation: gql`
       mutation{
         signIn(
           loginCredentialsDto: {  
-           username: "${userName}"
+           cpf: "${cpf}"
           password: "${password}"
           }
         ){
-          username
+          cpf
           token
         }
       }`
@@ -44,7 +28,7 @@ function SignIn() {
       console.log(res)
       localStorage.setItem('token', res.data.signIn.token);
       setToken(res.data.signIn.token)
-      navigate('/home')
+      navigate('/')
     }).catch((res) => {
       const errors = res.graphQLErrors.map((error) => {
         console.log(error);
@@ -54,23 +38,20 @@ function SignIn() {
 
   return (
     <div className="App">
-      <div className='left-side-signin'>
-        <div className='mask'>
-        </div>
-      </div>
-      <div className='right-side-signin'>
-        <p className="title-signin"><span>Gui</span> Medicine</p>
+      <div className='container-signin'>
+        <p className="title-signin">Clinica <span>Online</span></p>
         <div>
-          <label htmlFor="username">Username</label>
-          <input type="text" value={userName} onChange={(e) => setUsername(e.target.value)} id='username' />
+          <label htmlFor="cpf">CPF</label>
+          <input type="text" value={cpf} onChange={(e) => setcpf(e.target.value)} id='cpf' />
         </div>
         <div>
-          <label htmlFor="password">Password</label>
+          <label htmlFor="password">Senha</label>
           <input type="text" value={password} onChange={(e) => setPassword(e.target.value)} id='password' />
         </div>
         <div>
-          <button onClick={() => login(userName, password)}>Login</button>
-          <button>Cadastre-se</button>
+          <button onClick={() => login(cpf, password)}>Login</button>
+
+          <p>É sua primeira vez aqui? <Link to='/sign-up'>Cadastre-se</Link> </p>
         </div>
       </div>
     </div>

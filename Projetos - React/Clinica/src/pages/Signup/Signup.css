@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Akshar&display=swap');
+
+.container-signup {
+    box-sizing: border-box;
+    height: 100vh;
+    width: 100vw;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 30px;
+
+    text-align: center;
+    font-family: 'Akshar', sans-serif;
+    padding: 50px 200px;
+}
+
+.container-signup .flex {
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.title-signup {
+    font-size: 48px;
+    color: #3A6291;
+}
+
+.title-signup span {
+    color: orange;
+}
+
+.container-signup label {
+    width: 400px;
+    display: block;
+    margin-bottom: 2px;
+    color: #3A6291;
+    font-size: 28px;
+
+    text-align: start;
+}
+
+
+.container-signup input {
+    margin-bottom: 10px;
+    width: 400px;
+
+    padding: 5px 10px;
+}
+
+.container-signup button {
+    all: unset;
+    cursor: pointer;
+
+    background-color: #3A6291;
+    color: white;
+    font-weight: bold;
+
+    padding: 10px 100px;
+    margin: 20px 5px;
+}
+
+.container-signup button:hover {
+    background-color: rgb(34, 193, 195);
+    color: white;
+}
+
+.container-signup a {
+    color: orange;
+    cursor: pointer;
+}

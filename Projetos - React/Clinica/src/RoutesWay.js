@@ -14,6 +14,7 @@ import ListarPacientes from "./pages/ListarPacientes/ListarPacientes";
 import Dashboard from "./components/Dashboard/Dashboard";
 import PesquisarPaciente from "./pages/PesquisarPaciente/PesquisarPaciente";
 import PesquisarConsulta from "./pages/PesquisarConsulta/PesquisarConsulta";
+import Signup from "./pages/Signup/Signup";
 
 function RequireAuth({ children, redirectTo }) {
   let isAuthenticated = true;
@@ -26,6 +27,8 @@ export default function RoutesWay() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/sign-in" element={<SignIn />} />
+        <Route path="/sign-up" element={<Signup />} />
+
         <Route
           path="*"
           element={
