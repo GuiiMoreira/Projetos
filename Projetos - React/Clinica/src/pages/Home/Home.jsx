@@ -1,14 +1,19 @@
 import React from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
-import './Home.css'
-import iconTime from '../../assets/home/time-icon.png'
 import iconCalendar from '../../assets/home/calendar-icon.png'
 import iconCelphone from '../../assets/home/celphone-icon.png'
+import iconTime from '../../assets/home/time-icon.png'
+import iconPefil from '../../assets/home/perfil-icon.png'
 import Footer from '../../components/Footer/Footer'
-
+import { removeToken, selectAuth } from '../../redux/authSlice'
+import './Home.css'
 
 
 export default function Home() {
+    const auth = useSelector(selectAuth);
+    const dispatch = useDispatch();
+
     return (
         <div className='container-home'>
             <div className="background-home">
@@ -19,7 +24,14 @@ export default function Home() {
                         <p>Agendar Vacinas</p>
                         <p>Resultados Exames</p>
                         <p>Fale Conosco</p>
-                        <p ><button><Link to='/sign-in'>Entrar</Link></button></p>
+                        <p >
+                            {!auth.token ?
+                                <button><Link to='/sign-in'>Entrar</Link></button> :
+                                <div className='flex' onClick={() => dispatch(removeToken())}>
+                                    <img className='icon' src={iconPefil} alt="" />
+                                    <span>Olá {auth.name}</span>
+                                </div>}
+                        </p>
                     </nav>
                 </header>
                 <div className='txt-background'>

@@ -59,7 +59,7 @@ export default function Signup() {
     return (
         <div className="App">
             <div className='container-signup'>
-                <p className="title-signup">Clinica <span>Online</span></p>
+                <p className="title-signup"><Link to='/'>Clinica <span>Online</span></Link></p>
                 <div className="flex">
                     <div>
                         <label htmlFor="name">Nome*</label>
@@ -118,7 +118,7 @@ export default function Signup() {
                     <button onClick={() => signup(cadastro.cpf, cadastro.password)}>Cadastrar</button>
 
 
-                    <p>Já possui cadastro? <Link to='/sign-in'>Fazer login</Link> </p>
+                    <p>Já possui cadastro? <Link to='/sign-in' className="link">Fazer login</Link> </p>
                 </div>
             </div>
         </div>

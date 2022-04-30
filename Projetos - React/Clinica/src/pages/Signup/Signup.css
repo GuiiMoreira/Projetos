@@ -24,6 +24,8 @@
 .title-signup {
     font-size: 48px;
     color: #3A6291;
+
+    cursor: pointer;
 }
 
 .title-signup span {
@@ -65,7 +67,7 @@
     color: white;
 }
 
-.container-signup a {
+.container-signup .link {
     color: orange;
     cursor: pointer;
 }

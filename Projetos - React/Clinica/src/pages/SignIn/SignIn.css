@@ -27,6 +27,8 @@ body {
 .title-signin {
   font-size: 48px;
   color: #3A6291;
+
+  cursor: pointer;
 }
 
 .title-signin span {
@@ -70,7 +72,7 @@ body {
 }
 
 
-.container-signin a {
+.container-signin .link {
   color: orange;
   cursor: pointer;
 }

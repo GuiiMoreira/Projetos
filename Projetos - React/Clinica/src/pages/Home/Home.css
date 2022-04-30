@@ -44,8 +44,7 @@
 }
 
 .header-home nav p:hover {
-    transform: scale(1.1);
-    transition: 0.5s;
+    border-bottom: 1px solid orange;
 }
 
 .header-home button {
@@ -53,6 +52,15 @@
 
     border: 2px solid white;
     padding: 3px 20px;
+}
+
+.header-home .icon {
+    height: 30px;
+    margin-right: 10px;
+}
+
+.header-home .flex {
+    align-items: center;
 }
 
 .background-home {
