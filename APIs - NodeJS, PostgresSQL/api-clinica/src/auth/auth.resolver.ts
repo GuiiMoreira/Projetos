@@ -23,10 +23,10 @@ export class AuthResolver {
         @Args('loginCredentialsDto') loginCredentialsDto: LoginCredentialsDto,
     ) {
         const response = await this.AuthService.signIn(loginCredentialsDto);
-        console.log(response)
         return {
             cpf: response.cpf,
-            token: response.token
+            token: response.token,
+            name: response.name
         }
     }
 }

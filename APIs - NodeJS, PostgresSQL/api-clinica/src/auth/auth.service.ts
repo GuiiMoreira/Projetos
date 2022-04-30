@@ -54,7 +54,16 @@ export class AuthService {
 
     async signIn(loginCredentialsDto: LoginCredentialsDto): Promise<AuthType> {
         const { cpf, password } = loginCredentialsDto
+        let name = ''
+
         const user = await this.usersRepository.findOne({ cpf })
+
+        if (user) {
+            name = user.name
+        } else {
+            throw new UnauthorizedException('User or password is wrong')
+
+        }
 
         const comparePassword = await bcrypt.compare(password, user.password)
 
@@ -62,9 +71,9 @@ export class AuthService {
             const payload: JwtPayload = { cpf }
             const token: string = await this.jwtService.sign(payload);
 
-
             return {
                 cpf,
+                name,
                 token
             }
         } else {

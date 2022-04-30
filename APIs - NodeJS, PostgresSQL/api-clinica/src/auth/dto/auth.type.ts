@@ -5,6 +5,8 @@ export class AuthType {
     @Field()
     cpf: string;
 
+    @Field()
+    name: string;
 
     @Field()
     token: string;
