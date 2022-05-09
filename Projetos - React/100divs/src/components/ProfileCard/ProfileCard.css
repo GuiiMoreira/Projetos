@@ -1,8 +1,8 @@
-.div-profileCard{
+.div-profileCard {
     position: relative;
     box-sizing: border-box;
-	min-width: 450px;
-	min-height: 450px;
+    min-width: 450px;
+    min-height: 450px;
     overflow: hidden;
     background: linear-gradient(to top right, #EEBE6C 0%, #CA7C4E 100%);
     color: #786450;
@@ -11,9 +11,11 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
+    margin-top: 2px;
 }
 
-.profileCard{
+.profileCard {
     width: 80%;
     height: 80%;
     background-color: white;
@@ -21,7 +23,7 @@
     display: flex;
 }
 
-.left-side-profileCard{
+.left-side-profileCard {
     width: 65%;
     display: flex;
     flex-direction: column;
@@ -30,40 +32,40 @@
     padding: 30px 0px;
 }
 
-.photo-profileCard{
+.photo-profileCard {
     width: 100px;
     border-radius: 50%;
     border: 1px solid #786450;
     padding: 3px;
 }
 
-.name-profileCard{
+.name-profileCard {
     font-size: 18px;
     font-weight: 600;
     margin-top: 20px;
 }
 
-.prof-profileCard{
+.prof-profileCard {
     font-size: 12px;
     margin-bottom: 20px;
     margin-top: 5px;
 }
 
-button{
+button {
     all: unset;
-	box-sizing: border-box;
+    box-sizing: border-box;
     display: block;
-	width: 120px;
-	height: 30px;
+    width: 120px;
+    height: 30px;
 
     text-align: center;
-	font-size: 12px;
-	font-weight: 600;
+    font-size: 12px;
+    font-weight: 600;
 
     cursor: pointer;
-	color: #786450;
+    color: #786450;
     border: 1px solid #786450;
-	border-radius: 15px;
+    border-radius: 15px;
     margin-top: 20px;
 }
 
@@ -72,14 +74,14 @@ button:hover {
     color: #fff;
 }
 
-.right-side-profileCard{
+.right-side-profileCard {
     display: flex;
     flex-direction: column;
     width: 35%;
     justify-content: space-between;
 }
 
-.div-right-side{
+.div-right-side {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -91,7 +93,7 @@ button:hover {
     background: #F5E8DF;
 }
 
-.title-right-side{
+.title-right-side {
     font-weight: bold;
     font-size: 16px;
 }

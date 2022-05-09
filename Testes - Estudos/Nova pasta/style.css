@@ -1,0 +1,49 @@
+body {
+    background-color: rgba(230, 230, 230, 0.795);
+    margin: 0;
+}
+
+
+header {
+    background-color: red;
+}
+
+
+footer {
+    background-color: blue;
+}
+
+.container-cards {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+
+    position: relative;
+}
+
+.card {
+    position: absolute;
+    height: 200px;
+    background-color: green;
+    margin-bottom: 10px;
+
+    animation: example 2s;
+}
+
+.maior {
+    height: 300px;
+    width: 300px;
+}
+
+@keyframes example {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 100%;
+    }
+}

@@ -13,6 +13,8 @@
     align-items: center;
     justify-content: center;
     font-family: 'Open Sans', Helvetica, sans-serif;
+
+    margin-top: 2px;
 }
 
 .notificationCard{

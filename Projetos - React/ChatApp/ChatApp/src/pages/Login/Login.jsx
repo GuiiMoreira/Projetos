@@ -59,7 +59,7 @@ function Login() {
                 <p>Canais que conectam o mundo.</p>
             </div>
             <div className="Lado-direito-layout-login">
-                <div className="logo-login">HB<span>CHANNELS</span></div>
+                <div className="logo-login">GUI<span>CHANNELS</span></div>
                 <p className="titulo-login">Faça seu login!</p>
                 <form onSubmit={HandleLogin}>
                     <div>

@@ -1,6 +1,6 @@
 import './App.css';
 import BotaoMenuFechar from './components/BotaoMenuFechar/BotaoMenuFechar';
-import DivTres from './components/DivTres/DivTres';
+import Japao from './components/Japao/Japao';
 import Deserto from './components/Deserto/Deserto';
 import Titulo from './components/Titulo/Titulo';
 import Ondas from './components/Ondas/Ondas';
@@ -9,6 +9,9 @@ import LetreiroHello from './components/LetreiroHello/LetreiroHello';
 import DivProx from './components/DivProx/DivProx';
 import ProfileCard from './components/ProfileCard/ProfileCard';
 import NotificationCard from './components/NotificationCard/NotificationCard';
+import Calculadora from './components/Calculadora/Calculadora';
+import CelulaEt from './components/CelulaEt/CelulaEt';
+import Pokedex from './components/Pokedex/Pokedex'
 
 function App() {
   return (
@@ -16,17 +19,18 @@ function App() {
       <Titulo />
       <div className="flex">
         <BotaoMenuFechar />
-        <DivTres />
+        <Japao />
         <Deserto />
         <Ondas />
         <LetreiroHello />
         <SeguirCursor />
+        <ProfileCard />
+        <Calculadora />
+        <NotificationCard />
+        <CelulaEt />
+        <Pokedex />
       </div>
       <DivProx />
-      <div className="flex">
-        <ProfileCard />
-        <NotificationCard />
-      </div>
     </div>
   );
 }
