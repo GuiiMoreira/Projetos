@@ -42,6 +42,7 @@ export default function TableTansaction({
                 method: 'DELETE',
                 headers: {
                     'content-type': 'application/json',
+                    'Authorization': "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjUyMjgxMjU4LCJleHAiOjE2NTIzMTAwNTh9.wGIeVerA4nluLJB5Pp9zwL3Ll5hZxGsrsEF6ODb4PiQ",
                 },
             })
             await loadTransaction()

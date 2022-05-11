@@ -1,13 +1,13 @@
-import filtro from './assets/filtro.svg'
-import './App.css';
-import { useEffect, useState } from 'react'
-import Header from './components/Header/Header'
-import Filters from './components/Filters/Filters'
-import Resume from './components/Resume/Resume'
-import TableTansaction from './components/TableTransactions/TableTansaction'
-import ModalTransactions from './components/ModalTransactions/ModalTransactions';
+import { useEffect, useState } from 'react';
+import './Home.css';
+import filtro from '../../assets/filtro.svg';
+import Filters from '../../components/Filters/Filters';
+import Header from '../../components/Header/Header';
+import Resume from '../../components/Resume/Resume';
+import TableTansaction from '../../components/TableTransactions/TableTansaction';
+import ModalTransactions from '../../components/Modal/ModalTransactions';
 
-function App() {
+function Home() {
   const [openFilters, setOpenFilters] = useState(false)
   const [displayModal, setDisplayModal] = useState(false)
   const [selectBtnCredit, setselectBtnCredit] = useState('')
@@ -56,6 +56,7 @@ function App() {
         method: 'GET',
         headers: {
           'content-type': 'application/json',
+          'Authorization': "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjUyMjc1NjUxLCJleHAiOjE2NTIzMDQ0NTF9.j03poB5TAQNhq6paygEG6Crxilwh7TOG67NzmO8S2qk",
         },
       })
       const categories = []
@@ -126,9 +127,8 @@ function App() {
         setTransactionInEditing={setTransactionInEditing}
       />}
 
-
     </div>
   );
 }
 
-export default App;
+export default Home;

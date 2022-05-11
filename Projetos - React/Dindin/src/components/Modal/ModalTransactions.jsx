@@ -63,6 +63,7 @@ export default function ModalTransactions({
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json',
+                    'Authorization': "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjUyMjgxMjU4LCJleHAiOjE2NTIzMTAwNTh9.wGIeVerA4nluLJB5Pp9zwL3Ll5hZxGsrsEF6ODb4PiQ",
                 },
                 body: JSON.stringify(body)
             })
@@ -99,6 +100,7 @@ export default function ModalTransactions({
                 method: 'PUT',
                 headers: {
                     'content-type': 'application/json',
+                    'Authorization': "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjUyMjgxMjU4LCJleHAiOjE2NTIzMTAwNTh9.wGIeVerA4nluLJB5Pp9zwL3Ll5hZxGsrsEF6ODb4PiQ",
                 },
                 body: JSON.stringify(body)
             })

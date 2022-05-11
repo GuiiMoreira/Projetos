@@ -1,0 +1,27 @@
+.container-header {
+    display: flex;
+    justify-content: space-between;
+    background: linear-gradient(90.23deg, #05EDE3 0.02%, #645FFB 99.63%);
+    padding: 4vh 6vw;
+}
+
+.container-header div {
+    display: flex;
+}
+
+
+.container-header p {
+    font-family: 'Rubik', sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 43px;
+
+    color: #FFFFFF;
+
+    margin-left: 13px;
+}
+
+.container-header .user {
+    font-size: 20px;
+}
