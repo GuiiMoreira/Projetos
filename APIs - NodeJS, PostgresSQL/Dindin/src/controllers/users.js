@@ -1,13 +1,13 @@
 const knex = require('../../database/conection');
 const bcrypt = require('bcrypt');
 const registerUserSchema = require('../validations/registerUserSchema');
-// const editaruserschema = require('../validation/editaruserschema');
+const editUserSchema = require('../validations/editUserSchema');
 
 const registerUser = async (req, res) => {
     const { name, email, password } = req.body;
 
     try {
-        // await registerUserSchema.validate(req.body);
+        await registerUserSchema.validate(req.body);
 
         const existeUsuario = await knex('users')
             .where({ email })
@@ -39,7 +39,6 @@ const registerUser = async (req, res) => {
 
 const getUser = async (req, res) => {
     const id = req.userID
-    console.log(id)
 
     try {
         const usuario = await knex('users').where({ id }).first();
@@ -57,71 +56,59 @@ const getUser = async (req, res) => {
     }
 };
 
-// const editarPerfilUsuario = async (req, res) => {
-//   let { name, email, password, cpf, telefone } = req.body;
-//   const id = req.usuarioId;
+const editUser = async (req, res) => {
+    let { name, email, password } = req.body;
+    const id = req.userID;
 
-//   try {
-//     await editaruserschema.validate(req.body);
+    try {
+        await editUserSchema.validate(req.body);
 
-//     const usuario = await knex('users').where({ id }).first();
+        const user = await knex('users').where({ id }).first();
 
-//     if(!usuario) {
-//       return res.status(404).json('Usuario não encontrado!');
-//     }
+        if (!user) {
+            return res.status(404).json('Usuario não encontrado!');
+        }
 
-//     if (password) {
-//       password = password.trim();
-//       password = await bcrypt.hash(password, 10);
-//     }
+        if (password) {
+            password = password.trim();
+            password = await bcrypt.hash(password, 10);
+        }
 
-//     if (!password) {
-//       password = usuario.password;
-//     }
+        if (!password) {
+            password = user.password;
+        }
 
-//     if (email !== usuario.email) {
-//       const verificarEmail = await knex('users')
-//         .where({ email })
-//         .first();
+        if (email !== user.email) {
+            const checkEmail = await knex('users')
+                .where({ email })
+                .first();
 
-//       if (verificarEmail) {
-//         return res.status(401).json("Email ja cadastrado");
-//       }
-//     }
+            if (checkEmail) {
+                return res.status(401).json("Email ja cadastrado");
+            }
+        }
 
-//     if ( cpf && cpf !== usuario.cpf) {
-//       const verificarCpf = await knex('users')
-//         .where({ cpf })
-//         .first();
+        const updateUser = await knex('users')
+            .where({ id })
+            .update({
+                name,
+                email,
+                password
+            });
 
-//       if (verificarCpf) {
-//         return res.status(401).json("Cpf ja cadastrado em outra conta");
-//       }
-//     }
+        if (!updateUser) {
+            return res.status(400).json('O usuario não foi atualizado');
+        }
 
-//     const atualizarUsuario = await knex('users')
-//       .where({ id })
-//       .update({ 
-//         name,
-//         email,
-//         password, 
-//         cpf, 
-//         telefone 
-//       });
+        return res.status(200).json('Usuario foi atualizado com sucesso.');
 
-//     if (!atualizarUsuario) {
-//       return res.status(400).json('O usuario não foi atualizado');
-//     }
-
-//     return res.status(200).json('Usuario foi atualizado com sucesso.');
-
-//   } catch (error) {
-//     return res.status(400).json(error.message);
-//   }
-// }
+    } catch (error) {
+        return res.status(400).json(error.message);
+    }
+}
 
 module.exports = {
     registerUser,
     getUser,
-    // editarPerfilUsuario,
+    editUser
 };
