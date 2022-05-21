@@ -32,10 +32,11 @@ fetch('https://tmdb-proxy.cubos-academy.workers.dev/3/discover/movie?language=pt
     const promisedBody = response.json()
     promisedBody.then(function (body) {
 
-        if (initialTheme === 'black') {
-            blackTheme()
-        } else {
+        if (initialTheme === 'white') {
             whiteTheme()
+        } else {
+            blackTheme()
+
         }
 
         let page = 0
@@ -44,6 +45,7 @@ fetch('https://tmdb-proxy.cubos-academy.workers.dev/3/discover/movie?language=pt
         createSectionGenres()
 
         function createPage(i, body) {
+            let page = 0
             const movie = body.results[i]
             const divMovie = document.createElement('div')
             const divInfo = document.createElement('div')
@@ -51,7 +53,9 @@ fetch('https://tmdb-proxy.cubos-academy.workers.dev/3/discover/movie?language=pt
             const divVote = document.createElement('div')
             const userVote = document.createElement('span')
             const estrela = document.createElement('img')
-            let page = Math.trunc(i / 6)
+            if (window.screen.width > 800) {
+                page = Math.trunc(i / 6)
+            }
 
             divMovie.style.backgroundImage = `url(${movie.poster_path})`
             title.textContent = movie.title
@@ -93,6 +97,7 @@ fetch('https://tmdb-proxy.cubos-academy.workers.dev/3/discover/movie?language=pt
                 const promisedBody = response.json()
                 promisedBody.then(function (body) {
                     for (let i = 0; i < 18; i++) {
+                        let page = 1
                         const movie = body.results[i]
                         const divMovie = document.createElement('div')
                         const divInfo = document.createElement('div')
@@ -100,7 +105,9 @@ fetch('https://tmdb-proxy.cubos-academy.workers.dev/3/discover/movie?language=pt
                         const divVote = document.createElement('div')
                         const userVote = document.createElement('span')
                         const estrela = document.createElement('img')
-                        let page = Math.trunc(i / 6)
+                        if (window.screen.width > 800) {
+                            page = Math.trunc(i / 6)
+                        }
 
                         divMovie.style.backgroundImage = `url(${movie.poster_path})`
                         title.textContent = movie.title
@@ -276,7 +283,7 @@ fetch('https://tmdb-proxy.cubos-academy.workers.dev/3/discover/movie?language=pt
                 const promisedBody = response.json()
                 promisedBody.then(function (body) {
                     divHighlight.style.backgroundImage = `url(${body.backdrop_path})`
-                    divHighlight.style.backgroundSize = ('1100px 620px')
+                    divHighlight.style.backgroundSize = ('100vw')
                     const genresName = []
                     for (i = 0; i < body.genres.length; i++) {
                         genresName.push(body.genres[i].name)
