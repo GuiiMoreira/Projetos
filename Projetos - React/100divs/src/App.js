@@ -12,6 +12,7 @@ import NotificationCard from './components/NotificationCard/NotificationCard';
 import Calculadora from './components/Calculadora/Calculadora';
 import CelulaEt from './components/CelulaEt/CelulaEt';
 import Pokedex from './components/Pokedex/Pokedex'
+import JogoDaVelha from './components/JogoDaVelha/JogoDaVelha';
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
         <NotificationCard />
         <CelulaEt />
         <Pokedex />
+        <JogoDaVelha />
       </div>
       <DivProx />
     </div>

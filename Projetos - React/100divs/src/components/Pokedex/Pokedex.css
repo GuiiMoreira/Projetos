@@ -1,0 +1,103 @@
+.container-pokedex {
+    position: relative;
+    box-sizing: border-box;
+    width: calc(100vw - 930px);
+    min-width: 450px;
+    min-height: 450px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-image: url("https://i.pinimg.com/originals/ca/72/9d/ca729d33c150594423fefb1a42dfd886.png");
+    background-size: cover;
+
+    cursor: pointer;
+
+    margin-top: 2px;
+}
+
+.pokedex {
+    max-width: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    height: 80%;
+    background-color: rgb(109, 3, 3);
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.pokedex-lado-esquerdo,
+.pokedex-lado-direito {
+    box-sizing: border-box;
+    width: 50%;
+    height: 100%;
+    padding: 40px 20px;
+    background-color: rgb(102, 22, 22);
+    border: 1px solid black;
+    border-radius: 10px;
+
+}
+
+
+.pokedex-lado-direito {
+    display: flex;
+    flex-direction: column;
+}
+
+.pokemon-foto-nome {
+    box-sizing: border-box;
+    width: 90%;
+    height: 50%;
+    background-color: white;
+    margin: auto;
+}
+
+.pokemon-foto-nome div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.pokemon-foto-nome img {
+    width: 70%;
+
+    max-width: 120px;
+}
+
+.pokemon-foto-nome p {
+    font-size: 20px;
+    margin-top: -10px;
+}
+
+.pokedex-lado-direito div {
+    box-sizing: border-box;
+    width: 100%;
+    height: 30%;
+    background-color: rgb(77, 104, 77);
+
+    border-radius: 10px;
+    margin-bottom: 50px;
+    padding: 10px;
+}
+
+.pokedex input {
+    all: unset;
+
+    padding: 2px 5px;
+    background-color: white;
+    border-radius: 5px;
+}
+
+.pokedex button {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: rgb(27, 70, 163);
+    margin: auto;
+}

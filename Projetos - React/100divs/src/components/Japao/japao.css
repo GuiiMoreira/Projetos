@@ -3,8 +3,7 @@
 .div-tres {
     position: relative;
     box-sizing: border-box;
-    max-width: 450px;
-
+    width: calc(100vw - 930px);
     min-width: 450px;
     min-height: 450px;
 
