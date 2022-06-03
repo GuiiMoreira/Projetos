@@ -1,0 +1,83 @@
+.container {
+    background-image: url('../../assets/background.svg');
+    background-size: cover;
+    height: 100vh;
+}
+
+.form-align {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.form-container {
+    box-sizing: border-box;
+    width: 30vw;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background-color: white;
+
+    font-family: 'Rubik', sans-serif;
+
+    padding: 40px 60px;
+}
+
+.form-card {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.form-container h1 {
+    text-align: center;
+
+    color: #7978D9;
+    margin-bottom: 20px;
+}
+
+.form-card label {
+    display: block;
+    font-size: 16px;
+    margin-bottom: 4px;
+}
+
+.form-card input {
+    height: 30px;
+    border: 1px solid #555555;
+    border-radius: 5px;
+    margin-bottom: 24px;
+    padding: 0 15px;
+}
+
+.form-card button {
+    all: unset;
+    height: 40px;
+    width: 100%;
+    align-self: center;
+
+    font-size: 14px;
+    font-weight: 700;
+    text-align: center;
+    border-radius: 5px;
+    color: white;
+    background-color: #7978D9;
+
+    margin: 10px 0;
+    cursor: pointer;
+}
+
+.form-card button:hover {
+    filter: brightness(1.2);
+}
+
+.form-container span {
+    color: #7978D9;
+    font-size: 14px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 700;
+    cursor: pointer;
+}

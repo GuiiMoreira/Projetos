@@ -1,8 +1,8 @@
-import './SignIn.css';
-import { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom'
+import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import logo from '../../assets/logoDindin.svg';
-import request from '../../services/api/request'
+import request from '../../services/api/request';
+import './SignIn.css';
 
 export default function SignIn() {
 
@@ -44,16 +44,16 @@ export default function SignIn() {
 
     return (
         <div className="container">
-            <div className='container-logo' >
+            <header className='container-logo' >
                 <img src={logo} alt='logo' />
-            </div>
-            <main className='main-container'>
-                <section className='main-info' >
+            </header>
+            <main className='signIn-container'>
+                <section className='signIn-info' >
                     <h1>Controle suas <span>finanças</span>, sem planilha chata.</h1>
                     <p>Organizar as suas finanças nunca foi tão fácil, com o DINDIN, você tem tudo num único lugar e em um clique de distância.</p>
                     <button onClick={() => navigate('/signup')}>Cadastre-se</button>
                 </section>
-                <section className='main-form'>
+                <section className='signIn-form'>
                     <h1>Faça seu Login</h1>
                     <form onSubmit={handleSubmit}>
                         <div>

@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react';
-import './Home.css';
 import filtro from '../../assets/filtro.svg';
 import Filters from '../../components/Filters/Filters';
 import Header from '../../components/Header/Header';
+import ModalTransactions from '../../components/Modal/ModalTransactions';
 import Resume from '../../components/Resume/Resume';
 import TableTansaction from '../../components/TableTransactions/TableTansaction';
-import ModalTransactions from '../../components/Modal/ModalTransactions';
+import './Home.css';
 
 function Home() {
   const [openFilters, setOpenFilters] = useState(false)

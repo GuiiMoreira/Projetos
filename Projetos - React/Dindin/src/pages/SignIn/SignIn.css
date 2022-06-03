@@ -1,3 +1,15 @@
+body {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.error-message {
+    font-family: 'Lato', sans-serif;
+    color: lightcoral;
+    text-align: center;
+}
+
 .container {
     background-image: url('../../assets/background.svg');
     background-size: cover;
@@ -9,45 +21,45 @@
     padding: 50px 150px;
 }
 
-.main-container {
+.signIn-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0px 150px;
 }
 
-.main-info {
+.signIn-info {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-    font-family: var(--font-style-rubik);
+    font-family: 'Rubik', sans-serif;
     width: 650px;
 }
 
-.main-info h1 {
+.signIn-info h1 {
     margin: 0;
     margin-bottom: 48px;
     font-size: 3em;
     font-weight: 700;
-    color: var(--main-color);
+    color: white;
 }
 
-.main-info span {
+.signIn-info span {
     color: #7978D9;
 }
 
-.main-info p {
+.signIn-info p {
     font-size: 1.6em;
-    color: var(--main-color);
+    color: white;
     margin-bottom: 48px;
 }
 
-.main-info button {
+.signIn-info button {
     all: unset;
     text-align: center;
-    color: var(--main-color);
-    background-color: var(--btn-color);
+    color: white;
+    background-color: #7978D9;
     border-radius: 5px;
     cursor: pointer;
     font-weight: bold;
@@ -55,29 +67,29 @@
     padding: 20px 60px;
 }
 
-.main-form {
+.signIn-form {
     display: flex;
     flex-direction: column;
     align-items: center;
     background-color: white;
-    font-family: var(--font-style-rubik);
+    font-family: 'Rubik', sans-serif;
     margin-top: 50px;
     margin-left: 100px;
     padding: 50px;
 }
 
-.main-form h1 {
-    color: var(--btn-color);
+.signIn-form h1 {
+    color: #7978D9;
     margin-bottom: 24px;
 }
 
-.main-form label {
+.signIn-form label {
     display: block;
     font-size: 16px;
     margin-bottom: 4px;
 }
 
-.main-form input {
+.signIn-form input {
     all: unset;
     box-sizing: border-box;
     width: 300px;
@@ -88,7 +100,7 @@
     padding: 10px 15px;
 }
 
-.main-form button {
+.signIn-form button {
     all: unset;
     box-sizing: border-box;
     width: 300px;
@@ -97,8 +109,13 @@
     font-weight: 700;
     text-align: center;
     border-radius: 5px;
-    background-color: var(--btn-color);
+    background-color: #7978D9;
     color: white;
     padding: 15px;
     cursor: pointer;
+}
+
+.signIn-info button:hover,
+.signIn-form button:hover {
+    filter: brightness(1.2);
 }
