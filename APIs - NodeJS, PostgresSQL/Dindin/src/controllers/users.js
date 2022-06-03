@@ -9,16 +9,16 @@ const registerUser = async (req, res) => {
     try {
         await registerUserSchema.validate(req.body);
 
-        const existeUsuario = await knex('users')
+        const userExist = await knex('users')
             .where({ email })
             .first();
 
-        if (existeUsuario) {
+        if (userExist) {
             return res.status(401).json("O email já esta cadastrado!");
         }
         const criptoPassword = await bcrypt.hash(password, 10);
 
-        const usuario = await knex('users')
+        const user = await knex('users')
             .insert({
                 name,
                 email,
@@ -26,7 +26,7 @@ const registerUser = async (req, res) => {
             })
             .returning('*');
 
-        if (!usuario) {
+        if (!user) {
             return res.status(400).json("O usuário não foi cadastrado.");
         }
 
@@ -41,15 +41,15 @@ const getUser = async (req, res) => {
     const id = req.userID
 
     try {
-        const usuario = await knex('users').where({ id }).first();
+        const user = await knex('users').where({ id }).first();
 
-        if (!usuario) {
+        if (!user) {
             return res.status(404).json('Usuario não encontrado');
         }
 
-        const { password: _, ...dadosUsuario } = usuario;
+        const { password: _, ...dataUser } = usuario;
 
-        return res.status(200).json(dadosUsuario);
+        return res.status(200).json(dataUser);
 
     } catch (error) {
         return res.status(400).json(error.message);
