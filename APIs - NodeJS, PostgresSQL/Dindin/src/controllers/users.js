@@ -42,12 +42,11 @@ const getUser = async (req, res) => {
 
     try {
         const user = await knex('users').where({ id }).first();
-
         if (!user) {
             return res.status(404).json('Usuario não encontrado');
         }
-
-        const { password: _, ...dataUser } = usuario;
+        
+        const { password: _, ...dataUser } = user;
 
         return res.status(200).json(dataUser);
 

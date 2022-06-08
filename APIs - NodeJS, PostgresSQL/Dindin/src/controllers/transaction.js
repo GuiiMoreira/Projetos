@@ -9,7 +9,7 @@ const registerTransaction = async (req, res) => {
     try {
         await registerTransactionSchema.validate(req.body);
 
-        const cobranca = await knex('transactions')
+        const transactions = await knex('transactions')
             .insert({
                 user_id,
                 date,
@@ -21,7 +21,7 @@ const registerTransaction = async (req, res) => {
             })
             .returning('*');
 
-        if (!cobranca) {
+        if (!transactions) {
             return res.status(400).json("A transação não pôde ser cadastrada!");
         }
 
@@ -33,7 +33,7 @@ const registerTransaction = async (req, res) => {
 
 const getTransactions = async (req, res) => {
     const user_id = req.userID
-
+    
     try {
         const transactions = await knex('transactions').where({ user_id });
 
