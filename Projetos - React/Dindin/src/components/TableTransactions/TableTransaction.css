@@ -1,0 +1,158 @@
+.table {
+  box-sizing: border-box;
+  width: 1000px;
+
+  margin-top: 50px;
+}
+  
+.table-head {
+  background: #FAFAFA;
+  box-shadow: 0px 2px 11px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  
+  font-weight: bold;
+}
+  
+.table-body {
+  max-height: 50vh;
+}
+  
+.table-line {
+  position: relative;
+  display: flex;
+  align-items: center;
+  
+  border-bottom: 1px solid #E0E0E0;
+}
+  
+.table-head,
+.table-line {
+  display: flex;
+  justify-content: space-between;
+  
+  padding: 20px;
+}
+  
+.column-title {
+  cursor: pointer;
+}
+  
+.column-title,
+.line-items {
+  position: relative;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  min-width: 110px;
+  max-width: 130px;
+  font-family: 'Lato', sans-serif;
+  font-style: normal;
+  font-size: 14px;
+  line-height: 17px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  
+}
+  
+.description {
+  width: 250px;
+  max-width: 250px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+  
+.column-title img {
+  margin-left: 4px;
+  
+  cursor: pointer;
+}
+  
+.delete-icon,
+.edit-icon {
+  cursor: pointer;
+}
+
+.container-confirm-delete {
+  position: absolute;
+  bottom: -30px;
+  right: -50px;
+  z-index: 2;
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  
+  box-sizing: border-box;
+  width: 120px;
+  height: 46px;
+  
+  background: #E4F2FD;
+  border-radius: 4px;
+  
+  padding: 7px 15px;
+}
+  
+.container-confirm-delete p {
+  font-family: 'Rubik', sans-serif;
+  font-size: 10px;
+  line-height: 12px;
+}
+  
+.btn-action-confirm-delete {
+  all: unset;
+  
+  width: 37px;
+  height: 15px;
+  
+  font-family: 'Rubik', sans-serif;
+  font-size: 9px;
+  line-height: 11px;
+  text-align: center;
+  
+  border-radius: 4px;
+  color: white;
+}
+  
+.sim {
+  background: #3A9FF1;
+  margin-right: 2px;
+}
+  
+.nao {
+  background: #FF576B;
+}
+  
+.hidden {
+  display: none;
+}
+
+@media screen and (max-width: 1300px) {
+  .table {
+    width: 100%;
+
+    overflow: auto;
+  }
+
+  .table-head, .table-body, .table-line{
+    min-width: 700px;
+  }
+
+
+  .table::-webkit-scrollbar {
+    height: 8px;               /* width of the entire scrollbar */
+  }
+  
+  .table::-webkit-scrollbar-track {
+    background: #FAFAFA;
+  }
+  
+  .table::-webkit-scrollbar-thumb {
+    background: linear-gradient(264.83deg, #3A9FF1 -3.28%, #05EDE3 100%);
+    border-radius: 10px;
+    border: 1px solid white;
+  }
+}

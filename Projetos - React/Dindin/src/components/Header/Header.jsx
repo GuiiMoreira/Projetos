@@ -6,6 +6,7 @@ import "./Header.css"
 export default function Header() {
     const [user, setUser] = useState('')
     const navigate = useNavigate()
+    const token = localStorage.getItem('token')
 
     useEffect(() => {
         loadUser()
@@ -18,7 +19,7 @@ export default function Header() {
                 method: 'GET',
                 headers: {
                     'content-type': 'application/json',
-                    'Authorization': "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjUyMjc1NjUxLCJleHAiOjE2NTIzMDQ0NTF9.j03poB5TAQNhq6paygEG6Crxilwh7TOG67NzmO8S2qk",
+                    'Authorization': `Bearer ${token}`,
                 },
             })
 

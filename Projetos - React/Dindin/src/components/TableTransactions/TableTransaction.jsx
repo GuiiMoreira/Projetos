@@ -1,10 +1,11 @@
 import React, { useState } from 'react'
-import setaFiltro from '../../assets/setaFiltro.svg'
 import lapis from '../../assets/lapis.svg'
 import lixeira from '../../assets/lixeira.svg'
+import setaFiltro from '../../assets/setaFiltro.svg'
 import setaFiltroDec from '../../assets/setaFiltroDec.svg'
+import './TableTransaction.css'
 
-export default function TableTansaction({
+export default function TableTransaction({
     transactionsData,
     setTransactionsData,
     loadTransaction,
@@ -14,18 +15,19 @@ export default function TableTansaction({
     const [orderDate, setOrderDate] = useState(false)
     const [orderDay, setOrderDay] = useState(false)
     const [orderValue, setOrderValue] = useState(false)
+    const token = localStorage.getItem('token')
 
     function showModalDelete(transactionID) {
         const newData = [...transactionsData]
         const transactionSelect = newData.find(transaction => transaction.id === transactionID)
-        transactionSelect.displayModalDelete = ""
+        transactionSelect.displayModalDelete = ''
         setTransactionsData(newData)
     }
 
     function closeModalDelete(transactionID) {
         const newData = [...transactionsData]
         const transactionSelect = newData.find(transaction => transaction.id === transactionID)
-        transactionSelect.displayModalDelete = "hidden"
+        transactionSelect.displayModalDelete = 'hidden'
         setTransactionsData(newData)
     }
 
@@ -42,7 +44,7 @@ export default function TableTansaction({
                 method: 'DELETE',
                 headers: {
                     'content-type': 'application/json',
-                    'Authorization': "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjUyMjgxMjU4LCJleHAiOjE2NTIzMTAwNTh9.wGIeVerA4nluLJB5Pp9zwL3Ll5hZxGsrsEF6ODb4PiQ",
+                    'Authorization': `Bearer ${token}`,
                 },
             })
             await loadTransaction()
@@ -106,39 +108,39 @@ export default function TableTansaction({
     }
 
     return (
-        <div className="table">
-            <div className="table-head">
-                <p className="column-title" id="date" onClick={() => handleOrderByDate()}>Data <img src={setaFiltro} className={orderDate === 'crescent' ? '' : 'hidden'} alt="" />
-                    <img src={setaFiltroDec} className={orderDate === 'decrescent' ? '' : 'hidden'} alt="" /></p>
-                <p className="column-title" id="week-day" onClick={() => handleOrderByDay()}>Dia da Semana <img src={setaFiltro} className={orderDay === 'crescent' ? '' : 'hidden'} alt="" />
-                    <img src={setaFiltroDec} className={orderDay === 'decrescent' ? '' : 'hidden'} alt="" />
+        <div className='table'>
+            <div className='table-head'>
+                <p className='column-title' id='date' onClick={() => handleOrderByDate()}>Data <img src={setaFiltro} className={orderDate === 'crescent' ? '' : 'hidden'} alt='' />
+                    <img src={setaFiltroDec} className={orderDate === 'decrescent' ? '' : 'hidden'} alt='' /></p>
+                <p className='column-title' id='week-day' onClick={() => handleOrderByDay()}>Dia da Semana <img src={setaFiltro} className={orderDay === 'crescent' ? '' : 'hidden'} alt='' />
+                    <img src={setaFiltroDec} className={orderDay === 'decrescent' ? '' : 'hidden'} alt='' />
                 </p>
-                <p className="column-title description">Descrição</p>
-                <p className="column-title">Categoria</p>
-                <p className="column-title" id="value" onClick={() => handleOrderByValue()}>Valor<img src={setaFiltro} className={orderValue === 'crescent' ? '' : 'hidden'} alt="" />
-                    <img src={setaFiltroDec} className={orderValue === 'decrescent' ? '' : 'hidden'} alt="" /></p>
-                <p className="column-title"></p>
+                <p className='column-title description'>Descrição</p>
+                <p className='column-title'>Categoria</p>
+                <p className='column-title' id='value' onClick={() => handleOrderByValue()}>Valor<img src={setaFiltro} className={orderValue === 'crescent' ? '' : 'hidden'} alt='' />
+                    <img src={setaFiltroDec} className={orderValue === 'decrescent' ? '' : 'hidden'} alt='' /></p>
+                <p className='column-title'></p>
             </div >
-            <div className="table-body">
+            <div className='table-body'>
                 {transactionsData.map(transaction =>
-                    <div className="table-line" key={transaction.id}>
-                        <p className="line-items">{formatar(transaction.date)}</p>
-                        <p className="line-items">{transaction.week_day}</p>
-                        <p className="line-items description">{transaction.description}</p>
-                        <p className="line-items">{transaction.category}</p>
+                    <div className='table-line' key={transaction.id}>
+                        <p className='line-items'>{formatar(transaction.date)}</p>
+                        <p className='line-items'>{transaction.week_day}</p>
+                        <p className='line-items description'>{transaction.description}</p>
+                        <p className='line-items'>{transaction.category}</p>
                         <p className={transaction.type === 'credit' ? 'in line-items' : 'out line-items'}>{`R$ ${Number(transaction.value).toFixed(2)}`}</p>
-                        <p className="line-items">
-                            <img src={lapis} alt="edit-icon" className="edit-icon" onClick={() => {
+                        <p className='line-items'>
+                            <img src={lapis} alt='edit-icon' className='edit-icon' onClick={() => {
                                 setTransactionInEditing(transaction)
                                 setDisplayModal(true)
                             }} />
-                            <img src={lixeira} alt="delete-icon" className="delete-icon" onClick={() => {
+                            <img src={lixeira} alt='delete-icon' className='delete-icon' onClick={() => {
                                 showModalDelete(transaction.id)
                             }} />
                         </p>
                         <div className={`${transaction.displayModalDelete} container-confirm-delete`}>
                             <p>Apagar item?</p>
-                            <div className="btns-delete-cancel">
+                            <div className='btns-delete-cancel'>
                                 <button className={`btn-action-confirm-delete sim`} onClick={() => handleDeleteTransaction(transaction.id)}>Sim</button>
                                 <button className={`btn-action-confirm-delete nao`} onClick={() => closeModalDelete(transaction.id)}>Não</button>
                             </div>

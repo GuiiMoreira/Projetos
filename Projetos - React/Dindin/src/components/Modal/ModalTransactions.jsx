@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import closeBtn from '../../assets/closeBtn.svg'
+import './ModalTransactions.css'
 
 export default function ModalTransactions({
     setTransactionInEditing,
@@ -16,6 +17,7 @@ export default function ModalTransactions({
     const [transactionDate, setTransactionDate] = useState('')
     const [transactionDescription, setTransactionDescription] = useState('')
     const [transactionCategory, setTransactionCategory] = useState('')
+    const token = localStorage.getItem('token')
 
     useEffect(() => {
         if (transactionInEditing) {
@@ -63,7 +65,7 @@ export default function ModalTransactions({
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json',
-                    'Authorization': "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjUyMjgxMjU4LCJleHAiOjE2NTIzMTAwNTh9.wGIeVerA4nluLJB5Pp9zwL3Ll5hZxGsrsEF6ODb4PiQ",
+                    'Authorization': `Bearer ${token}`,
                 },
                 body: JSON.stringify(body)
             })
@@ -100,7 +102,7 @@ export default function ModalTransactions({
                 method: 'PUT',
                 headers: {
                     'content-type': 'application/json',
-                    'Authorization': "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjUyMjgxMjU4LCJleHAiOjE2NTIzMTAwNTh9.wGIeVerA4nluLJB5Pp9zwL3Ll5hZxGsrsEF6ODb4PiQ",
+                    'Authorization': `Bearer ${token}`,
                 },
                 body: JSON.stringify(body)
             })

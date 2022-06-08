@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import './Filters.css'
 
 export default function Filters({ transactionsData, loadTransaction, setTransactionsData, filtersCategory, setFiltersCategory }) {
     const startFiltersDay = [

@@ -4,7 +4,7 @@ import Filters from '../../components/Filters/Filters';
 import Header from '../../components/Header/Header';
 import ModalTransactions from '../../components/Modal/ModalTransactions';
 import Resume from '../../components/Resume/Resume';
-import TableTansaction from '../../components/TableTransactions/TableTansaction';
+import TableTransaction from '../../components/TableTransactions/TableTransaction';
 import './Home.css';
 
 function Home() {
@@ -18,7 +18,7 @@ function Home() {
   const [transactionBalanceTotal, setTransactionBalanceTotal] = useState('')
   const [transactionInEditing, setTransactionInEditing] = useState(false)
   const [filtersCategory, setFiltersCategory] = useState([])
-
+  const token = localStorage.getItem('token')
 
   useEffect(() => {
     loadTransaction()
@@ -56,7 +56,7 @@ function Home() {
         method: 'GET',
         headers: {
           'content-type': 'application/json',
-          'Authorization': "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjUyMjc1NjUxLCJleHAiOjE2NTIzMDQ0NTF9.j03poB5TAQNhq6paygEG6Crxilwh7TOG67NzmO8S2qk",
+          'Authorization': `Bearer ${token}`,
         },
       })
       const categories = []
@@ -98,6 +98,15 @@ function Home() {
           setFiltersCategory={setFiltersCategory}
         />}
 
+        <div className="flex">
+        <TableTransaction
+          transactionsData={transactionsData}
+          setTransactionsData={setTransactionsData}
+          loadTransaction={loadTransaction}
+          setTransactionInEditing={setTransactionInEditing}
+          setDisplayModal={setDisplayModal}
+        />
+
         <Resume
           transactionBalanceIn={transactionBalanceIn}
           transactionBalanceOut={transactionBalanceOut}
@@ -106,14 +115,7 @@ function Home() {
           setselectBtnCredit={setselectBtnCredit}
           setselectBtnDebit={setselectBtnDebit}
         />
-
-        <TableTansaction
-          transactionsData={transactionsData}
-          setTransactionsData={setTransactionsData}
-          loadTransaction={loadTransaction}
-          setTransactionInEditing={setTransactionInEditing}
-          setDisplayModal={setDisplayModal}
-        />
+        </div>
       </div>
 
       {displayModal && <ModalTransactions

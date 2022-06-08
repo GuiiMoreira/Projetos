@@ -1,4 +1,5 @@
 import React from 'react'
+import './Resume.css'
 
 export default function Resume({
     transactionBalanceIn,
@@ -9,7 +10,7 @@ export default function Resume({
     setselectBtnDebit
 }) {
     return (
-        <div className="resume-button">
+        <div className="resume">
             <div className="container-resume">
                 <p className="title-resume">Resumo</p>
                 <div className="balance-info">

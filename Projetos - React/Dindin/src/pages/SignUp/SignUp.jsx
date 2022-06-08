@@ -24,10 +24,10 @@ export default function SignUp() {
                 alert('Senhas diferentes');
             }
 
-            const response = await request.post('/usuario', {
-                "nome": name,
-                "email": email,
-                "senha": password
+            const response = await request.post('/signup', {
+                name,
+                email,
+                password
             })
             if (response.status > 204) {
                 return;
