@@ -46,6 +46,7 @@ export default function SignIn() {
         <div className="container">
             <header className='container-logo' >
                 <img src={logo} alt='logo' />
+                <span>Dindin</span>
             </header>
             <main className='signIn-container'>
                 <section className='signIn-info' >

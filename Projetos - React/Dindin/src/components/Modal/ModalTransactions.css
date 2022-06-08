@@ -11,10 +11,11 @@
   align-items: center;
   
   background: rgba(61, 61, 61, 0.48);
-  ;
   }
   
 .modal-container {
+  width: 400px;
+  height: 600px;
   display: flex;
   flex-direction: column;
   
@@ -116,7 +117,7 @@
 .btn-insert {
   all: unset;
   box-sizing: border-box;
-  height: 30px;
+  height: 40px;
   width: 230px;
 
   font-family: 'Rubik', sans-serif;
@@ -132,5 +133,25 @@
   align-self: center;
   margin: 10px 0 -10px 0;
   cursor: pointer;
+}
+
+
+@media screen and (max-width: 550px) {
+  .modal-container {
+    box-sizing: border-box;
+    width: 100vw;
+    height: 100vh;
+  }
+
+  .title-modal {
+    margin-left: 25px;
+    font-size: 24px;
+  }
+
+  .close-icon{
+    position: absolute;
+    top: 40px;
+    right: 30px;
+  }
 }
 

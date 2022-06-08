@@ -46,3 +46,10 @@
     color: #645FFB;
 
 }
+
+
+@media screen and (max-width: 450px) {
+    .logo{
+        transform: scale(0.7);
+    }
+}

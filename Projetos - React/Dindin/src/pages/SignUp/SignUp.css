@@ -1,4 +1,5 @@
 .container {
+    box-sizing: border-box;
     background-image: url('../../assets/background.svg');
     background-size: cover;
     height: 100vh;
@@ -12,7 +13,7 @@
 
 .form-container {
     box-sizing: border-box;
-    width: 30vw;
+    width: 400px;
 
     display: flex;
     flex-direction: column;
@@ -80,4 +81,13 @@
     font-family: 'Lato', sans-serif;
     font-weight: 700;
     cursor: pointer;
+}
+
+
+@media screen and (max-width: 500px) {
+    .form-container{
+        width: 100vw;
+        position: absolute;
+        bottom: 20px;
+    }
 }

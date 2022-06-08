@@ -11,14 +11,31 @@ body {
 }
 
 .container {
+    box-sizing: border-box;
     background-image: url('../../assets/background.svg');
     background-size: cover;
     height: 100vh;
     width: 100vw;
+
+    overflow: hidden;
 }
 
 .container-logo {
+    display: flex;
+    align-items: center;
     padding: 50px 150px;
+}
+
+.container-logo span{
+    font-family: 'Rubik', sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 43px;
+
+    color: #FFFFFF;
+
+    margin-left: 13px;
 }
 
 .signIn-container {
@@ -40,7 +57,7 @@ body {
 .signIn-info h1 {
     margin: 0;
     margin-bottom: 48px;
-    font-size: 3em;
+    font-size: 48px;
     font-weight: 700;
     color: white;
 }
@@ -50,7 +67,7 @@ body {
 }
 
 .signIn-info p {
-    font-size: 1.6em;
+    font-size: 28px;
     color: white;
     margin-bottom: 48px;
 }
@@ -118,4 +135,60 @@ body {
 .signIn-info button:hover,
 .signIn-form button:hover {
     filter: brightness(1.2);
+}
+
+
+@media screen and (max-width: 1200px) {
+    .container-logo {
+        padding: 50px 50px;
+    }
+
+    .signIn-container {
+        padding: 0px 50px;
+    }
+}
+
+
+@media screen and (max-width: 940px) {
+    .signIn-info h1 {
+        font-size: 36px;
+    }
+      
+    .signIn-info p {
+        font-size: 22px;
+    }
+}
+
+@media screen and (max-width: 860px) {
+    .signIn-info{
+        display: none;
+    }
+
+    .signIn-container {
+        padding: 0px;
+    }
+
+    .signIn-form{
+        margin: 0px auto;
+        margin-top: 50px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .signIn-container {
+        position: absolute;
+        bottom: 0;
+    }
+
+    .signIn-form{
+        width:100vw;
+        padding: 30px 0;
+    }
+
+    .container-logo {
+        width: 200px;
+        padding: 50px 0;
+
+        margin: 10px auto;
+    }
 }

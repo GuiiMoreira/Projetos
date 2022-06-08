@@ -85,9 +85,9 @@ export default function Filters({ transactionsData, loadTransaction, setTransact
                     )}
                 </div>
             </div>
-            <div>
+            <div className="value-filters">
                 <p className="title-filters">Valor</p>
-                <div className="value-filters">
+                <div className="value-filter">
                     <label htmlFor="min-value" >Min</label>
                     <input type="number" id="min-value" onChange={(e) => setMinValueFilter(e.target.value)} value={minValueFilter} />
                     <label htmlFor="max-value">Max</label>

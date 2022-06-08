@@ -41,6 +41,7 @@ export default function SignUp() {
         <div className="container">
             <header className='container-logo' >
                 <img src={logo} alt='logo' />
+                <span>Dindin</span>
             </header>
             <main className='form-align'>
                 <section className='form-container' >

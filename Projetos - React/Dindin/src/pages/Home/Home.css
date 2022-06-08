@@ -31,3 +31,17 @@ body {
   justify-content: space-between;
   flex-wrap: wrap;
 }
+
+
+@media screen and (max-width: 450px) {
+  .container-body {
+    margin: -15px 0;
+    width: 110vw;
+
+  }
+
+  .flex{
+    flex-direction: column;
+    align-items: center;
+  }
+}

@@ -36,8 +36,7 @@
     background: #FAFAFA;
     box-shadow: 0px 2px 11px rgba(0, 0, 0, 0.2);
     border-radius: 10px;
-  
-    margin: 2vh 3vw 4vh 6vw;
+    margin-top: 20px;
     padding: 27px 40px;
   }
   
@@ -99,14 +98,14 @@
     cursor: pointer;
   }
   
-  .value-filters {
+  .value-filter {
     display: flex;
     flex-direction: column;
-  
+
     margin-right: 60px;
   }
   
-  .value-filters label {
+  .value-filter label {
     font-family: 'Rubik', sans-serif;
     font-size: 9px;
     line-height: 11px;
@@ -114,7 +113,7 @@
     color: #484848;
   }
   
-  .value-filters input {
+  .value-filter input {
     all: unset;
   
     width: 65px;
@@ -184,4 +183,35 @@
     border-radius: 10px;
   
     cursor: pointer;
+  }
+
+  @media screen and (max-width: 1300px) {
+    .container-filters {
+      width: 100%;
+  
+      overflow: auto;
+    }
+  
+    .title-filters, .week-filters,  .btns-geral-filter{
+      min-width: 200px;
+    }
+
+    .value-filters {
+      width: 100px;
+      margin: 0;
+    }
+  
+    .container-filters::-webkit-scrollbar {
+      height: 8px;               /* width of the entire scrollbar */
+    }
+    
+    .container-filters::-webkit-scrollbar-track {
+      background: #FAFAFA;
+    }
+    
+    .container-filters::-webkit-scrollbar-thumb {
+      background: linear-gradient(264.83deg, #3A9FF1 -3.28%, #05EDE3 100%);
+      border-radius: 10px;
+      border: 1px solid white;
+    }
   }

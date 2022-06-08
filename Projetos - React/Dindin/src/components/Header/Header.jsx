@@ -32,7 +32,7 @@ export default function Header() {
 
     return (
         <div className="container-header">
-            <div>
+            <div className='logo'>
                 <img src={logoDindin} alt="logo Dindin" />
                 <p>Dindin</p>
             </div>
