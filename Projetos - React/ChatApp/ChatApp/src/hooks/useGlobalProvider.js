@@ -1,4 +1,4 @@
-import { getDatabase, onValue, ref } from "firebase/database";
+import { onValue, ref } from "firebase/database";
 import { useState } from 'react';
 import { useLocalStorage } from 'react-use';
 import { db } from '../context/config';
@@ -12,11 +12,11 @@ function useGlobalProvider() {
     );
     const [erroLogin, setErroLogin] = useState();
     const [abrirModalAddchannel, setAbrirModalAddchannel] = useState(false);
+    const [dashboard, setDashboard] = useState(false);
     const [channels, setChannels] = useState('');
     const [currentChannel, setCurrentChannel] = useState('');
     const [configChannel, setConfigChannel] = useState('');
     const [user, setUser] = useState('');
-    const dbRef = ref(getDatabase());
 
     function handleSetChannels() {
         return onValue(ref(db, '/channel'), (snapshot) => {
@@ -57,7 +57,9 @@ function useGlobalProvider() {
         user,
         setUser,
         configChannel,
-        setConfigChannel
+        setConfigChannel,
+        dashboard,
+        setDashboard
     };
 }
 

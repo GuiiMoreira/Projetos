@@ -1,10 +1,10 @@
-.backdrop{
+.backdrop {
     position: fixed;
     top: 0;
     bottom: 0;
     right: 0;
     left: 0;
-    z-index: 8;
+    z-index: 100;
 
     display: flex;
     flex-direction: column;
@@ -15,7 +15,7 @@
     background-color: rgba(0, 0, 0, 0.8);
 }
 
-.modalAddChannel{
+.modalAddChannel {
     box-sizing: border-box;
     width: 500px;
     height: 250px;
@@ -30,7 +30,7 @@
     background-color: #252525;
 }
 
-.modalAddChannel label{
+.modalAddChannel label {
     display: block;
 
     font-family: 'Montserrat', sans-serif;
@@ -42,8 +42,8 @@
 }
 
 
-.modalAddChannel input{
-    all: unset ;
+.modalAddChannel input {
+    all: unset;
     display: block;
     font-family: 'nunito', sans-serif;
     width: 80%;
@@ -58,7 +58,8 @@
     margin-bottom: 50px;
 }
 
-.btn-confirm, .btn-cancel{
+.btn-confirm,
+.btn-cancel {
     all: unset;
     font-family: 'nunito', sans-serif;
 
@@ -66,18 +67,18 @@
     cursor: pointer;
 }
 
-.btn-confirm{
+.btn-confirm {
     background-color: #7b43b9;
     color: #F8F8F9;
 
     margin-right: 30px;
 }
 
-.btn-cancel{
+.btn-cancel {
     background-color: #F8F8F9;
 }
 
-.msg-delete{
+.msg-delete {
     font-size: 20px;
     color: white;
     margin-bottom: 50px;

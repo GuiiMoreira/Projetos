@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import './Chat.css'
-import { set, ref, onValue, update } from "firebase/database";
+import { set, ref, onValue } from 'firebase/database';
 import useGlobal from '../../hooks/useGlobal';
 import { uid } from 'uid';
 import { db } from '../../context/config';
 import chatImage from '../../assets/chatImage.svg'
 import imptyChat from '../../assets/imptyChat.svg'
-
 
 export default function Chat() {
     const { setCurrentChannel, currentChannel, usuarioLogado, user } = useGlobal()
@@ -25,18 +24,20 @@ export default function Chat() {
     messagesBox && messagesBox.sort((a, b) => a.timeStamp - b.timeStamp)
 
     function scrollBottom() {
-        const objDiv = document.querySelector(".chat");
+        const objDiv = document.querySelector('.chat');
         objDiv.scrollTop = objDiv.scrollHeight;
     }
 
     useEffect(() => {
-        handleSetMessagesBox()
-        setTimeout(() => scrollBottom(), 150)
+        // eslint-disable-next-line
+        handleSetMessagesBox()  // eslint-disable-next-line
+        setTimeout(() => scrollBottom(), 150)// eslint-disable-next-line
     }, [currentChannel])
 
     useEffect(() => {
-        setCurrentChannel('')
-    }, [])
+        // eslint-disable-next-line
+        setCurrentChannel('')// eslint-disable-next-line
+    }, [])  // eslint-disable-next-line
 
     function handleSendMessage() {
         const uuid = uid()
@@ -57,44 +58,48 @@ export default function Chat() {
     }
 
     return (
-        <div className='chat'>
-            {currentChannel && <div className='header-chat'>{currentChannel.name}</div>}
-
-            <div className='message-box'>
-                {currentChannel && messagesBox && messagesBox.map((message) => {
-                    return (
-                        <div key={message.id} className={message.creatorId === usuarioLogado.user.uid ? 'own message' : 'others message'}>
-                            {message.creatorId !== usuarioLogado.user.uid &&
-                                <p className='message-creator'>{message.creatorName}</p>
-                            }
-                            <p className='txt-message'>{message.message}</p>
-                            <div className='message-date'>
-                                <p>{message.date}</p>
-                                <p>{message.time}</p>
+        <div>
+            <div className='chat'>
+                {currentChannel && <div className='header-chat'>{currentChannel.name}</div>}
+                <div className='message-box'>
+                    {currentChannel && messagesBox && messagesBox.map((message) => {
+                        return (
+                            <div key={message.id} className={message.creatorId === usuarioLogado.user.uid ? 'own message' : 'others message'}>
+                                {message.creatorId !== usuarioLogado.user.uid &&
+                                    <p className='message-creator'>{message.creatorName}</p>
+                                }
+                                <p className='txt-message'>{message.message}</p>
+                                <div className='message-date'>
+                                    <p>{message.date}</p>
+                                    <p>{message.time}</p>
+                                </div>
                             </div>
-                        </div>
-                    )
-                })}
+                        )
+                    })}
 
-                {!messagesBox && currentChannel && <div className='impty-chat'>
-                    <img className='chat-image' src={imptyChat} alt="" />
-                    <p>Inicie uma conversa nesse canal</p>
+                    {!messagesBox && currentChannel && <div className='impty-chat'>
+                        <img className='chat-image' src={imptyChat} alt='' />
+                        <p>Inicie uma conversa nesse canal</p>
 
-                </ div>}
+                    </ div>}
 
 
-                {!currentChannel && <div className='impty-chat'>
-                    <img className='chat-image' src={chatImage} alt="" />
-                    <p>Selecione um dos canais e participe da conversa!</p>
-                </ div>}
-            </div>
-            {
-                currentChannel && <div className='container-message'>
-                    <button onClick={() => handleSendMessage()} disabled={!message && true}>Enviar</button>
-                    <textarea name="message" id="" cols="30" rows="10" value={message} onChange={(e) => setMessage(e.target.value)}></textarea>
+                    {!currentChannel && <div className='impty-chat'>
+                        <img className='chat-image' src={chatImage} alt='' />
+                        <p>Selecione um dos canais e participe da conversa!</p>
+                    </ div>}
                 </div>
-            }
+            </div >
 
-        </div >
+            <div>
+                {
+                    currentChannel && <div className='container-message'>
+                        <button onClick={() => handleSendMessage()} disabled={!message && true}>Enviar</button>
+                        <textarea name='message' id='' cols='30' rows='10' value={message} onChange={(e) => setMessage(e.target.value)}></textarea>
+                    </div>
+                }
+            </div>
+        </div>
+
     )
 }

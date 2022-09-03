@@ -1,17 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Nunito:wght@400;600&display=swap');
 
-.dashboard{
+
+.flex {
+    display: flex;
+    align-items: center;
+}
+
+.dashboard {
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
 
-    background-color: #0c0220;
-    width: 300px;
+    background-color: #31126e;
+    min-width: 300px;
     height: 100vh;
     padding: 10px;
 }
 
-.title-dashboard{
+.title-dashboard {
     font-family: 'Montserrat', sans-serif;
 
     font-weight: 600;
@@ -19,9 +25,10 @@
     line-height: 130%;
 
     color: white;
+    margin: 10px;
 }
 
-.title-channels{
+.title-channels {
     font-family: 'Montserrat', sans-serif;
 
     font-weight: 600;
@@ -29,15 +36,17 @@
     line-height: 130%;
 
     color: white;
+
+    margin: 10px;
 }
 
-.all-channels{
+.all-channels {
     height: 70vh;
     max-height: 70vh;
     overflow-y: auto;
 }
 
-.channels-dashboard{
+.channels-dashboard {
     position: relative;
     display: flex;
     align-items: center;
@@ -53,7 +62,7 @@
     padding: 10px;
 }
 
-.channels-dashboard p{
+.channels-dashboard p {
     width: 150px;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -61,39 +70,44 @@
     cursor: pointer;
 }
 
-.channels-dashboard img{
+.channels-dashboard img {
     margin-right: 10px;
     width: 20px;
 }
 
-.btn-dashboard{
+.btn-dashboard {
     all: unset;
 
     font-family: 'Nunito', sans-serif;
-    font-size: 14px;
-    line-height: 25px;
+    font-size: 24px;
     text-align: center;
 
     color: #F8F8F9;
-    background: #7b43b9;
-    margin: 20px 0 10px 0;
-    padding: 4px 40px;
 
     cursor: pointer;
+    margin-left: 150px;
 }
 
-.config-channel{
+.config-channel {
     position: absolute;
     right: 5px;
 }
 
-.edit-icon{
+.dropdown-icon {
+    margin-top: 2px;
+    margin-left: 16px;
+    height: 8px;
+
+    cursor: pointer;
+}
+
+.edit-icon {
     margin-bottom: -5px;
     transform: scale(0.8);
     cursor: pointer;
 }
 
-.delete-icon{
+.delete-icon {
     all: unset;
 
     border: 1px solid rgb(202, 48, 48);
@@ -105,7 +119,7 @@
     cursor: pointer;
 }
 
-.btn-edit-user{
+.btn-edit-user {
     all: unset;
     box-sizing: border-box;
     position: absolute;
@@ -118,7 +132,7 @@
     cursor: pointer;
 }
 
-.btn-logout{
+.btn-logout {
     position: absolute;
     bottom: 10px;
     width: 270px;
@@ -127,14 +141,42 @@
 
 
 .all-channels::-webkit-scrollbar {
-    width: 8px;             
-  }
-  
-  .all-channels::-webkit-scrollbar-track {
+    width: 8px;
+}
+
+.all-channels::-webkit-scrollbar-track {
     background-color: rgb(247, 247, 247);
-  }
-  
-  .all-channels::-webkit-scrollbar-thumb {
-    background-color:   #7b43b9;
+}
+
+.all-channels::-webkit-scrollbar-thumb {
+    background-color: #7b43b9;
     border-radius: 20px;
-  }
+}
+
+.channels-open {
+    animation: open 0.5s forwards;
+}
+
+.channels-close {
+    animation: close 0.5s forwards;
+}
+
+@keyframes close {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(-90deg);
+    }
+}
+
+@keyframes open {
+    0% {
+        transform: rotate(-90deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}

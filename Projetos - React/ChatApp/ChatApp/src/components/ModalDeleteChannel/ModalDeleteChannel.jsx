@@ -1,10 +1,10 @@
-import React, { useState } from 'react'
+import React from 'react'
 import useGlobal from '../../hooks/useGlobal'
 import { db } from '../../context/config';
 import { ref, remove } from "firebase/database";
 
 export default function ModalDeleteChannel() {
-    const { setAbrirModalAddchannel, usuarioLogado, handleSetChannels, configChannel } = useGlobal()
+    const { setAbrirModalAddchannel, handleSetChannels, configChannel } = useGlobal()
 
     function handleDeleteChannel() {
         remove(ref(db, `channel/${configChannel.id}`));

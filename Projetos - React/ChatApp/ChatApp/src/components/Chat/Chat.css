@@ -1,7 +1,7 @@
-.chat{
+.chat {
     box-sizing: border-box;
-    height: 90vh;
-    width: 80vw;
+    height: calc(100vh - 120px);
+    width: calc(100vw - 300px);
     position: relative;
 
     background-color: rgb(247, 247, 247);
@@ -11,7 +11,7 @@
     padding-bottom: 50px;
 }
 
-.header-chat{
+.header-chat {
     position: fixed;
     top: 0;
     z-index: 5;
@@ -24,7 +24,7 @@
     padding: 10px 20px;
 }
 
-.impty-chat{
+.impty-chat {
     position: absolute;
     display: flex;
     flex-direction: column;
@@ -35,7 +35,7 @@
     left: calc(50% - 300px);
 }
 
-.impty-chat p{
+.impty-chat p {
     font-family: 'Montserrat', sans-serif;
 
     font-weight: 600;
@@ -46,12 +46,12 @@
     text-align: center;
 }
 
-.chat-image{
+.chat-image {
     width: 600px;
     height: 400px;
 }
 
-.message-box{
+.message-box {
     color: white;
     display: flex;
     flex-direction: column;
@@ -59,7 +59,7 @@
     padding: 10px;
 }
 
-.message{
+.message {
     width: 300px;
     min-height: 30px;
     position: relative;
@@ -68,26 +68,30 @@
     border-radius: 10px;
 }
 
-.own{
-    background-color: #7b43b9;
+.own {
+    background-color: #31126e;
     align-self: flex-end;
 }
 
-.others{
+.dashboard-icon {
+    display: none;
+}
+
+.others {
     background-color: #76787a;
     align-items: flex-start;
 }
 
-.message-creator{
+.message-creator {
     font-size: 12px;
     color: rgba(255, 255, 255, 0.5);
 }
 
-.txt-message{
+.txt-message {
     margin-bottom: 10px;
 }
 
-.message-date{
+.message-date {
     display: flex;
     gap: 5px;
     position: absolute;
@@ -98,25 +102,21 @@
     color: rgba(255, 255, 255, 0.5);
 }
 
-.container-message{
+.container-message {
     display: flex;
     align-items: center;
-    width: 1200px;
-
-    position: fixed;
-    bottom: 2vh;
-    left: 310px;
-    z-index: 2px;
+    width: calc(100vw - 320px);
+    margin: 0 10px;
 }
 
-.container-message button{
+.container-message button {
     all: unset;
     box-sizing: border-box;
     display: flex;
     align-items: center;
     justify-content: center;
     height: 50px;
-    width: 10%;
+    width: 100px;
 
     font-family: 'Nunito', sans-serif;
     font-size: 14px;
@@ -124,17 +124,18 @@
 
     color: #F8F8F9;
     background: #7b43b9;
+    border-radius: 10px 0 0 10px;
     padding: 4px;
 
     cursor: pointer;
 }
 
-.container-message button:disabled{
+.container-message button:disabled {
     background: #76787a;
     cursor: default;
 }
 
-.container-message textarea{
+.container-message textarea {
     all: unset;
     box-sizing: border-box;
     width: 90%;
@@ -146,6 +147,8 @@
 
 
     color: #F8F8F9;
-    background-color: #0c0220;
+    background-color: #31126e;
+    border-radius: 0 10px 10px 0;
+
     padding: 12px 10px;
 }

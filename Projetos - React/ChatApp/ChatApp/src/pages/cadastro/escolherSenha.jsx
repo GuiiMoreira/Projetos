@@ -13,7 +13,7 @@ import { db } from '../../context/config';
 
 function EscolherSenha() {
   const history = useHistory();
-  const { nomeEmail, setUsuarioLogado } = useGlobal();
+  const { nomeEmail } = useGlobal();
   const [errorRegister, setErrorRegister] = useState();
   const [mostrarSenha, setMostrarSenha] = useState(false)
   const [mostrarConfirmSenha, setMostrarConfirmSenha] = useState(false)
